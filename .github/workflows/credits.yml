@@ -1,0 +1,50 @@
+name: credits
+
+on:
+  schedule:
+    # run at 8:00 UTC every Monday
+    - cron:  '0 8 * * 1'
+  # Allows to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  report-erofs-utils-vendors:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Collect erofs-utils contributors by vendor
+        run: |
+          mkdir code && cd code
+          git clone git://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git .
+          latest_tag=$(git describe --tags --abbrev=0)
+          git checkout $latest_tag
+          echo "As of erofs-utils ${latest_tag}:" >> $GITHUB_STEP_SUMMARY
+          echo "| Commits | Email domain | " >> $GITHUB_STEP_SUMMARY
+          echo "| ------- | ------------ | " >> $GITHUB_STEP_SUMMARY
+          OIFS=$IFS; IFS=' '
+          git log --format="%ae" --no-merges | \
+              sed -e 's/^.*@//' | sort | uniq -c | sort -rn | \
+              while read p; do p=($p); echo '|' ${p[0]} '|' ${p[1]} '|' >> $GITHUB_STEP_SUMMARY; done
+          IFS=$OIFS
+
+  report-kernel-vendors:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Collect kernel contributors by vendor
+        run: |
+          mkdir code && cd code
+          git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git .
+          latest_tag=$(git describe --tags --abbrev=0)
+          git checkout $latest_tag
+          echo "As of kernel ${latest_tag}:" >> $GITHUB_STEP_SUMMARY
+          echo "| Commits | Email domain | " >> $GITHUB_STEP_SUMMARY
+          echo "| ------- | ------------ | " >> $GITHUB_STEP_SUMMARY
+          OIFS=$IFS; IFS=' '
+          mkdir -p drivers/staging/erofs
+          git log --format="%ae" --no-merges fs/erofs drivers/staging/erofs Documentation/filesystems/erofs* | \
+              sed -e 's/^.*@//' | sort | uniq -c | sort -rn | \
+              while read p; do p=($p); echo '|' ${p[0]} '|' ${p[1]} '|' >> $GITHUB_STEP_SUMMARY; done
+          IFS=$OIFS
