@@ -46,8 +46,8 @@ The EROFS superblock is laid out as follows in [`struct erofs_super_block`](http
 | 0x0    | __le32 | magic                 | Magic signature, 0xE0F5E1E2                                                                        |
 | 0x4    | __le32 | checksum              | Superblock checksum                                                                                |
 | 0x8    | __le32 | feature_compat        | Compatible feature flags.  The kernel can still read this fs even if it doesn't understand a flag  |
-| 0xC    | __le32 | blkszbits             | Block size is 2{sup}`blkszbits`.  It should be no less than 9 (512-byte block size)                |
-| 0xD    | __le32 | sb_extslots           | The total superblock size is 128 + sb_extslots * 16. It should be 0 for future expansion           |
+| 0xC    |   __u8 | blkszbits             | Block size is 2{sup}`blkszbits`.  It should be no less than 9 (512-byte block size)                |
+| 0xD    |   __u8 | sb_extslots           | The total superblock size is 128 + sb_extslots * 16. It should be 0 for future expansion           |
 | 0xE    | __le16 | root_nid              | NID (node number) of the root directory                                                            |
 | 0x10   | __le64 | inos                  | Total valid inode count                                                                            |
 | 0x18   | __le64 | build_time            | When the filesystem was created, in seconds since the epoch                                        |
