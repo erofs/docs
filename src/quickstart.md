@@ -10,7 +10,7 @@ Here are examples for `Arch Linux`, `Debian`, `Fedora`, `OpenAnolis` and
 
 ```sh
 # Arch Linux
-$ sudo pacman -Sy erofs-utils
+$ sudo pacman -S erofs-utils
 
 # Debian and Ubuntu
 $ sudo apt install -y erofs-utils
