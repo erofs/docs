@@ -8,7 +8,7 @@
 
  - Intel QAT/IAA accelerator support;
 
- - Zstandard decompressor support;
+ - [Zstandard decompressor support](https://git.kernel.org/torvalds/c/7c35de4df105);
 
  - [Preliminary EROFS Rust in-kernel adaption (EXPERIMENTAL, program for students)](https://summer-ospp.ac.cn/org/prodetail/241920019).
 
