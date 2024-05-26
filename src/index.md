@@ -110,7 +110,8 @@ byte-granularity cut points.
 [Void Linux](https://github.com/void-linux/void-packages/tree/master/srcpkgs/erofs-utils);
 [yocto](https://yoctoproject.org); and maybe [more](https://repology.org/project/erofs-utils).
 
- - Bootloaders: [Das U-Boot](https://www.denx.de/project/u-boot)
+ - Bootloaders: [Das U-Boot](https://source.denx.de/u-boot/u-boot/-/tree/master/fs/erofs);
+[GNU GRUB](https://git.savannah.gnu.org/cgit/grub.git/tree/grub-core/fs/erofs.c)
 
 ```{rubric} Architecture
 ```
