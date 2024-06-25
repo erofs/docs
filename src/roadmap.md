@@ -2,23 +2,20 @@
 
 ## Linux Kernel
 
- - [Compressed data support over fscache](https://lore.kernel.org/r/20240308094159.40547-1-jefflexu@linux.alibaba.com);
-
  - Enable Large folio support for compressed data [\[1\]](https://lore.kernel.org/r/20240305091448.1384242-1-hsiangkao@linux.alibaba.com);
 
  - Intel QAT/IAA accelerator support;
 
- - [Zstandard decompressor support](https://git.kernel.org/torvalds/c/7c35de4df105);
+ - Large logical cluster support for smaller compression indexes;
 
  - [Preliminary EROFS Rust in-kernel adaption (EXPERIMENTAL, program for students)](https://summer-ospp.ac.cn/org/prodetail/241920019).
 
 ## Userspace tools (erofs-utils)
 
- - Multi-threaded (de)compression [\[1\]](https://lore.kernel.org/r/20240228161652.1010997-1-zhaoyifan@sjtu.edu.cn)
-[\[2\]](https://lore.kernel.org/r/20240422003450.19132-1-xiang@kernel.org);
+ - Multi-threaded decompression;
 
- - Intel QAT/IAA accelerator support;
+ - [Intel QAT/IAA accelerator support](https://git.kernel.org/xiang/erofs-utils/c/4bfa9ef57e78);
 
- - Preliminary Zstandard compression support;
+ - Large logical cluster support for smaller compression indexes;
 
- - Rebuild improvements (including incremental updates).
+ - Rebuild improvements (including incremental updates [\[1\]](https://git.kernel.org/xiang/erofs-utils/c/7550a30c332c)).
