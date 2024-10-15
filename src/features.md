@@ -26,13 +26,13 @@ in-kernel approaches when making technical decisions.
 | Multiple compression algorithms | Per-file       | N/A       | No            |
 | Data deduplication              | Extent-based   | No? [^8]  | No            |
 | Extended attribute support      | Yes            | Yes       | Yes           |
-| File-based distribution         | Yes            | No        | No            |
+| File-based distribution         | Yes [^9]       | No        | No            |
 | External data (multi-devices)   | Yes            | No        | No            |
 | POSIX.1e ACL support            | Yes            | Yes       | No            |
-| Direct I/O support [^9]         | Yes            | Yes       | No            |
+| Direct I/O support [^10]        | Yes            | Yes       | No            |
 | FIEMAP support                  | Yes            | Yes       | No            |
 | FSDAX support                   | Yes            | Yes       | No            |
-| Large folio support [^10]       | Yes            | No        | No            |
+| Large folio support [^11]       | Yes            | No        | No            |
 
 [^1]: 512-byte blocks can be used for tarball data reference.
 
@@ -48,8 +48,10 @@ See [Squashfs Binary Format/Inode Table](https://dr-emann.github.io/squashfs/squ
 
 [^5]: Data compression is an optional feature of the EROFS filesystem.
 Currently, the supported compression algorithms include [LZ4](https://lz4.org),
-[MicroLZMA](https://tukaani.org/xz) (since Linux 5.16), and
-[DEFLATE](https://datatracker.ietf.org/doc/html/rfc1951) (since Linux 6.6 LTS).
+[MicroLZMA](https://tukaani.org/xz) (since Linux 5.16),
+[DEFLATE](https://datatracker.ietf.org/doc/html/rfc1951) (since Linux 6.6 LTS)
+and [Zstandard](https://datatracker.ietf.org/doc/html/rfc8878) (since Linux
+6.10).
 
 [^6]: The default block size of EROFS is 4 KiB on x86 and x86-64.
 
@@ -60,10 +62,14 @@ I/O amplification and extra runtime overhead in resource-limited scenarios.
 [^8]: Strictly speaking, EXT4 has a feature named "[shared_blocks](https://lore.kernel.org/r/20201005161941.GF4225@quack2.suse.cz)",
 which will prevents applications from writing to the filesystem.
 
-[^9]: For example, `direct I/O` can be used for loop devices backed by unencoded
-files on the EROFS filesystem to avoid double caching.  `Direct I/O` on encoded
-files is almost useless since it should not do ANY caching and thus will kill
-the overall performance.
+[^9]: EROFS has supported [EROFS over fscache](https://lwn.net/Articles/896140)
+(since Linux 5.19, deprecated in Linux 6.12) and [file-backed mounts](https://lwn.net/Articles/990750)
+(since Linux 6.12).
 
-[^10]: EROFS supports [large folios for uncompressed files](https://lwn.net/Articles/931794)
-since Linux 6.2.
+[^10]: For example, `direct I/O` can be used for loop devices backed by
+unencoded files on the EROFS filesystem to avoid double caching.  `Direct I/O`
+on encoded files is almost useless since it should not do ANY caching and thus
+will kill the overall performance.
+
+[^11]: EROFS has supported large folios [for uncompressed files](https://lwn.net/Articles/931794)
+(since Linux 6.2) and [compressed files](https://git.kernel.org/torvalds/c/e080a26725fb) (since Linux 6.11).

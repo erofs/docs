@@ -2,18 +2,17 @@
 
 ## Linux Kernel
 
- - Enable large folio support for compressed data [\[1\]](https://lore.kernel.org/r/20240305091448.1384242-1-hsiangkao@linux.alibaba.com)
-[\[2\]](https://lore.kernel.org/r/20240703120051.3653452-1-hsiangkao@linux.alibaba.com);
+ - [Enable large folio support for compressed data](https://git.kernel.org/torvalds/c/e080a26725fb);
 
  - [EROFS page cache sharing across different filesystems](https://lwn.net/Articles/984092);
+
+ - [File-backed mounts to replace "EROFS over fscache" for container images](https://git.kernel.org/torvalds/c/69a3a0a45a2f);
 
  - Intel QAT/IAA accelerator support;
 
  - Large logical cluster support for smaller compression indexes;
 
- - [Preliminary EROFS Rust in-kernel adaption (EXPERIMENTAL, program for students)](https://summer-ospp.ac.cn/org/prodetail/241920019);
-
- - File-backed mounts to replace "EROFS over fscache" for container images.
+ - [Preliminary EROFS Rust in-kernel adaption (EXPERIMENTAL, program for students)](https://summer-ospp.ac.cn/org/prodetail/241920019).
 
 ## Userspace tools (erofs-utils)
 

@@ -89,11 +89,13 @@ byte-granularity cut points.
 [Kata Containers](https://github.com/kata-containers/kata-containers/blob/main/docs/how-to/how-to-use-erofs-build-rootfs.md)
 
  - {octicon}`device-desktop` [Archiso](https://gitlab.archlinux.org/archlinux/archiso/-/merge_requests/82);
+[dracut-ng](https://github.com/dracut-ng/dracut-ng/pull/546); [kdump-utils](https://github.com/rhkdump/kdump-utils/pull/33);
 [Linglong](https://linglong.dev)
 
  - Distributions: [Alpine Linux](https://pkgs.alpinelinux.org/package/edge/community/x86_64/erofs-utils);
 [Arch Linux](https://archlinux.org/packages/extra/x86_64/erofs-utils);
 [Azure Linux](https://github.com/microsoft/azurelinux/pull/9971);
+[Bottlerocket](https://github.com/bottlerocket-os/twoliter/pull/379);
 [Buildroot](https://buildroot.org);
 [CentOS Stream](https://gitlab.com/redhat/centos-stream/src/kernel/centos-stream-9/-/commit/37d0627c30a55e4159f00af2d02b5d64b1dc98e8);
 [Chromium OS](https://chromium-review.googlesource.com/c/chromiumos/platform/crosutils/+/5125177);
