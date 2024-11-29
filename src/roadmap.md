@@ -2,11 +2,7 @@
 
 ## Linux Kernel
 
- - [Enable large folio support for compressed data](https://git.kernel.org/torvalds/c/e080a26725fb);
-
  - [EROFS page cache sharing across different filesystems](https://lwn.net/Articles/984092);
-
- - [File-backed mounts to replace "EROFS over fscache" for container images](https://git.kernel.org/torvalds/c/69a3a0a45a2f);
 
  - Intel QAT/IAA accelerator support;
 

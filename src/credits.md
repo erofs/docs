@@ -3,7 +3,7 @@
 EROFS has been contributed by community developers around the world,
 including but not limited to (in alphabetical order):
 
- * By vendor ([raw](https://github.com/erofs/docs/actions/runs/7959034932))
+ * By vendor ([raw](https://github.com/erofs/docs/actions/workflows/credits.yml))
      - Alibaba Group (@linux.alibaba.com)
      - ByteDance (@bytedance.com)
      - Coolpad (@coolpad.com, @yulong.com)

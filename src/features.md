@@ -9,30 +9,31 @@ Note that it's just **an incomplete list** for the qualitative evaluation.
 The overall purpose of this is to show EROFS benefits compared to other
 in-kernel approaches when making technical decisions.
 
-| Feature  (as of Linux 6.6)      | EROFS          | EXT4      | SquashFS      |
-| ------------------------------- | -------------- | --------- | ------------- |
-| Minimal block size              | 512 B [^1]     | 1 KiB     | Unaligned[^2] |
-| Inode size                      | 32/64 B        | 128/256 B | Varied [^3]   |
-| Limitation of total UIDs/GIDs   | No             | No        | Yes (64k)[^4] |
-| Pre-1970 / ns timestamps        | Yes            | Yes       | No            |
-| Filesystem UUID                 | Yes            | Yes       | No            |
-| Filesystem label (Volume label) | Yes            | Yes       | No            |
-| Inline data                     | Yes            | Yes       | No            |
-| Data compression                | Yes [^5]       | No        | Yes           |
-| Largest compression granularity | 1 MiB          | N/A       | 1 MiB         |
-| Default compression granularity | 1 Block [^6]   | N/A       | 128 KiB       |
-| Fragments                       | Yes            | N/A       | Yes           |
-| Metadata compression            | No [^7]        | N/A       | Yes           |
-| Multiple compression algorithms | Per-file       | N/A       | No            |
-| Data deduplication              | Extent-based   | No? [^8]  | No            |
-| Extended attribute support      | Yes            | Yes       | Yes           |
-| File-based distribution         | Yes [^9]       | No        | No            |
-| External data (multi-devices)   | Yes            | No        | No            |
-| POSIX.1e ACL support            | Yes            | Yes       | No            |
-| Direct I/O support [^10]        | Yes            | Yes       | No            |
-| FIEMAP support                  | Yes            | Yes       | No            |
-| FSDAX support                   | Yes            | Yes       | No            |
-| Large folio support [^11]       | Yes            | No        | No            |
+| Feature  (as of Linux 6.6)      | EROFS             | EXT4      | SquashFS      |
+| ------------------------------- | ----------------- | --------- | ------------- |
+| Minimal block size              | 512 B [^1]        | 1 KiB     | Unaligned[^2] |
+| Inode size                      | 32/64 B           | 128/256 B | Varied [^3]   |
+| Limitation of total UIDs/GIDs   | No                | No        | Yes (64k)[^4] |
+| Pre-1970 / ns timestamps        | Yes               | Yes       | No            |
+| Filesystem UUID                 | Yes               | Yes       | No            |
+| Filesystem label (Volume label) | Yes               | Yes       | No            |
+| Inline data                     | Yes (Inline tail) | Yes       | No            |
+| Data compression                | Yes [^5]          | No        | Yes           |
+| Largest compression granularity | 1 MiB             | N/A       | 1 MiB         |
+| Default compression granularity | 1 Block [^6]      | N/A       | 128 KiB       |
+| Fragments                       | Yes               | N/A       | Yes           |
+| Metadata compression            | No [^7]           | N/A       | Yes           |
+| Multiple compression algorithms | Per-file          | N/A       | No            |
+| Data deduplication              | Extent-based      | No? [^8]  | No            |
+| Extended attribute support      | Yes               | Yes       | Yes           |
+| File-based distribution         | Yes [^9]          | No        | No            |
+| External data (multi-devices)   | Yes               | No        | No            |
+| POSIX.1e ACL support            | Yes               | Yes       | No            |
+| Direct I/O support [^10]        | Yes               | Yes       | No            |
+| FIEMAP support                  | Yes               | Yes       | No            |
+| SEEK_{DATA,HOLE} support        | Yes               | Yes       | No            |
+| FSDAX support                   | Yes               | Yes       | No            |
+| Large folio support [^11]       | Yes               | No        | No            |
 
 [^1]: 512-byte blocks can be used for tarball data reference.
 
