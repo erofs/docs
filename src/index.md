@@ -107,9 +107,11 @@ byte-granularity cut points.
 [Homebrew](https://formulae.brew.sh/formula/erofs-utils);
 [NixOS](https://github.com/NixOS/nixpkgs/tree/nixos-unstable/pkgs/tools/filesystems/erofs-utils);
 [openAnolis](https://openanolis.cn/?lang=en);
+[OpenCloudOS](https://gitee.com/OpenCloudOS/OpenCloudOS-Kernel/commit/65fdb18aed207b763076b4014139a57662d999c5);
 [openEuler](https://gitee.com/openeuler/kernel/pulls/3828);
 [openSUSE](https://packagehub.suse.com/packages/erofs-utils);
 [Ubuntu](https://packages.ubuntu.com/erofs-utils);
+[Red Hat Enterprise Linux](https://access.redhat.com/articles/7084858);
 [Void Linux](https://github.com/void-linux/void-packages/tree/master/srcpkgs/erofs-utils);
 [yocto](https://yoctoproject.org); and maybe [more](https://repology.org/project/erofs-utils).
 
