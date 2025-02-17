@@ -85,10 +85,12 @@ byte-granularity cut points.
  - {octicon}`device-mobile;1em` [The Android system firmware](https://source.android.com/docs/core/architecture/kernel/erofs)
 
  - {octicon}`container;1em` [Composefs](https://github.com/containers/composefs);
+[containerd](https://github.com/containerd/containerd/pull/10705);
 [Dragonfly Nydus](https://nydus.dev/); [gVisor](https://github.com/google/gvisor/pull/9486);
 [Kata Containers](https://github.com/kata-containers/kata-containers/blob/main/docs/how-to/how-to-use-erofs-build-rootfs.md)
 
  - {octicon}`device-desktop` [Archiso](https://gitlab.archlinux.org/archlinux/archiso/-/merge_requests/82);
+[CoreOS Assembler](https://github.com/coreos/coreos-assembler/pull/4012);
 [dracut-ng](https://github.com/dracut-ng/dracut-ng/pull/546); [kdump-utils](https://github.com/rhkdump/kdump-utils/pull/33);
 [Linglong](https://linglong.dev)
 
