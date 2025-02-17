@@ -22,11 +22,11 @@ in-kernel approaches when making technical decisions.
 | Largest compression granularity | 1 MiB             | N/A       | 1 MiB         |
 | Default compression granularity | 1 Block [^6]      | N/A       | 128 KiB       |
 | Fragments                       | Yes               | N/A       | Yes           |
-| Metadata compression            | No [^7]           | N/A       | Yes           |
+| File-backed mount               | Yes [^7]          | No        | No            |
+| Metadata compression            | No [^8]           | N/A       | Yes           |
 | Multiple compression algorithms | Per-file          | N/A       | No            |
-| Data deduplication              | Extent-based      | No? [^8]  | No            |
+| Data deduplication              | Extent-based      | No? [^9]  | No            |
 | Extended attribute support      | Yes               | Yes       | Yes           |
-| File-based distribution         | Yes [^9]          | No        | No            |
 | External data (multi-devices)   | Yes               | No        | No            |
 | POSIX.1e ACL support            | Yes               | Yes       | No            |
 | Direct I/O support [^10]        | Yes               | Yes       | No            |
@@ -56,16 +56,16 @@ and [Zstandard](https://datatracker.ietf.org/doc/html/rfc8878) (since Linux
 
 [^6]: The default block size of EROFS is 4 KiB on x86 and x86-64.
 
-[^7]: EROFS metadata is designed to be directly accessible without decoding or
+[^7]: EROFS has supported [EROFS over fscache](https://lwn.net/Articles/896140)
+(since Linux 5.19, deprecated in Linux 6.12) and [file-backed mounts](https://lwn.net/Articles/990750)
+(since Linux 6.12) to avoid unnecessary loop devices.
+
+[^8]: EROFS metadata is designed to be directly accessible without decoding or
 deserialization (e.g., [protobuf](https://protobuf.dev/)) since they could cause
 I/O amplification and extra runtime overhead in resource-limited scenarios.
 
-[^8]: Strictly speaking, EXT4 has a feature named "[shared_blocks](https://lore.kernel.org/r/20201005161941.GF4225@quack2.suse.cz)",
+[^9]: Strictly speaking, EXT4 has a feature named "[shared_blocks](https://lore.kernel.org/r/20201005161941.GF4225@quack2.suse.cz)",
 which will prevents applications from writing to the filesystem.
-
-[^9]: EROFS has supported [EROFS over fscache](https://lwn.net/Articles/896140)
-(since Linux 5.19, deprecated in Linux 6.12) and [file-backed mounts](https://lwn.net/Articles/990750)
-(since Linux 6.12).
 
 [^10]: For example, `direct I/O` can be used for loop devices backed by
 unencoded files on the EROFS filesystem to avoid double caching.  `Direct I/O`
