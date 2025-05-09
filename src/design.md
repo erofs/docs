@@ -106,6 +106,16 @@ Here is a summary of our overall design as below:
  - Multi-reference compressed clusters - to avoid deduplicated data I/O (not
    always) and minimize images even further.
 
+:::{note}
+
+EROFS doesn’t prefetch unnecessary on-disk data or amplify user I/Os at runtime,
+unlike some alternative approaches, since they kill random performance and
+increase memory footprints.  Those customized strategies can also be achieved by
+using [posix_fadvise()](https://pubs.opengroup.org/onlinepubs/000095399/functions/posix_fadvise.html)
+or userspace tools like ureadahead, so there is no need to bother the kernel.
+
+:::
+
 ```{toctree}
 :hidden:
 core_ondisk.md
