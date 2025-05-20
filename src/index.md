@@ -96,6 +96,7 @@ byte-granularity cut points.
 [KIWI](https://github.com/OSInside/kiwi/issues/2799); [Linglong](https://linglong.dev)
 
  - Distributions: [Alpine Linux](https://pkgs.alpinelinux.org/package/edge/community/x86_64/erofs-utils);
+[Amazon Linux](https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.7.20250512.html);
 [Arch Linux](https://archlinux.org/packages/extra/x86_64/erofs-utils);
 [Azure Linux](https://github.com/microsoft/azurelinux/pull/9971);
 [Bottlerocket](https://github.com/bottlerocket-os/twoliter/pull/379);

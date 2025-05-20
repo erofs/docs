@@ -9,7 +9,7 @@ Note that it's just **an incomplete list** for the qualitative evaluation.
 The overall purpose of this is to show EROFS benefits compared to other
 in-kernel approaches when making technical decisions.
 
-| Feature  (as of Linux 6.6)      | EROFS             | EXT4      | SquashFS      |
+| Feature  (as of Linux 6.16)     | EROFS             | EXT4      | SquashFS      |
 | ------------------------------- | ----------------- | --------- | ------------- |
 | Minimal block size              | 512 B [^1]        | 1 KiB     | Unaligned[^2] |
 | Inode size                      | 32/64 B           | 128/256 B | Varied [^3]   |
@@ -22,10 +22,10 @@ in-kernel approaches when making technical decisions.
 | Largest compression granularity | 1 MiB             | N/A       | 1 MiB         |
 | Default compression granularity | 1 Block [^6]      | N/A       | 128 KiB       |
 | Fragments                       | Yes               | N/A       | Yes           |
-| File-backed mount               | Yes [^7]          | No        | No            |
+| File-backed mounts              | Yes [^7]          | No        | No            |
 | Metadata compression            | No [^8]           | N/A       | Yes           |
 | Multiple compression algorithms | Per-file          | N/A       | No            |
-| Data deduplication              | Extent-based      | No? [^9]  | No            |
+| Data deduplication              | Extent-based      | No? [^9]  | File-based    |
 | Extended attribute support      | Yes               | Yes       | Yes           |
 | External data (multi-devices)   | Yes               | No        | No            |
 | POSIX.1e ACL support            | Yes               | Yes       | No            |
@@ -33,7 +33,8 @@ in-kernel approaches when making technical decisions.
 | FIEMAP support                  | Yes               | Yes       | No            |
 | SEEK_{DATA,HOLE} support        | Yes               | Yes       | No            |
 | FSDAX support                   | Yes               | Yes       | No            |
-| Large folio support [^11]       | Yes               | No        | No            |
+| Large folio support             | Yes [^11]         | Yes [^12] | No            |
+| Hardware acceleration support   | Yes [^13]         | No        | No            |
 
 [^1]: 512-byte blocks can be used for tarball data reference.
 
@@ -74,3 +75,8 @@ will kill the overall performance.
 
 [^11]: EROFS has supported large folios [for uncompressed files](https://lwn.net/Articles/931794)
 (since Linux 6.2) and [compressed files](https://git.kernel.org/torvalds/c/e080a26725fb) (since Linux 6.11).
+
+[^12]: EXT4 supports [large folios since Linux 6.16](https://git.kernel.org/torvalds/c/d87d73895fcd).
+
+[^13]: EROFS has supported [Intel QuickAssist Technology to accelerate DEFLATE
+algorithm since Linux 6.16](https://git.kernel.org/torvalds/c/79b98edf918e).
