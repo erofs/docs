@@ -6,8 +6,6 @@
 
  - [EROFS page cache sharing across different filesystems](https://lwn.net/Articles/984092);
 
- - [Intel QAT/IAA accelerator support](https://lore.kernel.org/r/20250410042048.3044-3-liubo03@inspur.com);
-
  - [Preliminary EROFS Rust in-kernel adaption (EXPERIMENTAL, program for students)](https://summer-ospp.ac.cn/org/prodetail/241920019).
 
 ## Userspace tools (erofs-utils)
@@ -22,4 +20,6 @@
 
  - [(containerd) EROFS Support and Improvements](https://github.com/containerd/containerd/issues/11340);
 
- - [(Kata Containers) EROFS Snapshotter Support in Kata](https://github.com/kata-containers/kata-containers/issues/11163).
+ - [(Kata Containers) EROFS Snapshotter Support in Kata](https://github.com/kata-containers/kata-containers/issues/11163);
+
+ - [(gVisor) EROFS Snapshotter Support](https://docs.google.com/document/d/1JBBIAqEPwJHGOqML9wcEyZhKicfo9pWZOkahn31AfPs).
