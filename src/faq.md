@@ -3,13 +3,13 @@
 ## Why are images packaged in EROFS larger than those with SquashFS?
 
 First of all, the initial target use cases of EROFS are _high-performance
-embedded scenarios, such as smartphones powered by Android_.  Runtime
+embedded scenarios, such as smartphones powered by Android_. Runtime
 performance is always the top priority for EROFS (or, systems and applications
 will be lagged), even if it means sacrificing some ultra-space savings to avoid
 significant performance regressions against uncompressed approaches.
 
-However, EROFS has landed **several new ondisk features** to narrow the slight
-size difference with SquashFS.  When comparing, please ensure the same
+However, EROFS has landed **several new on-disk features** to narrow the slight
+size difference with SquashFS. When comparing, please ensure the same
 configuration is used:
 
  - **Compression algorithm (if data is compressed)**: EROFS uses *LZ4* by
@@ -19,14 +19,14 @@ configuration is used:
  - **Compressed extent size**: Almost all filesystems that natively support
    compression typically cut data into compressed extents for random access.
    EROFS focuses on smaller physical clusters to maximize random performance and
-   use *block-sized physical clusters* by default (usually 4 KiB), whileas
-   SquashFS uses *128 KiB*.  It can be adjusted using the `-C` option with
+   use *block-sized physical clusters* by default (usually 4 KiB), whereas
+   SquashFS uses *128 KiB*. It can be adjusted using the `-C` option with
    `mkfs.erofs`.
 
 :::{note}
 
 Large physical clusters (e.g., 1MiB) can significantly degrade random read
-performance as well as increase memory usage.  Please conduct a thorough
+performance as well as increase memory usage. Please conduct a thorough
 evaluation by factoring in the target image size prior to deployment.
 
 :::
@@ -39,25 +39,25 @@ evaluation by factoring in the target image size prior to deployment.
    comparing with SquashFS.
 
 In addition, EROFS may produce larger images due to the following differences:
- - **Inode size**: Currently EROFS has to use 64-byte ondisk inodes (extended
+ - **Inode size**: Currently EROFS has to use 64-byte on-disk inodes (extended
    inodes) to support per-inode nanosecond timestamps, whereas SquashFS often
    uses [32-byte inodes with only 4-byte timestamps](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/squashfs/squashfs_fs.h?h=v6.12#n334)
-   for regular files;  Consider switching to 32-byte EROFS compact inodes (e.g.,
+   for regular files; Consider switching to 32-byte EROFS compact inodes (e.g.,
    by using `-T`) if per-file timestamps are not a strong requirement;
 
- - **Lack of metadata compression**: If your testsets contain a large number of
+ - **Lack of metadata compression**: If your test sets contain a large number of
    files, EROFS may result in larger images compared to SquashFS because of
-   metadata compression is not supported.  Again, it isn't considered at first
+   metadata compression is not supported. Again, it isn't considered at first
    due to bad impacts to random metadata performance but it may be implemented
    in the future.
 
  - **File-based deduplication**: SquashFS deduplicates files with identical data
    by default (it can be disabled with `-no-duplicates`), whereas EROFS does not
-   (except for hardlinks).  However, EROFS offers finer-grained data
+   (except for hardlinks). However, EROFS offers finer-grained data
    deduplication using `-Ededupe`.
 
  - **BCJ filters**: SquashFS can compress with XZ algorithm of BCJ enabled to
-   optimize executable code.  This feature is not supported by EROFS for now,
+   optimize executable code. This feature is not supported by EROFS for now,
    but there are plans to introduce BCJ filters for all EROFS-supported
    algorithms.
 
@@ -71,7 +71,7 @@ runtime performance) when compressing files in small compressed extent sizes
 (especially smaller than 32KiB).
 
 Additionally, EROFS has supported CDC-like [compressed data deduplication](design.md#data-deduplication)
-since Linux 6.1, which gives extra space saving too.  Please make sure that
+since Linux 6.1, which gives extra space saving too. Please make sure that
 the options `-Ededupe` and `-Eall-fragments` are specified with `mkfs.erofs`.
 
 ## 🚧 Under construction..

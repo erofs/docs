@@ -2,7 +2,7 @@
 
 ```{toctree}
 :hidden:
-comparsion/dedupe.md
+comparison/dedupe.md
 ```
 
 Note that it's just **an incomplete list** for the qualitative evaluation.
@@ -40,10 +40,10 @@ in-kernel approaches when making technical decisions.
 
 [^2]: It means a fixed minimal filesystem I/O size which SquashFS doesn't have.
 Instead, SquashFS has its own "block size": its compressed files are split up in
-fixed-size blocks.  See [Squashfs Binary Format/About](https://dr-emann.github.io/squashfs/squashfs.html#_about).
+fixed-size blocks. See [Squashfs Binary Format/About](https://dr-emann.github.io/squashfs/squashfs.html#_about).
 
 [^3]: SquashFS has different on-disk inodes for each type of varying contents
-and size.  See [Squashfs Binary Format/Inode Table](https://dr-emann.github.io/squashfs/squashfs.html#_inode_table).
+and size. See [Squashfs Binary Format/Inode Table](https://dr-emann.github.io/squashfs/squashfs.html#_inode_table).
 
 [^4]: SquashFS allows 32-bit UIDs/GIDs, but only among 2{sup}`16` unique values.
 See [Squashfs Binary Format/Inode Table](https://dr-emann.github.io/squashfs/squashfs.html#_inode_table).
@@ -69,7 +69,7 @@ I/O amplification and extra runtime overhead in resource-limited scenarios.
 which will prevents applications from writing to the filesystem.
 
 [^10]: For example, `direct I/O` can be used for loop devices backed by
-unencoded files on the EROFS filesystem to avoid double caching.  `Direct I/O`
+unencoded files on the EROFS filesystem to avoid double caching. `Direct I/O`
 on encoded files is almost useless since it should not do ANY caching and thus
 will kill the overall performance.
 

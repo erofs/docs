@@ -45,7 +45,7 @@ $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git
 The repo defaults to the master development branch. You can also check out a release tag to build:
 
 ```sh
-$ git checkout <tag>  # v1.7.1, v1.6, etc.
+$ git checkout <tag> # v1.7.1, v1.6, etc.
 ```
 
 ### Configure and build
