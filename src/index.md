@@ -8,12 +8,12 @@ sd_hide_title: true
 ```
 
 A modern, flexible, general-purpose, high-performance block-based immutable
-filesystem with highly-optimized ondisk format and runtime implementation aimed
+filesystem with highly-optimized on-disk format and runtime implementation aimed
 at various use cases instead of just focusing on storage space saving without
 considering any side effects of runtime performance.
 
 [EROFS](https://docs.kernel.org/filesystems/erofs.html) has been formally
-available since Linux 5.4.  It is currently maintained by an open-source
+available since Linux 5.4. It is currently maintained by an open-source
 community from all over the world, and is still
 [under active development](roadmap.md).
 
@@ -56,8 +56,8 @@ advanced features like Direct I/O and FSDAX.
 :link: features
 :link-type: doc
 
-Minimal core ondisk format for non-encoded use cases. \
-Besides, advanced ondisk and/or runtime features can be enabled on demand.
+Minimal core on-disk format for non-encoded use cases. \
+Besides, advanced on-disk and/or runtime features can be enabled on demand.
 
 +++
 [Learn more »](features)
@@ -68,7 +68,7 @@ Besides, advanced ondisk and/or runtime features can be enabled on demand.
 :link-type: ref
 
 Per-file data compression as an option, normally using fixed-sized output
-compression to fill up each block.  Compressed data can be deduplicated with
+compression to fill up each block. Compressed data can be deduplicated with
 byte-granularity cut points.
 
 +++
