@@ -9,8 +9,8 @@ will be lagged), even if it means sacrificing some ultra-space savings to avoid
 significant performance regressions against uncompressed approaches.
 
 However, EROFS has landed **several new on-disk features** to narrow the slight
-size difference with SquashFS. When comparing, please ensure the same
-configuration is used:
+size difference with SquashFS or even outperform SquashFS. When comparing,
+please ensure the same configuration is used:
 
  - **Compression algorithm (if data is compressed)**: EROFS uses *LZ4* by
    default due to lowest decompression latencies among popular open-source
@@ -53,25 +53,28 @@ In addition, EROFS may produce larger images due to the following differences:
 
  - **File-based deduplication**: SquashFS deduplicates files with identical data
    by default (it can be disabled with `-no-duplicates`), whereas EROFS does not
-   (except for hardlinks). However, EROFS offers finer-grained data
-   deduplication using `-Ededupe`.
+   (except for hardlinks). However, EROFS offers the similar functionality using
+   `-Efragments` and even finer-grained data deduplication using `-Ededupe`.
 
  - **BCJ filters**: SquashFS can compress with XZ algorithm of BCJ enabled to
    optimize executable code. This feature is not supported by EROFS for now,
-   but there are plans to introduce BCJ filters for all EROFS-supported
-   algorithms.
+   but there are plans to introduce [BCJ filters for all EROFS-supported algorithms](https://github.com/tukaani-project/xz/releases/tag/v5.8.0).
 
 Note that EROFS is still under active development. The features mentioned above
 are not top priorities at the moment due to limited development resources
 (anyway, SquashFS has been existed for over 20 years) and target use scenarios,
 but they will be considered in the future, and contributions are always welcome.
-Also, note that SquashFS doesn't always outperform EROFS in image size either.
+Again, note that SquashFS doesn't always outperform EROFS in image size either.
 EROFS images are often significantly smaller (while still offering better
 runtime performance) when compressing files in small compressed extent sizes
 (especially smaller than 32KiB).
 
 Additionally, EROFS has supported CDC-like [compressed data deduplication](design.md#data-deduplication)
-since Linux 6.1, which gives extra space saving too. Please make sure that
-the options `-Ededupe` and `-Eall-fragments` are specified with `mkfs.erofs`.
+since Linux 6.1, which also gives extra space savings (although `-Ededupe` is
+still single-threaded).
+
+In brief, if image size is your top priority, please ensure that the options
+`-Ededupe` and `-E(all-)fragments` are specified with mkfs.erofs.  At least,
+enable `-Efragments` to match the default configuration of SquashFS.
 
 ## 🚧 Under construction..
