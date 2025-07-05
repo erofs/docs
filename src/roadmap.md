@@ -10,9 +10,11 @@
 
 ## Userspace tools (erofs-utils)
 
- - Multi-threaded decompression;
+ - Metadata compression;
 
  - Stabilize liberofs APIs;
+
+ - Multi-threaded decompression;
 
  - Rebuild improvements (including incremental updates [\[1\]](https://git.kernel.org/xiang/erofs-utils/c/7550a30c332c)).
 
