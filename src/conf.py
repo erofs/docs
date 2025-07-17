@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'EROFS'
-copyright = '2023, EROFS filesystem developers'
+copyright = '2018-2025, EROFS filesystem developers'
 author = 'EROFS filesystem developers'
 
 version = '0.1'
