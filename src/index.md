@@ -18,7 +18,7 @@ community from all over the world, and is still
 [under active development](roadmap.md).
 
 ````{div} sd-d-flex-row
-```{button-ref} quickstart
+```{button-ref} install
 :ref-type: doc
 :color: primary
 :class: sd-rounded-pill sd-mr-3
@@ -157,12 +157,27 @@ for all Linux kernel development communities.
 
 ```{toctree}
 :hidden:
-quickstart.md
-design.md
+:caption: 🚀 Get Started
+
+install.md
+mkfs.md
 features.md
 casestudies.md
-roadmap.md
+```
+
+```{toctree}
+:hidden:
+:caption: 🚜 For Developers
+
+design.md
 developers.md
+roadmap.md
+```
+
+```{toctree}
+:hidden:
+:caption: 📌 More
+
 faq.md
 credits.md
 ```
