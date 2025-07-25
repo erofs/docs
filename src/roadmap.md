@@ -2,7 +2,7 @@
 
 ## Linux Kernel
 
- - [Metadata compression](https://issues.redhat.com/browse/RHEL-75783);
+ - Metadata compression [\[1\]](https://issues.redhat.com/browse/RHEL-75783) [\[2\]](https://lore.kernel.org/r/20250717070804.1446345-1-hsiangkao@linux.alibaba.com) [\[3\]](https://lore.kernel.org/r/20250718065419.3338307-1-hsiangkao@linux.alibaba.com);
 
  - [EROFS page cache sharing across different filesystems](https://lwn.net/Articles/984092);
 

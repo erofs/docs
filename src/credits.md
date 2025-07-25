@@ -9,6 +9,7 @@ including but not limited to (in alphabetical order):
      - Coolpad (@coolpad.com, @yulong.com)
      - Google (@google.com)
      - Huawei (@huawei.com)
+     - Inspur (@inspur.com)
      - OPPO (@oppo.com)
      - Red Hat (@redhat.com)
      - Shanghai Jiao Tong University (@sjtu.edu.cn)
