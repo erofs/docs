@@ -69,6 +69,30 @@ The EROFS superblock is laid out as follows in [`struct erofs_super_block`](http
 | 0x68   |   __u8 | xattr_filter_reserved | Always 0 for reserved use                                                                          |
 | 0x69   |   __u8 | reserved[23]          | Reserved                                                                                           |
 
+### Verify superblock checksum
+
+The CRC32-C checksum is calculated from the first byte of the superblock
+(offset `1024`) to the end of the filesystem block, the `checksum` field should
+be filled with zero.
+
+The filesystem block size is defined in `blkszbits`. For block size is larger
+than 1024 bytes, the first 1 KiB will be skipped (since the superblock offset
+is `1024`). This approach allows some use-cases which may contain user-defined
+contents, such as MBR, boot sector or others.
+
+> For example, when `blkszbits` is 12 (block size is 4KiB):
+>
+> | Offset | Size | Description                                    | Checksum covered |
+> |--------|------|------------------------------------------------|------------------|
+> | 0      | 1024 | Padding                                        | No               |
+> | 1024   | 4    | Magic number                                   | Yes              |
+> | 1028   | 4    | Checksum field in superblock, filled with zero | Yes              |
+> | 1032   | 3064 | Remain bytes in the filesystem block           | Yes              |
+
+> Tips: Some implementations (e.g., java.util.zip.CRC32C) apply a final
+> bit-wise inversion. If the superblock checksum doesn't match,
+> try inverting it.
+
 ## Inodes
 
 Each valid on-disk inode should be aligned to a fixed inode slot (32-byte)
