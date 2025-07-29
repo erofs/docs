@@ -167,7 +167,13 @@ with the starting block address stored in `inode.i_u`.
    Except for the tail data block, all consecutive physical blocks hold the
 entire content of the inode with the starting block address stored in
 `inode.i_u`. The tail block is kept within the block immediately following the
-on-disk inode metadata.
+on-disk inode metadata. If there are no blocks other than the tail inlined
+block, the value in `inode.i_u` (now treated as a "don't care" field)
+will be ignored at runtime.
+
+   :::{note}
+   This layout is not allowed if the tail inode data block cannot be inlined.
+   :::
 
  - `EROFS_INODE_CHUNK_BASED (4)`:
 
@@ -195,6 +201,10 @@ Each directory entry is defined as 12-byte
 
 Note that _nameoff{sub}`0`_ (`nameoff` of the 1st directory entry) also
 indicates the total number of directory entries in this directory block.
+
+File names are not null-terminated (`\0`): For each directory block, if the last
+file name doesn't reach up to the end of the block, the remaining bytes must be
+filled with `0x00`.
 
 :::{note}
 
