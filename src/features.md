@@ -9,11 +9,11 @@ Note that it's just **an incomplete list** for the qualitative evaluation.
 The overall purpose of this is to show EROFS benefits compared to other
 in-kernel approaches when making technical decisions.
 
-| Feature  (as of Linux 6.16)     | EROFS             | EXT4      | SquashFS      |
+| Feature  (as of Linux 6.17)     | EROFS             | EXT4      | SquashFS      |
 | ------------------------------- | ----------------- | --------- | ------------- |
 | Minimal block size              | 512 B [^1]        | 1 KiB     | Unaligned[^2] |
 | Inode size                      | 32/64 B           | 128/256 B | Varied [^3]   |
-| Limitation of total UIDs/GIDs   | No                | No        | Yes (64k)[^4] |
+| Limitation of total UIDs/GIDs   | Unlimited         | Unlimited | 65536 [^4]    |
 | Pre-1970 / ns timestamps        | Yes               | Yes       | No            |
 | Filesystem UUID                 | Yes               | Yes       | No            |
 | Filesystem label (Volume label) | Yes               | Yes       | No            |
@@ -23,7 +23,7 @@ in-kernel approaches when making technical decisions.
 | Default compression granularity | 1 Block [^6]      | N/A       | 128 KiB       |
 | Fragments                       | Yes               | N/A       | Yes           |
 | File-backed mounts              | Yes [^7]          | No        | No            |
-| Metadata compression            | No [^8]           | N/A       | Yes           |
+| Metadata compression            | Yes [^8]          | N/A       | Yes           |
 | Multiple compression algorithms | Per-file          | N/A       | No            |
 | Data deduplication              | Extent-based      | No? [^9]  | File-based    |
 | Extended attribute support      | Yes               | Yes       | Yes           |
@@ -61,9 +61,11 @@ and [Zstandard](https://datatracker.ietf.org/doc/html/rfc8878) (since Linux
 (since Linux 5.19, deprecated in Linux 6.12) and [file-backed mounts](https://lwn.net/Articles/990750)
 (since Linux 6.12) to avoid unnecessary loop devices.
 
-[^8]: EROFS metadata is designed to be directly accessible without decoding or
-deserialization (e.g., [protobuf](https://protobuf.dev/)) since they could cause
-I/O amplification and extra runtime overhead in resource-limited scenarios.
+[^8]: EROFS metadata is designed to be directly accessible from block devices
+without decoding, or deserialization, as these can lead to I/O amplification and
+additional runtime latency in performance-critical scenarios. Nevertheless,
+optional metadata compression has been supported since Linux 6.17 to minimize
+filesystem images.
 
 [^9]: Strictly speaking, EXT4 has a feature named "[shared_blocks](https://lore.kernel.org/r/20201005161941.GF4225@quack2.suse.cz)",
 which will prevents applications from writing to the filesystem.

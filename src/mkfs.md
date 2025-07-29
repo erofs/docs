@@ -48,8 +48,8 @@ $ mkfs.erofs -zlz4hc,12 -C65536 -Efragments,ztailpacking foo.erofs foo/
 
 By default, EROFS just uses a physical cluster size equal to the block size
 (e.g., 4096 on x86) and disables advanced features to keep the random access
-performance. Consider increasing -C and enabling advanced features if a smaller
-image size is desired.
+performance. Consider increasing `-C` and enabling advanced features if
+a smaller image size is desired.
 
 Using `-Eall-fragments` is not recommended now, as it can degrade runtime
 performance unless minimizing image size is the top priority. `-Efragments`
