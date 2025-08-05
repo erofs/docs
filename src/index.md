@@ -116,6 +116,7 @@ byte-granularity cut points.
 [openEuler](https://gitee.com/openeuler/kernel/pulls/3828);
 [openSUSE](https://packagehub.suse.com/packages/erofs-utils);
 [OpenWrt](https://github.com/openwrt/openwrt/pull/19244);
+[Oracle Linux](https://linux.oracle.com/errata/ELSA-2025-20480.html#:~:text=%5BOrabug%3A%2038042713%5D);
 [Ubuntu](https://packages.ubuntu.com/erofs-utils);
 [Red Hat Enterprise Linux](https://access.redhat.com/articles/7084858);
 [Void Linux](https://github.com/void-linux/void-packages/tree/master/srcpkgs/erofs-utils);
