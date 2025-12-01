@@ -2,6 +2,7 @@
 
 ```{toctree}
 :hidden:
+imagefs.md
 comparison/dedupe.md
 ```
 
