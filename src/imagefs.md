@@ -86,6 +86,30 @@ to avoid without incurring performance penalties, especially when combined with
 complex kernel implementation details that introduce additional potential risks
 in the host kernel.
 
+::: {note}
+For example, the following crafted EXT4 image can immediately crash all Linux
+kernel versions, since it uses
+[an expected by-design behavior in EXT4](https://lore.kernel.org/r/20160331165125.GF6207@thunk.org):
+
+![An EXT4 panic example](_static/ext4_panic.gif)
+
+It does not cause any obscure metadata inconsistency; it just corrupts the root
+inode and sets [`s_errors(EXT4_ERRORS_PANIC)`](https://docs.kernel.org/filesystems/ext4/super.html#super-errors:~:text=__le16-,s_errors)
+using the following `debugfs` commands:
+
+```sh
+debugfs: set_super_value errors 3
+debugfs: sif <2> bmap[0] 0
+```
+
+In addition, there are known [EXT4 syzkaller bugs](http://syzkaller.appspot.com/upstream/s/ext4)
+that could be exploited (51 open bugs as of 12/03/2025), making mounting
+untrusted remote EXT4 filesystems on the host absolutely unsafe.
+
+**Disclaimer:** This paragraph is only used to explain technical details.  Any
+further harmful exploits have no relationship with the EROFS project.
+:::
+
 ## The solution
 
 EROFS is designed as a simple, flexible immutable filesystem format similar to
