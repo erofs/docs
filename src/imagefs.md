@@ -33,7 +33,7 @@ Currently, there are three main approaches to snapshotting:
  2. Using an existing copy-on-write filesystem that supports snapshots, such as
 BTRFS or ZFS;
 
- 3. Using a dedicated package format or an effective image filesystem.
+ 3. Using a dedicated archive format or an effective image filesystem.
 
 The following subsection explores these approaches in more detail.
 
@@ -74,17 +74,23 @@ vulnerabilities.
 
 ### Generic filesystems pose consistency and stability risks
 
-On the other hand, generic copy-on-write filesystems can also be used for
-container images.  If a particular filesystem is chosen, it can serve as
-a precise white-box format.  However, the main issue is that most generic
-filesystems store redundant metadata for the same physical block: for example,
-allocation status appears in both the block allocation tree (or bitmap) and
-inode extents, and may also appear in the reverse block-mapping tree.  This
-redundancy can lead to crafted metadata inconsistencies when filesystem images
-are fetched from remote sources, resulting in serious bugs that are difficult
-to avoid without incurring performance penalties, especially when combined with
-complex kernel implementation details that introduce additional potential risks
-in the host kernel.
+Generic filesystems can serve as precise, white-box formats for container
+images.  However, they are still vulnerable when used as remote images due to
+immitigable metadata inconsistencies.
+
+For example, the allocation status of a physical block may be recorded in
+multiple places: the allocation tree (or bitmap), inode extents, and may also
+appear in a reverse mapping tree.  When an image is fetched from an untrusted
+remote source, an attacker can craft inconsistencies and the resulting bugs are
+serious and hard to prevent.
+
+Performing extra consistency checks, either at runtime or beforehand with a tool
+like `fsck(8)`, incurs heavy performance penalties.  These risks will then be
+amplified by the complexity of kernel filesystem implementations, posing
+additional threats to the hosts.
+
+Other internal metadata, such as filesystem journaling, which can cause extra
+inconsistency, which is similar, so no need to go into further detail here.
 
 ::: {note}
 For example, the following crafted EXT4 image can immediately crash all Linux
@@ -112,11 +118,24 @@ further harmful exploits have no relationship with the EROFS project.
 
 ## The solution
 
+Our way to resolve this is *read/write separation at the filesystem level*:
+distribute remote data in a reliable, read-only archive format to prevent any
+serious inconsistencies, and then prepare the writable layer by reusing
+a trusted generic filesystem or generating a new filesystem locally.
+
+By the way, it does NOT mean a simple archive format won't have any
+inconsistency or corruption, but since it only contains necessary metadata like
+inodes and directories, either such inconsistency is not harmful (and can even
+be ignored) or should be a common issue either resolved in the VFS (e.g.
+_directory hardlinks_) or needs to be resolved by any specific filesystem which
+needs to parse filesystem metadata, including FUSE.
+
 EROFS is designed as a simple, flexible immutable filesystem format similar to
 previous archive formats such as tar, zip, and cpio as well as the CD-ROM
 filesystems with the following advanced highlights:
 
- - Since it's just like an advanced archive format, its metadata cannot become
+ - Since it's just like an advanced archive format
+   _(basically equivalent to unpacking packages)_, its metadata cannot become
    severely inconsistent, and the kernel implementation should be able to bear
    any on-disk corruption by design;
 
@@ -134,7 +153,8 @@ filesystems with the following advanced highlights:
  - Like common archive formats, EROFS images can be distributed as golden data
    and stored on any filesystem.  Depending on user requirements or specific
    workloads, the writable layer can also be freely configured with any
-   filesystem using OverlayFS instead of relying on remote data.
+   supported filesystem using OverlayFS instead of purely relying on remote
+   metadata.
 
 Due to its flexibility and simplicity, it is well-suited for use in container
 images and sandbox templates among runc and VM-based containers, making it
