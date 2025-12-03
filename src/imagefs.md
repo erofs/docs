@@ -74,17 +74,20 @@ vulnerabilities.
 
 ### Generic filesystems pose consistency and stability risks
 
-On the other hand, generic copy-on-write filesystems can also be used for
-container images.  If a particular filesystem is chosen, it can serve as
-a precise white-box format.  However, the main issue is that most generic
-filesystems store redundant metadata for the same physical block: for example,
-allocation status appears in both the block allocation tree (or bitmap) and
-inode extents, and may also appear in the reverse block-mapping tree.  This
-redundancy can lead to crafted metadata inconsistencies when filesystem images
-are fetched from remote sources, resulting in serious bugs that are difficult
-to avoid without incurring performance penalties, especially when combined with
-complex kernel implementation details that introduce additional potential risks
-in the host kernel.
+Generic filesystems can serve as precise, white-box formats for container
+images.  However, they are still vulnerable when used as remote images due to
+unavoidable metadata inconsistencies.
+
+For example, the allocation status of a physical block may be recorded in
+multiple places: the allocation tree (or bitmap), inode extents, and may also
+appear in a reverse mapping tree.  When an image is fetched from an untrusted
+remote source, an attacker can craft inconsistencies and the resulting bugs are
+serious and hard to prevent.
+
+Performing extra consistency checks, either at runtime or beforehand with a tool
+like `fsck(8)`, incurs heavy performance penalties.  These risks will then be
+amplified by the complexity of kernel filesystem implementations, posing
+additional threats to the hosts.
 
 ::: {note}
 For example, the following crafted EXT4 image can immediately crash all Linux
@@ -109,6 +112,11 @@ untrusted remote EXT4 filesystems on the host absolutely unsafe.
 **Disclaimer:** This paragraph is only used to explain technical details.  Any
 further harmful exploits have no relationship with the EROFS project.
 :::
+
+The best way to resolve this is read/write separation at the filesystem level:
+distribute remote images in a reliable, read-only package format to prevent
+any serious inconsistencies, and then prepare the writable layer by reusing
+a trusted generic filesystem or generating a new filesystem locally.
 
 ## The solution
 
