@@ -1,5 +1,10 @@
 # 🔍 Case Studies
 
+```{toctree}
+:hidden:
+bootable_system.md
+```
+
 The EROFS filesystem has been deployed in production at large scale since its
 inclusion in Linux 5.4 and is now part of several prominent open-source
 ecosystems.
