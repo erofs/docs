@@ -7,7 +7,7 @@ one of the basic use cases of EROFS is as a drop-in replacement for
 [tar](https://pubs.opengroup.org/onlinepubs/007908799/xcu/tar.html) or
 [cpio](https://pubs.opengroup.org/onlinepubs/007908799/xcu/cpio.html):
 
-![EROFS core on-disk format](_static/erofs_core_format.svg)
+![EROFS core on-disk format](../_static/erofs_core_format.svg)
 
 The format design principles are as follows:
 
