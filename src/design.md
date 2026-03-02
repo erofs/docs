@@ -119,6 +119,6 @@ or user space tools like `ureadahead`, so there is no need to bother the kernel.
 
 ```{toctree}
 :hidden:
-core_ondisk.md
+ondisk/index
 merging.md
 ```
