@@ -1,0 +1,67 @@
+name: PR Documentation Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-preview:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build HTML documentation
+        run: make html
+
+      - name: Upload HTML artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-docs-pr-${{ github.event.pull_request.number }}
+          path: build/html/
+          retention-days: 7
+
+      - name: Find existing comment
+        uses: peter-evans/find-comment@v3
+        id: find-comment
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: 'Documentation Preview'
+
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: ${{ steps.find-comment.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          edit-mode: replace
+          body: |
+            ## Documentation Preview
+
+            HTML documentation has been built for this PR.
+
+            **Download the preview:**
+            1. Go to [Artifacts](#{{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            2. Download `html-docs-pr-${{ github.event.pull_request.number }}`
+            3. Extract and open `index.html` in browser
+
+            | Property | Value |
+            | --- | --- |
+            | Run ID | ${{ github.run_id }} |
+            | Commit | ${{ github.event.pull_request.head.sha }} |
