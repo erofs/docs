@@ -28,9 +28,13 @@ Optional features extend this foundation without breaking the core design:
   Several mechanisms — including a shared xattr pool, long prefix tables, and a
   per-inode Bloom filter — keep storage overhead low even when xattrs are used
   extensively.
+- **{doc}`Chunk-based layout <chunked_format>`** splits large files into
+  fixed-size, independently-addressed chunks, enabling cross-file deduplication
+  and multi-device storage.
 
 ```{toctree}
 :hidden:
 core_ondisk
 xattrs
+chunked_format
 ```
