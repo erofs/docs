@@ -61,3 +61,12 @@ Then you just add a line saying:
 ```
 
 using your real name (sorry, no pseudonyms or anonymous contributions.)
+
+## Matrix room
+
+You can also join our Matrix room
+([#erofs:matrix.org](https://matrix.to/#/#erofs:matrix.org)) for informal
+discussions.
+
+However, proposals, bug reports, and/or patches should be sent to the mailing
+list eventually so that they can be properly archived.

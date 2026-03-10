@@ -134,7 +134,8 @@ byte-granularity cut points.
 ```
 
 If you're interested, feel free to send feedback and/or patches to
-the linux-erofs mailing list <[linux-erofs@lists.ozlabs.org](mailto:linux-erofs@lists.ozlabs.org)>.
+the linux-erofs mailing list <[linux-erofs@lists.ozlabs.org](mailto:linux-erofs@lists.ozlabs.org)>
+or join our Matrix room <[#erofs:matrix.org](https://matrix.to/#/#erofs:matrix.org)>.
 [_Developer guides_](developers.md) might be a useful start for newcomers as
 the first step.
 
