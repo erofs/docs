@@ -61,3 +61,5 @@ Then you just add a line saying:
 ```
 
 using your real name (sorry, no pseudonyms or anonymous contributions.)
+Pull requests are checked automatically, and any commit without a valid
+`Signed-off-by:` trailer will be blocked until it is fixed.

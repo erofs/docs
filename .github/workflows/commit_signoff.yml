@@ -1,0 +1,76 @@
+name: Commit Signoff
+
+'on':
+  pull_request:
+  merge_group:
+    types: [checks_requested]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  commit-signoff:
+    name: commit-signoff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR commits for Signed-off-by
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pull_number = context.payload.pull_request.number;
+
+            const commits = await github.paginate(
+              github.rest.pulls.listCommits,
+              {
+                owner,
+                repo,
+                pull_number,
+                per_page: 100,
+              }
+            );
+
+            const trailerPattern = /^Signed-off-by:\s+.+\s+<[^<>]+>$/im;
+            const missing = commits.filter(({ commit }) => !trailerPattern.test(commit.message));
+
+            const writeSummary = async (lines) => {
+              await core.summary
+                .addHeading('Signed-off-by check')
+                .addRaw(lines.join('\n') + '\n')
+                .write();
+            };
+
+            if (missing.length === 0) {
+              await writeSummary([
+                `Checked ${commits.length} commit(s).`,
+                'All commits include a Signed-off-by trailer.',
+              ]);
+              return;
+            }
+
+            await writeSummary([
+              `Found ${missing.length} commit(s) without a valid Signed-off-by trailer:`,
+              '',
+              ...missing.map(({ sha, commit }) => `- ${sha.slice(0, 12)} ${commit.message.split('\n')[0]}`),
+              '',
+              'Please rewrite the commit message(s) and push again.',
+              'Examples: `git commit --amend -s` or `git rebase --signoff <base>`.',
+            ]);
+
+            core.setFailed(
+              [
+                `Found ${missing.length} commit(s) without a valid Signed-off-by trailer.`,
+                ...missing.map(({ sha, commit }) => `- ${sha.slice(0, 12)} ${commit.message.split('\n')[0]}`),
+                'Please rewrite the commit message(s) and push again.',
+                'Examples: git commit --amend -s or git rebase --signoff <base>.',
+              ].join('\n')
+            );
+
+      - name: Report merge queue compatibility
+        if: ${{ github.event_name == 'merge_group' }}
+        run: |
+          echo "Signed-off-by is enforced on pull_request workflows."
+          echo "This merge_group run reports the required status for merge queue compatibility."
