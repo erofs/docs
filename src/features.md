@@ -6,9 +6,9 @@ imagefs.md
 comparison/dedupe.md
 ```
 
-Note that it's just **an incomplete list** for the qualitative evaluation.
-The overall purpose of this is to show EROFS benefits compared to other
-in-kernel approaches when making technical decisions.
+Note that this is only an **incomplete list** for qualitative evaluation.
+The overall purpose is to highlight the benefits of EROFS compared to other
+in-kernel filesystems when making technical decisions.
 
 | Feature  (as of Linux 6.17)     | EROFS             | EXT4      | SquashFS      |
 | ------------------------------- | ----------------- | --------- | ------------- |
