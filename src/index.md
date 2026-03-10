@@ -174,6 +174,7 @@ casestudies.md
 design.md
 developers.md
 roadmap.md
+gsoc.md
 ```
 
 ```{toctree}
