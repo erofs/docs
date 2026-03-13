@@ -2,13 +2,11 @@
 
 ## Why are images packaged in EROFS larger than those with SquashFS?
 
-First of all, the initial target use cases of EROFS are _high-performance
-embedded scenarios, such as smartphones powered by Android_. Runtime
-performance is always the top priority for EROFS (or, systems and applications
-will be lagged), even if it means sacrificing some ultra-space savings to avoid
+The primary target use cases of EROFS are _high-performance embedded scenarios, such as Android-powered smartphones_.  Runtime
+performance is always the top priority for EROFS (otherwise, systems and applications may experience performance issues), even if it means sacrificing some ultra-space savings to avoid
 significant performance regressions against uncompressed approaches.
 
-However, EROFS has landed **several new on-disk features** to narrow the slight
+However, EROFS has introduced**several new on-disk features** to narrow the slight
 size difference with SquashFS or even outperform SquashFS. When comparing,
 please ensure the same configuration is used:
 
@@ -63,8 +61,8 @@ In addition, EROFS may produce larger images due to the following differences:
 Note that EROFS is still under active development. The features mentioned above
 are not top priorities at the moment due to limited development resources
 (anyway, SquashFS has been existed for over 20 years) and target use scenarios,
-but they will be considered in the future, and contributions are always welcome.
-Again, note that SquashFS doesn't always outperform EROFS in image size either.
+but they may be considered in the future, and contributions are always welcome.
+Note that SquashFS does not always outperform EROFS in terms of image size.
 EROFS images are often significantly smaller (while still offering better
 runtime performance) when compressing files in small compressed extent sizes
 (especially smaller than 32KiB).
