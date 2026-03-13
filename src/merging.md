@@ -8,7 +8,7 @@ in one go.
 ## Single device
 
 Unlike other kernel filesystems which have inflexible layouts, EROFS has only
-one fixed-offset on_disk part: [the superblock](#on_disk_superblock). It's
+one fixed-offset on_disk part: {ref}`the superblock <on_disk_superblock>`. It's
 quite easy to compose external payloads such as binary formats like
 [tarballs](https://pubs.opengroup.org/onlinepubs/007908799/xcu/tar.html)
 or other filesystems (e.g., EROFS, EXT4, XFS, etc.) just with **linear physical
