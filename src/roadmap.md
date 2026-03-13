@@ -1,6 +1,7 @@
 # 🗺 Roadmap
 
-Note that items marked with **\[SoC\]** are also intended for Summer of Code projects.
+Note that items marked with **\[GSoC\]** are also intended for Google Summer of
+Code (GSoC) projects.
 
 ## Linux Kernel
 
@@ -12,7 +13,7 @@ Note that items marked with **\[SoC\]** are also intended for Summer of Code pro
 
  - Stabilize liberofs APIs;
 
- - **\[SOC\]** [Multi-threaded decompression](https://github.com/erofs/erofs-utils/issues/33);
+ - **\[GSoC\]** [Multi-threaded decompression](gsoc.md#multi_threaded_decompression);
 
  - Fanotify on-demand loading support (using fanotify pre-content hooks);
 
@@ -28,4 +29,4 @@ Note that items marked with **\[SoC\]** are also intended for Summer of Code pro
 
 ## Miscellaneous items
 
- - **\[SOC\]** [Porting EROFS to BSD Kernels](https://github.com/erofs/freebsd-freebsd-src/issues/1).
+ - **\[GSoC\]** [Porting EROFS to BSD Kernels](gsoc.md#porting-erofs-to-freebsd).

@@ -12,10 +12,10 @@ nearly the same.
 EROFS data is all arranged in **fixed-size blocks** (aka. block-aligned,
 typically 4 KiB) like many modern disk filesystems (e.g. ext4, xfs, btrfs, f2fs,
 etc.) to match the intrinsic characteristics of [block devices](https://en.wikipedia.org/wiki/Block_\(data_storage\)).
-This means the corresponding data can be *directly* parsed if you read a single
+This means the corresponding data can be *directly* parsed by reading a single
 filesystem block for __non-encoded data__ or (possibly) multiple consecutive blocks
-(called a single physical cluster) for __encoded data__, which is different
-from _archive formats or unaligned filesystems_ (e.g. `cramfs`, `romfs`, `squashfs`,
+(called a single physical cluster) for __encoded data__, which differs from
+_archive formats or unaligned filesystems_ (e.g. `cramfs`, `romfs`, `squashfs`,
 `affs`, and possibly more FUSE-based implementations.)
 
 ![Comparison between unaligned and block-aligned data](_static/aligned_io.svg)
@@ -66,8 +66,8 @@ the final blocks of physical clusters will not be fully filled with encoded
 data. Currently LZ4, LZMA (Linux 5.15+), DEFLATE (Linux 6.6+), and Zstandard
 (Linux 6.10+) algorithms natively support this mode.
 
-Fixed-size output compression generally has better compression ratios, especially
-on small physical clusters (e.g. 4 or 8 KiB) with about 5% additional space saved.
+Fixed-size output compression generally provides better compression ratios,
+especially on small physical clusters (e.g., 4 or 8 KiB), saving about 5% additional space.
 
 Note that **small compressed physical clusters** are quite important to
 end-to-end performance for memory-intensive workloads (that is exactly the EROFS

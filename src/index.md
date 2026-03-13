@@ -7,10 +7,10 @@ sd_hide_title: true
 ```{rubric} EROFS - Enhanced Read-Only File System
 ```
 
-A modern, flexible, general-purpose, high-performance block-based immutable
-filesystem with highly-optimized on-disk format and runtime implementation aimed
-at various use cases instead of just focusing on storage space saving without
-considering any side effects of runtime performance.
+A modern, flexible, general-purpose, high-performance, block-based immutable
+filesystem with a highly optimized on-disk format and runtime implementation,
+designed for a variety of use cases—not just storage space savings—while
+maintaining optimal runtime performance.
 
 [EROFS](https://docs.kernel.org/filesystems/erofs.html) has been formally
 available since Linux 5.4. It is currently maintained by an open-source
@@ -134,7 +134,8 @@ byte-granularity cut points.
 ```
 
 If you're interested, feel free to send feedback and/or patches to
-the linux-erofs mailing list <[linux-erofs@lists.ozlabs.org](mailto:linux-erofs@lists.ozlabs.org)>.
+the linux-erofs mailing list <[linux-erofs@lists.ozlabs.org](mailto:linux-erofs@lists.ozlabs.org)>
+or join our Matrix room <[#erofs:matrix.org](https://matrix.to/#/#erofs:matrix.org)>.
 [_Developer guides_](developers.md) might be a useful start for newcomers as
 the first step.
 
@@ -173,6 +174,7 @@ casestudies.md
 design.md
 developers.md
 roadmap.md
+gsoc.md
 ```
 
 ```{toctree}

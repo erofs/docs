@@ -18,8 +18,7 @@ $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git
 | master       | erofs-utils stable tree                             |     No  |
 
 ### Linux kernel source
-
-If you're interested in EROFS kernel development, it'd be much better to keep
+If you're interested in EROFS kernel development, it is recommended to keep
 your local code in sync with the latest [EROFS development repo](https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs.git):
 
 ```sh
@@ -39,7 +38,7 @@ EROFS has its own development mailing list hosted by [OzLabs](https://www.ozlabs
 You can [subscribe to the mailing list](https://lists.ozlabs.org/listinfo/linux-erofs)
 to receive the latest status of EROFS.
 
-When posting, it'd be much helpful to:
+When posting, it is helpful to:
 
  - Add an additional tag in the subject like `[PATCH]`, `[question]` or
 `[bug report]`, etc.;
@@ -62,3 +61,12 @@ Then you just add a line saying:
 ```
 
 using your real name (sorry, no pseudonyms or anonymous contributions.)
+
+## Matrix room
+
+You can also join our Matrix room
+([#erofs:matrix.org](https://matrix.to/#/#erofs:matrix.org)) for informal
+discussions.
+
+However, proposals, bug reports, and/or patches should be sent to the mailing
+list eventually so that they can be properly archived.
