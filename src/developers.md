@@ -46,7 +46,7 @@ When posting, it is helpful to:
  - Avoid [top-posting](https://daringfireball.net/2007/07/on_top) if possible.
 
 All patches should follow the Linux kernel's coding style. Additionally, as
-one of Linux kernel development communities, patches require the "sign-off"
+one of the Linux kernel development communities, patches require the "sign-off"
 procedure.
 
 The sign-off should be appended as a simple line at the end of the commit
