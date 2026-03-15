@@ -45,11 +45,11 @@ In addition, EROFS may produce larger images due to the following differences:
    for regular files; Consider switching to 32-byte EROFS compact inodes (e.g.,
    by using `-T`) if per-file timestamps are not a strong requirement;
 
- - **Lack of metadata compression**: If your test sets contain a large number of
-   files, EROFS may result in larger images compared to SquashFS because of
-   metadata compression is not supported. Again, it isn't considered at first
-   due to bad impacts to random metadata performance but it may be implemented
-   in the future.
+ - **Metadata compression**: If your test sets contain a large number of
+   files, EROFS may result in larger images compared to SquashFS if
+   metadata compression is not enabled. Optional metadata compression has been
+   supported since Linux 6.17; consider enabling it if metadata size is a
+   concern.
 
  - **File-based deduplication**: SquashFS deduplicates files with identical data
    by default (it can be disabled with `-no-duplicates`), whereas EROFS does not
@@ -62,7 +62,7 @@ In addition, EROFS may produce larger images due to the following differences:
 
 Note that EROFS is still under active development. The features mentioned above
 are not top priorities at the moment due to limited development resources
-(anyway, SquashFS has been existed for over 20 years) and target use scenarios,
+(anyway, SquashFS has existed for over 20 years) and target use scenarios,
 but they will be considered in the future, and contributions are always welcome.
 Again, note that SquashFS doesn't always outperform EROFS in image size either.
 EROFS images are often significantly smaller (while still offering better

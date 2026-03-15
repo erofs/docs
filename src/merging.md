@@ -44,7 +44,7 @@ Besides, it is quite useful for scenarios where we have no way to compose
 a single specific block device from individual sources as described in the
 previous section.
 
-In addition, Since [Linux 5.19](https://lwn.net/Articles/896140), EROFS has
+In addition, since [Linux 5.19](https://lwn.net/Articles/896140), EROFS has
 added __EROFS over fscache__ to make use of fscache caching framework without
 explicit block devices, which is currently used by
 [Dragonfly Nydus image service](https://nydus.dev). There are some benefits
