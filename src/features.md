@@ -69,7 +69,7 @@ optional metadata compression has been supported since Linux 6.17 to minimize
 filesystem images.
 
 [^9]: Strictly speaking, EXT4 has a feature named "[shared_blocks](https://lore.kernel.org/r/20201005161941.GF4225@quack2.suse.cz)",
-which will prevents applications from writing to the filesystem.
+which will prevent applications from writing to the filesystem.
 
 [^10]: For example, `direct I/O` can be used for loop devices backed by
 unencoded files on the EROFS filesystem to avoid double caching. `Direct I/O`

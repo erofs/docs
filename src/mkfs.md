@@ -48,8 +48,10 @@ $ mkfs.erofs -zlz4hc,12 -C65536 -Efragments,ztailpacking foo.erofs foo/
 
 By default, EROFS just uses a physical cluster size equal to the block size
 (e.g., 4096 on x86) and disables advanced features to keep the random access
-performance. Consider increasing `-C` and enabling advanced features if
-a smaller image size is desired.
+performance. Consider increasing `-C` (e.g., to 65536 or 131072) and enabling
+advanced features if a smaller image size is desired. Note that larger cluster
+sizes may increase memory footprint during decompression and degrade random access
+performance.
 
 Using `-Eall-fragments` is not recommended now, as it can degrade runtime
 performance unless minimizing image size is the top priority. `-Efragments`
@@ -77,7 +79,7 @@ Here are some frequently used additional options for `mkfs.erofs` tar mode:
 | --sort=none | (only valid with `--tar=f`) Keep inode data order consistent with tar data order.            |
 | --sort=path | (only valid with `--tar=f`) Data order strictly follows the tree generation order (default). |
 
-For example, to generate an full EROFS image from a tarball `foo.tar`:
+For example, to generate a full EROFS image from a tarball `foo.tar`:
 
 ```sh
 $ mkfs.erofs --tar=f --sort=none foo.erofs foo.tar

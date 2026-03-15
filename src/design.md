@@ -40,7 +40,7 @@ The main benefits of using fixed-size blocks are:
    encoded blocks could still be _cached in the page cache for later use_.
    This is quite useful on memory-limited devices since _caching compressed data
    is generally more efficient than decompressed data if selected compression
-   algorithms is **fast** enough_ (considering main benefits of ZSWAP or ZRAM).
+   algorithms are **fast** enough_ (considering main benefits of ZSWAP or ZRAM).
    Although unaligned solutions could also cache encoded data in page cache,
    reclaiming could lead to lower cache pages utilization due to fragmentation
    since page cache reclaims data in pages instead of bytes.
@@ -63,7 +63,7 @@ block utilization and maximize compression ratios.
 
 Such compression approach is not required. However, without this approach,
 the final blocks of physical clusters will not be fully filled with encoded
-data. Currently LZ4, LZMA (Linux 5.15+), DEFLATE (Linux 6.6+), and Zstandard
+data. Currently LZ4, LZMA (Linux 5.16+), DEFLATE (Linux 6.6+), and Zstandard
 (Linux 6.10+) algorithms natively support this mode.
 
 Fixed-size output compression generally provides better compression ratios,
