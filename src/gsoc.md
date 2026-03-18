@@ -121,7 +121,7 @@ should implement support for at least two common manifest formats, for example:
 
 Dedicated test cases should be added to ensure its correctness.
 
-### Complete filesystem feature support for erofs-rs
+### Complete Filesystem Feature Support for erofs-rs
 
 Proposed mentors: [@Dreamacro](https://github.com/Dreamacro), Gao Xiang  
 Languages: Rust  
@@ -164,7 +164,7 @@ efficient block allocator as a plus.
 Proposed mentors: Gao Xiang, Hongbo Li ([@hb-lee](https://github.com/hb-lee))  
 Languages: C  
 Estimated project length: 350 hours  
-Difficulty: medium  
+Difficulty: hard  
 Skills:  
  - Proficiency in C programming;
  - Experience with file system concepts and operations.
@@ -200,3 +200,39 @@ Key objectives:
  - Integrate EROFS with FreeBSD’s VFS, buffer cache, and VM systems;
  - Validate correctness and performance using real-world workloads;
  - Lay groundwork for future BSD ports (OpenBSD, NetBSD).
+
+### Advanced Fuzzing and Image Injection for the Kernel and erofs-utils
+
+Proposed mentors: Yifan Zhao, Hongbo Li, Gao Xiang  
+Languages: C, Go and/or Rust  
+Estimated project length: 175 hours  
+Difficulty: medium  
+Skills:  
+ - Proficiency in C programming;
+ - Experience with file system concepts and operations;
+ - Familiarity with fuzzing frameworks (e.g., AFL++, libFuzzer) is a plus.
+
+**Description**
+
+EROFS aims to be a secure, immutable image-based kernel filesystem by design.
+Because its on-disk format contains less redundant metadata and is designed
+to tolerate bogus or corrupted values, EROFS behaves differently from generic
+writable filesystems. In addition, its immutable design means that all writable
+data is copied up (aka copy-on-write) into another local trusted filesystem.
+This makes it safer than writing directly to an untrusted and potentially
+inconsistent generic writable filesystem.
+
+We pay particular attention to the EROFS core on-disk format. Although the
+format design is simple and the implementation (especially for the core format)
+is straightforward, it is highly beneficial to develop more advanced tools
+alongside the current syzkaller and the existing erofs-utils fuzzer. These tools
+will keep the codebase robust and allow us to address random human-introduced
+bugs more actively and in time.
+
+The main goal is to implement an advanced fuzzing tool and an image injection
+tool. These tools may be easier to implement using go-erofs (Go) or erofs-rs
+(Rust), for example. We also intend to enable a new GitHub Actions CI workflow
+to perform periodic fuzzing.
+
+This will allow us to maintain the kernel and erofs-utils implementations in
+better shape.
