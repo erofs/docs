@@ -133,7 +133,29 @@ Skills:
 
 **Description**
 
-*TBD*
+EROFS is a high-performance, space-efficient read-only filesystem widely used
+in the Linux ecosystem.
+
+Currently, there is no mature, full-featured EROFS implementation in pure Rust.
+However, [erofs-rs](https://github.com/Dreamacro/erofs-rs) has the following
+features that make it particularly appealing:
+
+ - `no_std` support for embedded systems;
+
+ - Zero-copy parsing via mmap (std) or byte slices (no_std).
+
+However, it currently only includes a reader, and even this reader lacks the
+following basic features:
+
+ - Support for extended attributes (xattrs);
+ - Support for multiple devices;
+ - Support for two compression layouts;
+ - Support for 48-bit addressing layouts;
+ - Support for metadata compression.
+
+The primary goal is to complete the erofs-rs feature set, including the missing
+reader features listed above, and additionally implement a writer with an
+efficient block allocator as a plus.
 
 (porting-erofs-to-freebsd)=
 
