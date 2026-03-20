@@ -77,7 +77,7 @@ installation of x86 boot sectors and other oddities.
 | 0x68   | 1    | `u8`   | _reserved_               | Reserved; must be 0 |
 | 0x69   | 1    | `u8`   | _dontcare_               | Xattr specific; ignored in core format |
 | 0x6A   | 2    | `u16`  | _reserved_               | Reserved; must be 0 |
-| 0x6C   | 12   | `u8[]` | _dontcare_               | 48 bit specific; ignored in core format |
+| 0x6C   | 12   | `u8[]` | _dontcare_               | 48-bit layout specific; ignored in core format |
 | 0x78   | 8    | `u64`  | _reserved_               | Reserved; must be 0 |
 
 Note the difference between _reserved_ and _dontcare_ fields:
