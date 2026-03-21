@@ -49,7 +49,7 @@ inode offset 0x10) is interpreted as a chunk info summary:
 
 | Bits  | Width | Description |
 |-------|-------|-------------|
-| 0–4   | 5     | `chunkbits`: chunk size = `2^(blkszbits + chunkbits)` |
+| 0–4   | 5     | `chunkbits`: chunk size = 2 to the power of (`blkszbits + chunkbits`) |
 | 5     | 1     | `EROFS_CHUNK_FORMAT_INDEXES`: entry format selector (see below) |
 | 6     | 1     | 48-bit layout specific; ignored for basic chunk-based inodes |
 | 7–31  | 25    | Reserved; must be 0 |
