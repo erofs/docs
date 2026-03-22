@@ -90,7 +90,7 @@ Specific goals:
 
 ### Support generating filesystems from manifests with mkfs.erofs
 
-Proposed mentors: Chengyu Zhu ([@ChengyuZhu6](https://github.com/ChengyuZhu6)), Gao Xiang  
+Proposed mentors: Chengyu Zhu ([@ChengyuZhu6](https://github.com/ChengyuZhu6)), Gao Xiang  ([@hsiangkao](https://github.com/hsiangkao))
 Languages: C  
 Estimated project length: 175 hours  
 Difficulty: medium  
@@ -123,7 +123,7 @@ Dedicated test cases should be added to ensure its correctness.
 
 ### Complete Filesystem Feature Support for erofs-rs
 
-Proposed mentors: [@Dreamacro](https://github.com/Dreamacro), Gao Xiang  
+Proposed mentors: [@Dreamacro](https://github.com/Dreamacro), Gao Xiang ([@hsiangkao](https://github.com/hsiangkao))
 Languages: Rust  
 Estimated project length: 350 hours  
 Difficulty: hard  
@@ -161,7 +161,7 @@ efficient block allocator as a plus.
 
 ### Porting EROFS to BSD Kernels (FreeBSD Focus)
 
-Proposed mentors: Gao Xiang, Hongbo Li ([@hb-lee](https://github.com/hb-lee))  
+Proposed mentors: Gao Xiang ([@hsiangkao](https://github.com/hsiangkao)), Hongbo Li ([@hb-lee](https://github.com/hb-lee))  
 Languages: C  
 Estimated project length: 350 hours  
 Difficulty: hard  
@@ -203,7 +203,7 @@ Key objectives:
 
 ### Advanced Fuzzing and Image Injection for the Kernel and erofs-utils
 
-Proposed mentors: Yifan Zhao, Hongbo Li, Gao Xiang  
+Proposed mentors: Yifan Zhao ([@SToPire](https://github.com/SToPire)), Hongbo Li ([@hb-lee](https://github.com/hb-lee)), Gao Xiang ([@hsiangkao](https://github.com/hsiangkao))  
 Languages: C, Go and/or Rust  
 Estimated project length: 175 hours  
 Difficulty: medium  
