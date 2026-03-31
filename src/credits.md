@@ -13,10 +13,13 @@ including but not limited to (in alphabetical order):
      - OPPO (@oppo.com)
      - Red Hat (@redhat.com)
      - Shanghai Jiao Tong University (@sjtu.edu.cn)
+     - Sony Group Corporation (@sony.com)
      - South China University of Technology (@mail.scut.edu.cn)
+     - Tencent (@tencent.com)
      - Tuxera (@tuxera.com)
      - Uniontech (@uniontech.com)
      - Vivo (@vivo.com)
+     - Xiaomi (@xiaomi.com)
 
   * Individuals
 
