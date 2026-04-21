@@ -125,7 +125,8 @@ When clear, the full byte selects one of the built-in short namespace prefixes:
 | 4     | `trusted.` |
 | 6     | `security.` |
 
-All other `e_name_index` values (including `0` and `5`) are reserved and must not be used unless defined by a future format extension.
+`e_name_index` value `0` is used for arbitrary namespace xattrs and may be hidden at runtime.
+Other values (such as `5`) are currently reserved unless defined by future format extensions.
 (shared_xattr_area)=
 ## Shared Xattr Area
 
