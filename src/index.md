@@ -87,13 +87,19 @@ byte-granularity cut points.
  - {octicon}`container;1em` [Composefs](https://github.com/containers/composefs);
 [containerd](https://github.com/containerd/containerd/pull/10705);
 [Dragonfly Nydus](https://nydus.dev/); [gVisor](https://github.com/google/gvisor/pull/9486);
-[Kata Containers](https://github.com/kata-containers/kata-containers/pull/11172);
-[Kata Containers (rootfs)](https://github.com/kata-containers/kata-containers/blob/main/docs/how-to/how-to-use-erofs-build-rootfs.md)
+[Kata Containers](https://github.com/kata-containers/kata-containers/blob/main/docs/how-to/how-to-use-erofs-snapshotter-with-kata.md);
+[Kata Containers (rootfs)](https://github.com/kata-containers/kata-containers/blob/main/docs/how-to/how-to-use-erofs-build-rootfs.md);
+[nerdbox](https://github.com/containerd/nerdbox)
 
  - {octicon}`device-desktop` [Archiso](https://gitlab.archlinux.org/archlinux/archiso/-/merge_requests/82);
 [CoreOS Assembler](https://github.com/coreos/coreos-assembler/pull/4012);
 [dracut-ng](https://github.com/dracut-ng/dracut-ng/pull/546); [kdump-utils](https://github.com/rhkdump/kdump-utils/pull/33);
 [KIWI](https://github.com/OSInside/kiwi/issues/2799); [Linglong](https://linglong.dev)
+
+ - Agent Sandboxes:
+[Super Rad Company microsandbox](https://github.com/superradcompany/microsandbox);
+[Tencent Cloud Cube Sandbox](https://github.com/TencentCloud/CubeSandbox) \[[intro (chn)](https://mp.weixin.qq.com/s/AsdIvvZdZMVVCKsi9OG9Gg)\];
+openEuler Conch \[[intro (chn)](https://mp.weixin.qq.com/s/cpSrWvow71tzlNr6rziOCg)\]
 
  - Distributions: [Alpine Linux](https://pkgs.alpinelinux.org/package/edge/community/x86_64/erofs-utils);
 [Amazon Linux](https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.7.20250512.html);
