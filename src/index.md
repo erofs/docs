@@ -99,7 +99,7 @@ byte-granularity cut points.
  - Agent Sandboxes:
 [Super Rad Company microsandbox](https://github.com/superradcompany/microsandbox);
 [Tencent Cloud Cube Sandbox](https://github.com/TencentCloud/CubeSandbox) \[[intro (chn)](https://mp.weixin.qq.com/s/AsdIvvZdZMVVCKsi9OG9Gg)\];
-openEuler Conch \[[intro (chn)](https://mp.weixin.qq.com/s/cpSrWvow71tzlNr6rziOCg)\]
+[openEuler Conch](https://gitcode.com/openeuler/Conch) \[[intro (chn)](https://mp.weixin.qq.com/s/cpSrWvow71tzlNr6rziOCg)\]
 
  - Distributions: [Alpine Linux](https://pkgs.alpinelinux.org/package/edge/community/x86_64/erofs-utils);
 [Amazon Linux](https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.7.20250512.html);
