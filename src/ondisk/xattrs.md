@@ -125,6 +125,8 @@ When clear, the full byte selects one of the built-in short namespace prefixes:
 | 4     | `trusted.` |
 | 6     | `security.` |
 
+`e_name_index` value `0` is used for arbitrary namespace xattrs and may be hidden at runtime.
+Other values (such as `5`) are currently reserved unless defined by future format extensions.
 (shared_xattr_area)=
 ## Shared Xattr Area
 
@@ -144,8 +146,8 @@ This section applies when `EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` is set.
 
 When this feature is set, a table of `xattr_prefix_count` prefix entries is
 present; see {ref}`xattr_prefix_table_placement` for where that table is stored.
-Each entry has the following fixed header, padded together with the
-variable-length `infix` payload to a 4-byte boundary:
+Each entry has the following fixed header. The full entry, including the
+variable-length `infix` payload, is padded to a 4-byte boundary.
 
 | Offset | Size | Type  | Name         | Description |
 |--------|------|-------|--------------|-------------|
