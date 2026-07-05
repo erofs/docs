@@ -9,6 +9,11 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.11"
+  jobs:
+    build:
+      html:
+        - LANGUAGE_SWITCHER_MODE=root sphinx-build -b html src $READTHEDOCS_OUTPUT/html
+        - LANGUAGE_SWITCHER_MODE=root sphinx-build -D language=zh_CN -b html src $READTHEDOCS_OUTPUT/html/html_zh
 
 # Build documentation with Sphinx
 sphinx:

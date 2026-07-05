@@ -1,4 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
+import os
 
 # -- Project information
 
@@ -25,6 +26,11 @@ myst_enable_extensions = ["colon_fence"]
 myst_heading_anchors = 3
 
 templates_path = ['_templates']
+html_context = {
+    "language_switcher_mode": os.environ.get(
+        "LANGUAGE_SWITCHER_MODE", "side_by_side"
+    ),
+}
 
 # -- Internationalization
 

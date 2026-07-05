@@ -1,15 +1,21 @@
-{# Simple language switcher for local side-by-side builds.
-   Assumes English is at build/html/ and Chinese at build/html_zh/.
-   Adjust the prefix when deploying to a different URL scheme.
-#}
 {% set depth = pagename.count('/') %}
-{% set up = '../' * (depth + 1) %}
+{% set side_by_side_up = '../' * (depth + 1) %}
+{% set root_up = '../' * depth %}
+{% set root_from_translation_up = '../' * (depth + 1) %}
 {% if language and language.startswith("zh") %}
   {% set other_label = "English" %}
-  {% set other_url = up + "html/" + pagename + ".html" %}
+  {% if language_switcher_mode == "root" %}
+    {% set other_url = root_from_translation_up + pagename + ".html" %}
+  {% else %}
+    {% set other_url = side_by_side_up + "html/" + pagename + ".html" %}
+  {% endif %}
 {% else %}
   {% set other_label = "中文" %}
-  {% set other_url = up + "html_zh/" + pagename + ".html" %}
+  {% if language_switcher_mode == "root" %}
+    {% set other_url = root_up + "html_zh/" + pagename + ".html" %}
+  {% else %}
+    {% set other_url = side_by_side_up + "html_zh/" + pagename + ".html" %}
+  {% endif %}
 {% endif %}
 
 <a class="btn language-switcher"
