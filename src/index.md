@@ -17,23 +17,10 @@ available since Linux 5.4. It is currently maintained by an open-source
 community from all over the world, and is still
 [under active development](roadmap.md).
 
-````{div} sd-d-flex-row
-```{button-ref} install
-:ref-type: doc
-:color: primary
-:class: sd-rounded-pill sd-mr-3
-
-Get Started
-```
-
-```{button-ref} faq
-:ref-type: doc
-:color: secondary
-:class: sd-rounded-pill
-
-FAQ
-```
-````
+<div class="sd-d-flex-row docutils erofs-hero-actions">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-rounded-pill sd-mr-3 reference internal" href="install.html"><span class="erofs-label-en">Get Started</span><span class="erofs-label-zh">开始使用</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary sd-rounded-pill reference internal" href="faq.html"><span class="erofs-label-en">FAQ</span><span class="erofs-label-zh">常见问题</span></a></p>
+</div>
 
 ---
 

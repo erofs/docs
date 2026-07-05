@@ -1,0 +1,11 @@
+.erofs-label-zh {
+  display: none;
+}
+
+html[lang^="zh"] .erofs-label-en {
+  display: none;
+}
+
+html[lang^="zh"] .erofs-label-zh {
+  display: inline;
+}
