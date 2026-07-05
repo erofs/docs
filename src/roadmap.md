@@ -13,7 +13,7 @@ Code (GSoC) projects.
 
  - Stabilize liberofs APIs;
 
- - **\[GSoC\]** [Multi-threaded decompression](gsoc.md#multi_threaded_decompression);
+ - **\[GSoC\]** <a href="gsoc.html#multi-threaded-decompression-support-in-fsck-erofs">Multi-threaded decompression</a>;
 
  - Fanotify on-demand loading support (using fanotify pre-content hooks);
 
@@ -29,4 +29,4 @@ Code (GSoC) projects.
 
 ## Miscellaneous items
 
- - **\[GSoC\]** [Porting EROFS to BSD Kernels](gsoc.md#porting-erofs-to-freebsd).
+ - **\[GSoC\]** <a href="gsoc.html#porting-erofs-to-bsd-kernels-freebsd-focus">Porting EROFS to BSD Kernels</a>.
