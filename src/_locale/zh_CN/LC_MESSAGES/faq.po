@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/faq.md:1 cceaddbb1e5347c88f8c000d8d73b18a
+msgid "🙋 Frequently Asked Questions"
+msgstr "🙋 常见问题"
+
+#: ../../src/faq.md:3 e3e5cb24b6c045b7936e3c1a20776f99
+msgid "Why are images packaged in EROFS larger than those with SquashFS?"
+msgstr "为什么用 EROFS 打包的镜像比 SquashFS 更大？"
+
+#: ../../src/faq.md:5 0f5833e6dabf459fad86fe1eae97359e
+msgid ""
+"First of all, the initial target use cases of EROFS are _high-performance"
+" embedded scenarios, such as smartphones powered by Android_. Runtime "
+"performance is always the top priority for EROFS (or, systems and "
+"applications will be lagged), even if it means sacrificing some ultra-"
+"space savings to avoid significant performance regressions against "
+"uncompressed approaches."
+msgstr ""
+"首先，EROFS 最初的目标用例是 _高性能嵌入式场景，例如运行 Android 的智能手机_。"
+"运行时性能始终是 EROFS 的首要优先级（否则系统和应用会出现卡顿），"
+"即便这意味着要牺牲一部分极致的空间节省，"
+"以避免相对未压缩方案出现显著的性能回退。"
+
+#: ../../src/faq.md:11 71f3cdb74f3d48a3b6f8b1aa186e66f2
+msgid ""
+"However, EROFS has landed **several new on-disk features** to narrow the "
+"slight size difference with SquashFS or even outperform SquashFS. When "
+"comparing, please ensure the same configuration is used:"
+msgstr ""
+"不过，EROFS 已经落地了**多项新的磁盘特性**，以缩小与 SquashFS 之间微小的体积差距，"
+"甚至比 SquashFS 更小。进行比较时，请确保使用相同的配置："
+
+#: ../../src/faq.md:15 a620bfc8a154475b850329d2d06ad276
+msgid ""
+"**Compression algorithm (if data is compressed)**: EROFS uses *LZ4* by "
+"default due to lowest decompression latencies among popular open-source "
+"algorithms, while SquashFS uses *GZIP* instead;"
+msgstr ""
+"**压缩算法（如果启用了数据压缩）**：在主流开源算法中，LZ4 的解压延迟最低，"
+"因此 EROFS 默认使用 *LZ4*，而 SquashFS 则使用 *GZIP*；"
+
+#: ../../src/faq.md:19 b0f29f56b73d43608dbf213f8cf1c1c5
+msgid ""
+"**Compressed extent size**: Almost all filesystems that natively support "
+"compression typically cut data into compressed extents for random access."
+" EROFS focuses on smaller physical clusters to maximize random "
+"performance and use *block-sized physical clusters* by default (usually 4"
+" KiB), whereas SquashFS uses *128 KiB*. It can be adjusted using the `-C`"
+" option with `mkfs.erofs`."
+msgstr ""
+"**压缩 extent 大小**：几乎所有原生支持压缩的文件系统都会把数据切分成压缩 extent，"
+"以支持随机访问。EROFS 专注于更小的 physical clusters，以最大化随机读取性能，"
+"并默认使用*块大小的 physical clusters*（通常为 4 KiB），而 SquashFS 使用 *128 KiB*。"
+"可以通过 `mkfs.erofs` 的 `-C` 选项进行调整。"
+
+#: ../../src/faq.md:28 c8eacf58c36f4ceeba7a6f4d929dc69c
+msgid ""
+"Large physical clusters (e.g., 1MiB) can significantly degrade random "
+"read performance as well as increase memory usage. Please conduct a "
+"thorough evaluation by factoring in the target image size prior to "
+"deployment."
+msgstr ""
+"过大的 physical clusters（例如 1MiB）会显著降低随机读取性能，并增加内存占用。"
+"请在部署前结合目标镜像体积进行充分评估。"
+
+#: ../../src/faq.md:34 3c3fe7fd35044359a37322b26a5e74a5
+msgid ""
+"**Compression level**: For example, EROFS uses *LZ4HC_CLEVEL_DEFAULT "
+"(level 9)* for LZ4 HC, whereas SquashFS often uses *[LZ4HC_CLEVEL_MAX "
+"(level 12)](https://github.com/plougher/squashfs-tools/blob/4.6.1"
+"/squashfs-tools/lz4_wrapper.c#L52)*;"
+msgstr ""
+"**压缩级别**：例如，EROFS 对 LZ4 HC 使用 *LZ4HC_CLEVEL_DEFAULT（level 9）*，"
+"而 SquashFS 通常使用 *[LZ4HC_CLEVEL_MAX（level 12）]"
+"(https://github.com/plougher/squashfs-tools/blob/4.6.1"
+"/squashfs-tools/lz4_wrapper.c#L52)*；"
+
+#: ../../src/faq.md:38 f251772709be46b7a56480877af4c480
+msgid ""
+"**Advanced features**: Enable the `-Efragments` option for EROFS when "
+"comparing with SquashFS."
+msgstr ""
+"**高级特性**：与 SquashFS 对比时，请为 EROFS 启用 `-Efragments` 选项。"
+
+#: ../../src/faq.md:41 2309c9057103473ab190a4fc249518dc
+msgid ""
+"In addition, EROFS may produce larger images due to the following "
+"differences:"
+msgstr ""
+"此外，由于以下差异，EROFS 生成的镜像可能会更大："
+
+#: ../../src/faq.md:42 7e3ad9eca6624e5b95dcfea382cfa895
+msgid ""
+"**Inode size**: Currently EROFS has to use 64-byte on-disk inodes "
+"(extended inodes) to support per-inode nanosecond timestamps, whereas "
+"SquashFS often uses [32-byte inodes with only 4-byte "
+"timestamps](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/squashfs/squashfs_fs.h?h=v6.12#n334)"
+" for regular files; Consider switching to 32-byte EROFS compact inodes "
+"(e.g., by using `-T`) if per-file timestamps are not a strong "
+"requirement;"
+msgstr ""
+"**Inode 大小**：目前 EROFS 必须使用 64 字节的 on-disk inodes（扩展 inode）"
+"来支持每个 inode 的纳秒级时间戳，而 SquashFS 对普通文件通常使用 "
+"[32 字节 inode，仅带 4 字节时间戳]"
+"(https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/squashfs/squashfs_fs.h?h=v6.12#n334)。"
+"如果每个文件的时间戳不是强需求，可以考虑切换到 32 字节的 EROFS 紧凑 inode"
+"（例如使用 `-T`）；"
+
+#: ../../src/faq.md:48 6abfa10a3b194a6d98c45d73efbe8119
+msgid ""
+"**Metadata compression**: If your test sets contain a large number of "
+"files, EROFS may result in larger images compared to SquashFS if metadata"
+" compression is not enabled. Optional metadata compression has been "
+"supported since Linux 6.17; consider enabling it if metadata size is a "
+"concern."
+msgstr ""
+"**元数据压缩**：如果测试集中包含大量文件，在未启用元数据压缩的情况下，"
+"EROFS 生成的镜像可能会比 SquashFS 更大。可选的元数据压缩自 Linux 6.17 起已受支持；"
+"如果元数据体积令人担忧，可以考虑启用它。"
+
+#: ../../src/faq.md:54 9f7fcb3417aa49ddb9759085e90947da
+msgid ""
+"**File-based deduplication**: SquashFS deduplicates files with identical "
+"data by default (it can be disabled with `-no-duplicates`), whereas EROFS"
+" does not (except for hardlinks). However, EROFS offers the similar "
+"functionality using `-Efragments` and even finer-grained data "
+"deduplication using `-Ededupe`."
+msgstr ""
+"**基于文件的去重**：SquashFS 默认会对数据完全相同的文件进行去重"
+"（可通过 `-no-duplicates` 禁用），而 EROFS 不会（硬链接除外）。"
+"不过，EROFS 可以通过 `-Efragments` 提供类似功能，"
+"甚至可以通过 `-Ededupe` 实现更细粒度的数据去重。"
+
+#: ../../src/faq.md:59 afa4141ce51948e08c319f0fe38f6ba8
+msgid ""
+"**BCJ filters**: SquashFS can compress with XZ algorithm of BCJ enabled "
+"to optimize executable code. This feature is not supported by EROFS for "
+"now, but there are plans to introduce [BCJ filters for all EROFS-"
+"supported algorithms](https://github.com/tukaani-"
+"project/xz/releases/tag/v5.8.0)."
+msgstr ""
+"**BCJ filters**：SquashFS 可以在启用 BCJ 后使用 XZ 算法压缩可执行代码以进行优化。"
+"EROFS 目前不支持该特性，但计划引入 [适用于所有 EROFS 支持算法的 BCJ filters]"
+"(https://github.com/tukaani-"
+"project/xz/releases/tag/v5.8.0)。"
+
+#: ../../src/faq.md:63 44dfd3d55c664cb6a072653d25ef93d0
+msgid ""
+"Note that EROFS is still under active development. The features mentioned"
+" above are not top priorities at the moment due to limited development "
+"resources (anyway, SquashFS has existed for over 20 years) and target use"
+" scenarios, but they will be considered in the future, and contributions "
+"are always welcome. Again, note that SquashFS doesn't always outperform "
+"EROFS in image size either. EROFS images are often significantly smaller "
+"(while still offering better runtime performance) when compressing files "
+"in small compressed extent sizes (especially smaller than 32KiB)."
+msgstr ""
+"请注意，EROFS 仍在积极开发中。由于开发资源有限"
+"（毕竟 SquashFS 已经存在 20 多年了）以及目标使用场景的原因，"
+"上述特性目前并非最高优先级，但未来会纳入考虑，并且欢迎随时贡献。"
+"另外，SquashFS 在镜像体积上也不总是优于 EROFS。"
+"当使用较小的压缩 extent 大小（尤其是小于 32KiB）压缩文件时，"
+"EROFS 镜像通常明显更小（同时仍能提供更好的运行时性能）。"
+
+#: ../../src/faq.md:72 4045944d87694f2595f56cf9f960e7f2
+msgid ""
+"Additionally, EROFS has supported CDC-like [compressed data "
+"deduplication](design.md#data-deduplication) since Linux 6.1, which also "
+"gives extra space savings (although `-Ededupe` is still single-threaded)."
+msgstr ""
+"此外，自 Linux 6.1 起，EROFS 已支持类似 CDC 的[压缩数据去重]"
+"(design.md#data-deduplication)，这也能带来额外的空间节省"
+"（尽管 `-Ededupe` 目前仍是单线程的）。"
+
+#: ../../src/faq.md:76 ee6c0c1a88b04d44a10ec83deeb9ab39
+msgid ""
+"In brief, if image size is your top priority, please ensure that the "
+"options `-Ededupe` and `-E(all-)fragments` are specified with mkfs.erofs."
+"  At least, enable `-Efragments` to match the default configuration of "
+"SquashFS."
+msgstr ""
+"简而言之，如果镜像体积是你的最高优先级，请确保在使用 mkfs.erofs 时"
+"指定 `-Ededupe` 和 `-E(all-)fragments` 选项。"
+"至少应启用 `-Efragments`，以与 SquashFS 的默认配置对齐。"
+
+#: ../../src/faq.md:80 91c278407fea462787914dadac0315b5
+msgid "🚧 Under construction.."
+msgstr "🚧 建设中……"

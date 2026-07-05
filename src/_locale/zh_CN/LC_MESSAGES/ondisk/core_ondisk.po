@@ -1,0 +1,1332 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/ondisk/core_ondisk.md:1 e8e74c8810cf48ce9eabbf721cf97841
+msgid "Core On-disk Format"
+msgstr "核心磁盘格式"
+
+#: ../../src/ondisk/core_ondisk.md:3 801ec5e0c645465781aa09f33e80b30e
+msgid "Overview"
+msgstr "概览"
+
+#: ../../src/ondisk/core_ondisk.md:5 1304f1a9f32b4fd485d3b767a440484a
+msgid ""
+"The EROFS core on-disk format is designed to be **as simple as "
+"possible**, since one of the basic use cases of EROFS is as a drop-in "
+"replacement for "
+"[tar](https://pubs.opengroup.org/onlinepubs/007908799/xcu/tar.html) or "
+"[cpio](https://pubs.opengroup.org/onlinepubs/007908799/xcu/cpio.html):"
+msgstr "EROFS 核心磁盘格式的设计目标是**尽可能简单**，因为 EROFS 的一个基本用例就是作为 [tar](https://pubs.opengroup.org/onlinepubs/007908799/xcu/tar.html) 或 [cpio](https://pubs.opengroup.org/onlinepubs/007908799/xcu/cpio.html) 的直接替代品："
+
+#: ../../src/ondisk/core_ondisk.md:10 454ac45b08674a509698f7deda8dcb44
+msgid "![EROFS core on-disk format](../_static/erofs_core_format.svg)"
+msgstr "![EROFS 核心磁盘格式](../_static/erofs_core_format.svg)"
+
+#: ../../src/ondisk/core_ondisk.md:10 939e273600f046c5b372c9dd2d40f951
+msgid "EROFS core on-disk format"
+msgstr "EROFS 核心磁盘格式"
+
+#: ../../src/ondisk/core_ondisk.md:12 ee42a75e49304a2e8533c4ccec0aa1a8
+msgid "The format design principles are as follows:"
+msgstr "该格式的设计原则如下："
+
+#: ../../src/ondisk/core_ondisk.md:14 979a1e8b658842f0b28e06f98fcbbd5f
+msgid ""
+"Data (except for _inline data_) is always block-based; metadata is not "
+"strictly block-based."
+msgstr "数据（除 _inline data_ 外）始终以块为单位存储；元数据则不一定严格按块存储。"
+
+#: ../../src/ondisk/core_ondisk.md:16 1047382fdbdb42efa37c6c036f58de33
+msgid ""
+"There are **no centralized inode or directory tables**. These are not "
+"suitable for image incremental updates, metadata flexibility, and "
+"extensibility. It is up to users to determine whether inodes or "
+"directories are arranged one by one or not."
+msgstr "**不存在集中式的 inode 或 directory table**。这不利于镜像增量更新、元数据灵活性及可扩展性。inode 和 directory 是否逐个排列，由用户自行决定。"
+
+#: ../../src/ondisk/core_ondisk.md:21 6bdcd962088d411ebc6eaaa7ace44d01
+msgid ""
+"I/O amplification from **extra metadata access** should be as small as "
+"possible."
+msgstr "因**额外元数据访问**导致的 I/O 放大应尽可能小。"
+
+#: ../../src/ondisk/core_ondisk.md:24 a72537642fbf436cb6b130c0ddcd61a0
+msgid ""
+"There are _only **three** on-disk components to form a full filesystem "
+"tree_: superblock, inodes, and directory entries."
+msgstr "构成完整文件系统树的磁盘组件_只有**三个**：superblock、inode 和 directory entry。"
+
+#: ../../src/ondisk/core_ondisk.md:27 6537bbf53a3f4e169adce3e415608e2b
+msgid ""
+"Note that only the superblock needs to be kept at a fixed offset, as "
+"mentioned below."
+msgstr "请注意，如下文所述，只有 superblock 需要保持在固定偏移处。"
+
+#: ../../src/ondisk/core_ondisk.md:29 ebc58450658f4ff0bd36c70df274be4b
+msgid "Conformance to Core Format"
+msgstr "核心格式合规性"
+
+#: ../../src/ondisk/core_ondisk.md:31 08c9a5a315094eb0af4ce4e2f34e0d77
+msgid ""
+"An EROFS image conforms to the core on-disk format if and only if **all**"
+" of the following conditions are met:"
+msgstr "当且仅当满足以下**全部**条件时，EROFS 镜像才符合核心磁盘格式："
+
+#: ../../src/ondisk/core_ondisk.md:34 077867e415cc48bcb377cd191396bafc
+msgid ""
+"The `is_compressed` field (offset 0x54, 2 bytes) in the superblock is "
+"**0**."
+msgstr "superblock 中的 `is_compressed` 字段（偏移 0x54，2 字节）为 **0**。"
+
+#: ../../src/ondisk/core_ondisk.md:35 1ca3bb2d006f47258e0de78eda765cab
+msgid ""
+"All bits in `feature_compat` and `feature_incompat`, except those listed "
+"in the [Feature Flags](#feature-flags) section below, are **0**."
+msgstr "`feature_compat` 和 `feature_incompat` 中，除下文 [Feature Flags](#feature-flags) 列出的位外，其余位均为 **0**。"
+
+#: ../../src/ondisk/core_ondisk.md:38 de3fc61242434a50911e65514e4f199b
+msgid ""
+"An image that does not meet these conditions uses one or more optional "
+"features described in separate feature-specific documents. Note that the "
+"core on-disk format has always been supported since Linux 5.4; thus, the "
+"48-bit layout is not part of the core on-disk format (for example), and "
+"not all users need 48-bit block addressing."
+msgstr "不符合这些条件的镜像使用了单独特性文档中描述的一项或多项可选特性。请注意，核心磁盘格式自 Linux 5.4 起始终受支持；因此，48-bit 布局不是核心磁盘格式的一部分（举例而言），并非所有用户都需要 48-bit 块寻址。"
+
+#: ../../src/ondisk/core_ondisk.md:45 f2583f1dbeb64b34a9ce30400968b22b
+msgid "Superblock"
+msgstr "Superblock"
+
+#: ../../src/ondisk/core_ondisk.md:47 5e7af6cd36ba45b2b890c42907588412
+msgid ""
+"The EROFS superblock is located at a fixed absolute offset of **1024 "
+"bytes**. Its base size is 128 bytes. When `sb_extslots` is non-zero, the "
+"total superblock size is `128 + sb_extslots * 16` bytes. The first 1024 "
+"bytes are unused, which allows for support of other advanced formats "
+"based on EROFS, as well as the installation of x86 boot sectors and other"
+" oddities."
+msgstr "EROFS superblock 位于固定的绝对偏移 **1024 字节**处。其基础大小为 128 字节。当 `sb_extslots` 非零时，superblock 总大小为 `128 + sb_extslots * 16` 字节。前 1024 字节未使用，以便支持基于 EROFS 的其他高级格式，以及安装 x86 boot sector 等其他特殊用途。"
+
+#: ../../src/ondisk/core_ondisk.md:53 7eb8a97776434fa0b959238ff13a1575
+msgid "Field Definitions"
+msgstr "字段定义"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 01f234a72cf74a1ebbe96f1cfbe65710
+#: 11baa79287ee41e9877994d03f084d3c a051fa1a5b034db7af306ea7125b44b0
+#: af9a9c78543f441eac200b0d641f5978 e6612677e9be4e77a528cdc767b53688
+msgid "Offset"
+msgstr "偏移"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 1fe3df4bf84847abaf9434f6591297b0
+#: 22a341927ec64f1cb3c3821249e887eb 2b8a41c62dce40b5a1d21eb7c4670ef2
+#: 8bcb913b71374c7d98f6eb9a9c1999f4 eb728c65142d4ad7a472542b8ad87248
+msgid "Size"
+msgstr "大小"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 2f7834030159466a92540aff42fe5276
+#: 67d1f2fb47a14edd8b5e7a2b7dc4f530 9dd4a13611cc46089298eb55b964cdd9
+#: fb433232eb5f436b807ef47c97e2dc35
+msgid "Type"
+msgstr "类型"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:228 ../../src/ondisk/core_ondisk.md:268
+#: 2befb1cede9f488891d87f6fcd27f030 306a21a974fc449cb491f56db852a553
+#: 643a3f507bac4d7b83371a65597809af 727baf76034147df9c8e1b68a4b96bc1
+#: b336830532b848be89137176ff817979 b6ac31cf63314f6f979a950742172c65
+msgid "Name"
+msgstr "名称"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:228 ../../src/ondisk/core_ondisk.md:268
+#: 13e86b80f02c42fe90967e1b9d78bd09 26e58fe2a08046de8c545a1e0b3432c0
+#: 30128af046ba4fb587388db29d7b3439 37bb2bca0b8242bf8148b25689648db7
+#: 6568998549a14f05b818b7927a2d8b44 a5e6404659b74113b1c0bc5d65809198
+#: b06c8c8df9274f3492e51929a89f6363 b2d3197745504cfc8d0762c77d659325
+msgid "Description"
+msgstr "描述"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 0bcdbe79bf3743b897eaaa31da5c3c17
+#: 3c25df12ca4a451c90b3451cfc5779e0 92e3195a78f34f3da813b166e58d7881
+#: d40940072c1243c6b93fe8c85c5b0ff5
+msgid "0x00"
+msgstr "0x00"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 0e53aa1957364f78bf15d898e7cbe807
+#: 25c5e0dae05c4cf394224751a8b64f73 27e03f448ff34de89e880a5d70103063
+#: 31363c09665a4ed5bea1391f7550127a 35c8b868848640c5a93cb228316e93ea
+#: 3a27303fd5ef44b399d2a89423e223a4 3b003f4c2df043edbdd4c1b4e4becff9
+#: 464bfa395c054cf89b80bf50911595cf 51a444b9453e4638806d0f0b92dab494
+#: 58ec7b796d844426854bfafc62450a73 66d6860d7f5c4b859ccba4ced7fc9e35
+#: 68197736d01d4144859139617b14df7b 6cb937dfbf954ce09a219e4432045d7e
+#: 83aea92db5d84b5aae6acbcb54d53096 856ebb05ac55448099bf35188d70a6ed
+#: 9797a3237b38413e8c126601390a823f ad655f302c8048e8a486d9d51da51a69
+#: b847456285e24d09aec12e25bcedc44f bc6ad54205b14765bddbffa3111042ba
+#: ca6a46c620a04fa7b98c67ddd18f27eb d21bf3d4163943d2adf09b81d78e1d73
+#: d478900467974207a3da59c31854e90d d5205bdac2ef4bc399952bc6c759ba90
+#: f5590b5f282244b3b4a4152f291f595a
+msgid "4"
+msgstr "4"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 01738dca9eae48be8baa7cafe6193c4a 0a8864de2cdd42b8ae9a255f367026ac
+#: 0e68068e947f4a1597a68513b17104e5 25e24461feca445a8a59721e59ec7e0f
+#: 262e323c651744b9b95971be93465abf 3e242a4a2773484caf232f994d198f5c
+#: 3f210df5ce8b4835b91abfd51d5c1374 4c03a8dd112a46a3b4cf621f9ceaf7ac
+#: 639220e3218049e0948bed682332b259 73612b0e8e774dd0a33fa97f4300a934
+#: 7afe28cae294441e91e501dc65f06fd8 aa5aee8d7a6647deb7dd5f11ecf1cc79
+#: aa753c9972bf4bb7ae5f68644bbac0a4 b3a22a0f4d5440d5a93075c86504bcec
+#: bffc7e41ca8e473ebb38581565dcc6c1 c292c0630cdf424a819ca509cae9bb3d
+#: dbf066b5d2744363994c07bde2b189a9 f16a27dab37c4b42a28910e17fc5498d
+#: f5a2e042d13b451798fd654e32a4d066 fcf58f3b0c7943f0914890f8aabb99f4
+msgid "`u32`"
+msgstr "`u32`"
+
+#: ../../src/ondisk/core_ondisk.md 8b6a3f2572b144c98595fef30fbcf861
+msgid "`magic`"
+msgstr "`magic`"
+
+#: ../../src/ondisk/core_ondisk.md 79029d5f9ffe496e96e26a267dfa63a5
+msgid "Magic signature: `0xE0F5E1E2`"
+msgstr "Magic 签名：`0xE0F5E1E2`"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 030893b8905f4098afe677b09b2640b4 2105dd02ff3f47afb0ec71c4ed45f8f8
+#: ea006afb243644d195da1c7c5e40212f
+msgid "0x04"
+msgstr "0x04"
+
+#: ../../src/ondisk/core_ondisk.md d0d6b6ef7c5e4408921992b1a86f7d6d
+msgid "`checksum`"
+msgstr "`checksum`"
+
+#: ../../src/ondisk/core_ondisk.md a220040cb0fc48928266d61584c210b8
+msgid "CRC32-C checksum of the superblock block; see {ref}`superblock-checksum`"
+msgstr "superblock 块的 CRC32-C checksum；参见 {ref}`superblock-checksum`"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 1466410e21b049cfb7e078df370748c1
+#: 33ebd523bb2248578f326a054cf809ff ac013e9780234612adb6963ff984e5e6
+#: da364e156d1949a695834b8d4434f1b0
+msgid "0x08"
+msgstr "0x08"
+
+#: ../../src/ondisk/core_ondisk.md ed0cc840e468401faf2982af491c4182
+msgid "`feature_compat`"
+msgstr "`feature_compat`"
+
+#: ../../src/ondisk/core_ondisk.md a9582c6f1dc444ccb40e10f0ee51ebdf
+msgid "Compatible feature flags; see {ref}`feature-flags`"
+msgstr "兼容特性标志；参见 {ref}`feature-flags`"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 0ad9839ffbe44d41b9953d453e82d7c0 d4aa3abd21de4b188e404b238681325f
+msgid "0x0C"
+msgstr "0x0C"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 2808d29aefbf4132b3ce3d05de9c1f05
+#: 46e835b1f1fb466a80a2e843aaae2c99 4dadd843d20c492daf4da7ed496cd7b3
+#: 562e9b434e3d400b9348ba3f77364a26 6591bcd0b49545ef9bce0d18495880a5
+#: 80fd9948e3c144ca9b2f07a011cccac4 a0c233c3e2c14ae9910a568b1176b251
+#: b26acb6bc44f4ef2ad0c7882bd4c530f d19c955c8940470ebfdb24bc7dbc8a76
+#: e9860bfeae944d7480b9121cf1a88346
+msgid "1"
+msgstr "1"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:268
+#: 15edb8fef62240c8b8cbd86731d92d7b 64f01c93bf94435688ec808dcf18c406
+#: 68625c1c141843ca976089ed43dbc8ba 8cdf471ae8f1441fa7b9b0930f692a33
+#: 970efcd8380448ad98dc9ec11bb4bb6b dda339bbb8b64ab8bd334b4154644a3c
+#: e735cc539ec54be5ade02f9ac27ed29c
+msgid "`u8`"
+msgstr "`u8`"
+
+#: ../../src/ondisk/core_ondisk.md e2d1fa7140ba400dba5bf54e03fc5cc7
+msgid "`blkszbits`"
+msgstr "`blkszbits`"
+
+#: ../../src/ondisk/core_ondisk.md e89d15051bd44911912f9fb63ca7cd28
+msgid "Block size = `2^blkszbits`; minimum 9"
+msgstr "块大小 = `2^blkszbits`；最小为 9"
+
+#: ../../src/ondisk/core_ondisk.md 728a603464b74046bf4de0fcf0850599
+msgid "0x0D"
+msgstr "0x0D"
+
+#: ../../src/ondisk/core_ondisk.md 98a074446f3a45969ccd203c9f042a64
+msgid "`sb_extslots`"
+msgstr "`sb_extslots`"
+
+#: ../../src/ondisk/core_ondisk.md ea52292c284a4689a408a98e7e6e8231
+msgid "Number of 16-byte superblock extension slots"
+msgstr "16 字节 superblock 扩展槽数量"
+
+#: ../../src/ondisk/core_ondisk.md c40d13cef56e4ac990eb0768acdf5336
+msgid "0x0E"
+msgstr "0x0E"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 1537b128537846bf8ac408320227d3d0
+#: 494c586268774956896fc102e977e8cc 63ea37b3577f443d815814e30950f71e
+#: 733a6362bdb44016beaacca72809e310 73a91a3687384c9d98d0e651edbf880a
+#: 7532f77a66f247f2bf8e3b68b5d364f2 77002b84872447b19a5be0b374f1c67c
+#: 93e5622fd49a4aba8b523a5f5816ac32 ae978d7dcbd5462badc1c5415a4fe239
+#: bd0588ff49fc476cba7f99a0314507af bd25c27c153042cd8776279c35dd4084
+#: c145b4a09fe94ed295c413729fdc96f0 de19ec2a27c848f6b214fe2e97151952
+#: f806bdfdd4114748a4c0e5361f9706e8 fd705e3f795e4f90886f62680b84c85b
+msgid "2"
+msgstr "2"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 004b1c67119944ec9c248c1202656ecc
+#: 02b098eeb1804adaba54bae56594b2ad 0b094e2c95f34ddc8b3620e4633bb362
+#: 2452f7f1f67243d783c57328776bef80 3a83e08f41924542b37774aee968be36
+#: 4a843e16684946c988b767559305f113 585bb64295f94f2faacfe45c86ce61c4
+#: 6a376827b7f64dd19be4a8426b8af0ca 7ebe97f90b724df4945e173c778c259f
+#: a74f3992682a4dd3a5303c3c15144079 ca423fcf6b7a49e99af0bf50607a1847
+#: e5d87861c9b34d839ac522d0ee31d33b f6a03b07cd5c47e7b0c32bc93ce50ea1
+#: f809d097926846ae973d68cac11208f7
+msgid "`u16`"
+msgstr "`u16`"
+
+#: ../../src/ondisk/core_ondisk.md 5c229012a77d4a26aa12571a2db06772
+msgid "`rootnid_2b`"
+msgstr "`rootnid_2b`"
+
+#: ../../src/ondisk/core_ondisk.md 1ac74e1877a24826a22f2518f1690241
+msgid "Root directory NID"
+msgstr "根目录 NID"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 31e973eac3914137915f7822dadeb4cc c464ca4e9b8b4e48b4bdbf04502c265a
+#: e65fe2c15ffc4ddeaf135737d787642d
+msgid "0x10"
+msgstr "0x10"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 0df3b078744a4c15bdf9b8086122d89d
+#: 5ae044cbdece4959b796ac9c15701890 75310d9bd3ac48948dc3599b44dd591f
+#: c0129eb194734b219d960b51ea557a1d e10299cf19d34149872a82ec7a530d7d
+#: f791c005926c44c990ff9f7a9b3a0dd0 f978d7bfa06e4d6db9c765422f20f9ba
+msgid "8"
+msgstr "8"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 3fd2c7b4fe0045ef9090f25f0d8220f8
+#: 41877eb9ecee41b895b767ca035750e4 575fed602b634034b5296e5b13bebe47
+#: 5dc1f85ed6394461b3b38bd6cbdbfb5a 9438549224014a3ab9fbc28a2b08c509
+#: 98e8d7cf8e604bff8e06bce753294d85
+msgid "`u64`"
+msgstr "`u64`"
+
+#: ../../src/ondisk/core_ondisk.md b93239b676c6400aacec6f17ad318687
+msgid "`inos`"
+msgstr "`inos`"
+
+#: ../../src/ondisk/core_ondisk.md c62d6e62299c4ffebe183a0d8d7e44e7
+msgid "Total inode count; see {ref}`blocks-and-inos-fields`"
+msgstr "inode 总数；参见 {ref}`blocks-and-inos-fields`"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 099395f1ebe34f26a4dd6cd4b77fac66 d84dc7aeb2c649728ce5b1a447031b39
+#: e4f426838132450cab82ec5eaff11f4c
+msgid "0x18"
+msgstr "0x18"
+
+#: ../../src/ondisk/core_ondisk.md db0376e4f1dc421bb20d4a2f2b5a99c4
+msgid "`epoch`"
+msgstr "`epoch`"
+
+#: ../../src/ondisk/core_ondisk.md 9d4b11bf24ec4890a57c885585f09857
+msgid "Filesystem creation time, seconds since UNIX epoch"
+msgstr "文件系统创建时间，自 UNIX epoch 起的秒数"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 2477913b5586455a8f0ee27141892faf 715baf9bd6d640aa9c73e6d0c2735199
+msgid "0x20"
+msgstr "0x20"
+
+#: ../../src/ondisk/core_ondisk.md afa717725db34b5fa96b19f8c1e7be52
+msgid "`fixed_nsec`"
+msgstr "`fixed_nsec`"
+
+#: ../../src/ondisk/core_ondisk.md 91261dcaee904e12a81cf16bf817edba
+msgid ""
+"Nanoseconds component shared by all compact inodes; see {ref}`mtime-in-"
+"compact-inodes`"
+msgstr "所有 compact inode 共享的纳秒分量；参见 {ref}`mtime-in-compact-inodes`"
+
+#: ../../src/ondisk/core_ondisk.md 06456699d034478baa06f431ef726084
+msgid "0x24"
+msgstr "0x24"
+
+#: ../../src/ondisk/core_ondisk.md 986eb386b47c4b9cbfee352c88c28f6b
+msgid "`blocks`"
+msgstr "`blocks`"
+
+#: ../../src/ondisk/core_ondisk.md b52879305d4b46bea8ad26e6858785bc
+msgid "Total block count; see {ref}`blocks-and-inos-fields`"
+msgstr "块总数；参见 {ref}`blocks-and-inos-fields`"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 4c0e3ae78a8249b4bff636ba96d8bcd8 9677f7f295544765bf71ed602b7b0602
+msgid "0x28"
+msgstr "0x28"
+
+#: ../../src/ondisk/core_ondisk.md 91d42a4822d2463eaa115a06520cadc0
+msgid "`meta_blkaddr`"
+msgstr "`meta_blkaddr`"
+
+#: ../../src/ondisk/core_ondisk.md e1c5f61b0ff548909487c33a11be0c6e
+msgid "Start block address to specify the inode-metadata zone"
+msgstr "指定 inode-metadata 区域的起始块地址"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 83c6ad950d684d798e45a9638b2281ce 985f232c35bd402c9b44cc745e1caff7
+msgid "0x2C"
+msgstr "0x2C"
+
+#: ../../src/ondisk/core_ondisk.md 1ac6950aa73d44dfb2e4e9810e8d7078
+msgid "`xattr_blkaddr`"
+msgstr "`xattr_blkaddr`"
+
+#: ../../src/ondisk/core_ondisk.md b5868c2483824258911fece5d107518c
+msgid "Start block address to specify the extended attribute zone"
+msgstr "指定 extended attribute 区域的起始块地址"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 74c5ec4764534f7f863dceffcb2f20ee d4f72a1c84b24d2db967ff97b743566c
+msgid "0x30"
+msgstr "0x30"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 13bcc2b56bf04796a03dae312904c7ab 54627411cec44b6f81d4fe4f7f310ee0
+#: a10cf815631f42b6a22ea52bdc6cd49b
+msgid "16"
+msgstr "16"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 055fdf849a8841b2ad3c44aa6535d9e5 10e0813677b7450f9cc9cb79db871089
+#: 6196e4233fcd4958a7d4817c42e7352a 6d38b53db5b64aa2ad7a1926886ad77e
+#: d900a6caac314990a7a0ab7fca04e950 d9cb0cbfff5c4336a4cea3818a7a7a2a
+msgid "`u8[]`"
+msgstr "`u8[]`"
+
+#: ../../src/ondisk/core_ondisk.md db45a8c12806471dbfb967e8073a621d
+msgid "`uuid`"
+msgstr "`uuid`"
+
+#: ../../src/ondisk/core_ondisk.md 879e8546a13d44cb92ada1e91ecac586
+msgid "128-bit UUID for the volume"
+msgstr "卷 128-bit UUID"
+
+#: ../../src/ondisk/core_ondisk.md 0403960af9d24eda8057196705219836
+msgid "0x40"
+msgstr "0x40"
+
+#: ../../src/ondisk/core_ondisk.md 579ce742c5b24b34b6708048c4a75cc0
+msgid "`volume_name`"
+msgstr "`volume_name`"
+
+#: ../../src/ondisk/core_ondisk.md 7da9384780de466c9d69ebb6c98d47f5
+msgid "Filesystem label (not null-terminated if 16 bytes)"
+msgstr "文件系统卷标（若长度为 16 字节则不以空字符结尾）"
+
+#: ../../src/ondisk/core_ondisk.md 90236978147a4219af002a6d941d68db
+msgid "0x50"
+msgstr "0x50"
+
+#: ../../src/ondisk/core_ondisk.md d069688bb9f04392b7de8b8385bbacd8
+msgid "`feature_incompat`"
+msgstr "`feature_incompat`"
+
+#: ../../src/ondisk/core_ondisk.md 0b2fba8b44f5476090d5de53f68e39e3
+msgid "Incompatible feature flags; see {ref}`feature-flags`"
+msgstr "不兼容特性标志；参见 {ref}`feature-flags`"
+
+#: ../../src/ondisk/core_ondisk.md cde2a655b7074437b12764a52445b20f
+msgid "0x54"
+msgstr "0x54"
+
+#: ../../src/ondisk/core_ondisk.md e86796c2c64f4c298e7ff3ad6355b283
+msgid "`is_compressed`"
+msgstr "`is_compressed`"
+
+#: ../../src/ondisk/core_ondisk.md 31d5769287b34171a3ce58abad6a009e
+msgid "0 for non-compressed images, any non-zero value for compressed images"
+msgstr "非压缩镜像为 0，压缩镜像为任意非零值"
+
+#: ../../src/ondisk/core_ondisk.md f79da4985f8a4eeb9e9720557432782f
+msgid "0x56"
+msgstr "0x56"
+
+#: ../../src/ondisk/core_ondisk.md 05ca62305c4e4e78a54269c202d7b9cf
+#: 191c8bf35a4d4bf482b4089eb777fe09 611c70e1cb7f48ac8bad07ac291f786f
+#: 7f8be47a0eb34e5fa2cba9ae0b5ed7fc b0bc6e967b6f4bf285e582f97a214616
+msgid "_dontcare_"
+msgstr "_dontcare_"
+
+#: ../../src/ondisk/core_ondisk.md 6ab38e029a25436981d7f7010faa1d10
+msgid "External device support specific; ignored in core format"
+msgstr "外部设备支持专用；核心格式中忽略"
+
+#: ../../src/ondisk/core_ondisk.md e2c124342b154dc99bb5726ce9d12128
+msgid "0x5A"
+msgstr "0x5A"
+
+#: ../../src/ondisk/core_ondisk.md 46a36cc14db94ae6a943de342a6a23eb
+msgid "`dirblkbits`"
+msgstr "`dirblkbits`"
+
+#: ../../src/ondisk/core_ondisk.md a583eea543e446b3a249f6905a1af6d4
+msgid ""
+"Directory block size = `2^(blkszbits + dirblkbits)`; strictly 0 in the "
+"core format"
+msgstr "Directory block 大小 = `2^(blkszbits + dirblkbits)`；核心格式中严格为 0"
+
+#: ../../src/ondisk/core_ondisk.md 4cdbe2fc03864895b7fd40a461aa19c1
+msgid "0x5B"
+msgstr "0x5B"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:268
+#: 166711f11a5d49ce8947eebb5f9fedd3 19186d2c82c5455a94b4903862e50906
+msgid "5"
+msgstr "5"
+
+#: ../../src/ondisk/core_ondisk.md 8bcccc77d894423893973501acaa2a43
+#: c7529ee8e3f54eafa99ac78cc56c6303
+msgid "Xattr specific; ignored in core format"
+msgstr "Xattr 专用；核心格式中忽略"
+
+#: ../../src/ondisk/core_ondisk.md 220e115bd3614f13a5574f85634ba386
+msgid "0x60"
+msgstr "0x60"
+
+#: ../../src/ondisk/core_ondisk.md 1de1cda4c70c418cb06dd76b743753cf
+msgid "Compression specific; ignored in core format"
+msgstr "压缩专用；核心格式中忽略"
+
+#: ../../src/ondisk/core_ondisk.md 13e88e34291a4db0a9dbe35e347beb25
+msgid "0x68"
+msgstr "0x68"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 3cbaec4832e54d09bc79d55edacadc80
+#: 62ed4954c87f4f698c228f90b622201d 7147f99a630447c2b7799587906cfc09
+#: 9d7f70ad919d4809a726bbbdf2f5163b a19304d717444ea99d22aeb154bd92ce
+#: a1b770ab2c64455d82ad262825e890a4 a6b56c91aca0457abed0d6558d477a83
+#: bd9be8555fd243b0aca8743a0cb0d6ee c1e8c62e21ad4633864c4fd7fb81c9b6
+#: cbe5b715bdb749e0bd3e94a14465f61d
+msgid "_reserved_"
+msgstr "_reserved_"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 00451c6fcf7a49c3a2f2bd55baec00c8
+#: 0f32c378425f45c98b07ef2c5d61060c 77208653ffe6403cbd8255930d3a3c49
+#: 7e143ff3abdd4fbabec584793f483e78 b39282864af241c19e7a6ef8261f650b
+#: d15c64737e1f4ab181c88fd50ea7fca9 e0be668f68c047daad23e9bda049556d
+#: fe321f8233c447c2af5ab17dc0232b96
+msgid "Reserved; must be 0"
+msgstr "保留；必须为 0"
+
+#: ../../src/ondisk/core_ondisk.md be581e72cbe84adbb8820bd88805d802
+msgid "0x69"
+msgstr "0x69"
+
+#: ../../src/ondisk/core_ondisk.md 0bec370ae0514805b1b18833692ea2bb
+msgid "0x6A"
+msgstr "0x6A"
+
+#: ../../src/ondisk/core_ondisk.md 7dd8ece524d04c24afb031d85bd5dbb2
+msgid "0x6C"
+msgstr "0x6C"
+
+#: ../../src/ondisk/core_ondisk.md b59d586ff8b04820a457ebc2d0f25481
+msgid "12"
+msgstr "12"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: 1b6a54ef074c43d38e624eb18e49cdbb 7a08aeb6a35a42c6a817cc01f36a17a9
+#: 7b76ee39f94f48e8b7609fd0181edff6
+msgid "48-bit layout specific; ignored in core format"
+msgstr "48-bit 布局专用；核心格式中忽略"
+
+#: ../../src/ondisk/core_ondisk.md dded841aaacc4a9bb2621be4d578c1f9
+msgid "0x78"
+msgstr "0x78"
+
+#: ../../src/ondisk/core_ondisk.md:83 105bccf38d3e4b7ea5e1977af1fb59df
+msgid "Note the difference between _reserved_ and _dontcare_ fields:"
+msgstr "请注意 _reserved_ 与 _dontcare_ 字段的区别："
+
+#: ../../src/ondisk/core_ondisk.md:84 ec2bb54335e340d3a1ba6fd8c996cb32
+msgid ""
+"**_reserved_**: Users must not use these fields, and they must be filled "
+"with `0` to comply with the supported features or reserve for future use."
+msgstr "**_reserved_**：用户不得使用这些字段，必须填入 `0`，以符合所支持特性要求或为将来保留。"
+
+#: ../../src/ondisk/core_ondisk.md:86 3c3fd918451d4870a3396c84897c7928
+msgid ""
+"**_dontcare_**: Users can safely use these for other purposes as long as "
+"the corresponding incompatible feature flag is not set."
+msgstr "**_dontcare_**：只要未设置相应的不兼容特性标志，用户即可安全地将其用于其他用途。"
+
+#: ../../src/ondisk/core_ondisk.md:89 2ecdb488c61b48ed8216d2bf4e7fcd28
+msgid "Magic Number"
+msgstr "Magic Number"
+
+#: ../../src/ondisk/core_ondisk.md:91 486d39ee29344ef8baab8f0196541d60
+msgid ""
+"The magic number at offset 0x00 must be `0xE0F5E1E2` (little-endian). A "
+"reader must reject any image whose first four bytes at offset 1024 do not"
+" match this value."
+msgstr "偏移 0x00 处的 magic number 必须为 `0xE0F5E1E2`（小端序）。读取器必须拒绝任何在偏移 1024 处前 4 字节不匹配该值的镜像。"
+
+#: ../../src/ondisk/core_ondisk.md:95 c313269df7f64f1189a920c1c379cfe4
+msgid "Superblock Checksum"
+msgstr "Superblock Checksum"
+
+#: ../../src/ondisk/core_ondisk.md:97 0016b03771fd48b7bfc6ae732406e9fd
+msgid ""
+"When `EROFS_FEATURE_COMPAT_SB_CHKSUM` is set, the `checksum` field "
+"contains a CRC32-C digest. The digest is computed over the byte range "
+"`[1024, 1024 + block_size)`, with the four bytes of the `checksum` field "
+"itself treated as zero during computation."
+msgstr "当设置 `EROFS_FEATURE_COMPAT_SB_CHKSUM` 时，`checksum` 字段包含一个 CRC32-C 摘要。摘要计算的字节范围为 `[1024, 1024 + block_size)`，计算时 `checksum` 字段本身的 4 字节按零处理。"
+
+#: ../../src/ondisk/core_ondisk.md:101 1fc62a9d6d1940faa9ede1cfa0dfbd92
+msgid "For example, when `blkszbits` is 12 (block size is 4 KiB):"
+msgstr "例如，当 `blkszbits` 为 12（块大小为 4 KiB）时："
+
+#: ../../src/ondisk/core_ondisk.md 765fed8e2de14f1784770651718227f6
+msgid "Checksum covered"
+msgstr "是否覆盖校验和"
+
+#: ../../src/ondisk/core_ondisk.md ../../src/ondisk/core_ondisk.md:126
+#: ../../src/ondisk/core_ondisk.md:268 2e27be0ecd9b4294ace6edfc654085ff
+#: 443021a2f5c64e2b81b296e5e738c390 d3d5ca7be4ed49589861fe4024857990
+msgid "0"
+msgstr "0"
+
+#: ../../src/ondisk/core_ondisk.md 0ab5729193884992a88c1c0acb11a28f
+#: b82e4c408fa549edb1e4cb5cda42d07a
+msgid "1024"
+msgstr "1024"
+
+#: ../../src/ondisk/core_ondisk.md 54ced29e9f6f4780a8b2644029410dc6
+msgid "Padding"
+msgstr "填充"
+
+#: ../../src/ondisk/core_ondisk.md f23da42bc9e246b4aba6a5363d3123ae
+msgid "No"
+msgstr "否"
+
+#: ../../src/ondisk/core_ondisk.md 5864e115df05476b9f5f74807080ea84
+msgid "Magic number"
+msgstr "Magic number"
+
+#: ../../src/ondisk/core_ondisk.md 67c956302c8648b49c2ef545c4fd523a
+#: 9d7e7f60e2f44e96aaa6f3fa4825910e e591e7fa95234e8e90d2854b8697c0ef
+msgid "Yes"
+msgstr "是"
+
+#: ../../src/ondisk/core_ondisk.md 85c7eefc14fe4584abe726c7d11ca8a2
+msgid "1028"
+msgstr "1028"
+
+#: ../../src/ondisk/core_ondisk.md 02bc4a037dc346c799b8626c8a5f31e0
+msgid "Checksum field in superblock, filled with zero"
+msgstr "superblock 中的 checksum 字段，计算时置零"
+
+#: ../../src/ondisk/core_ondisk.md e7edde6509b945d889031bd05330ee35
+msgid "1032"
+msgstr "1032"
+
+#: ../../src/ondisk/core_ondisk.md d1fc6b9d50bc4d1db501ce212e437e99
+msgid "3064"
+msgstr "3064"
+
+#: ../../src/ondisk/core_ondisk.md c90d87df2c23477f8b1df97401f079a3
+msgid "Remaining bytes in the filesystem block"
+msgstr "文件系统块中的剩余字节"
+
+#: ../../src/ondisk/core_ondisk.md:110 e7a568f21f254465bd10638d6625c66d
+msgid ""
+"**Tip:** Some implementations (e.g., `java.util.zip.CRC32C`) apply a "
+"final bit-wise inversion. If the superblock checksum does not match, try "
+"inverting it."
+msgstr "**提示：**某些实现（例如 `java.util.zip.CRC32C`）会应用最终按位取反。若 superblock checksum 不匹配，请尝试取反。"
+
+#: ../../src/ondisk/core_ondisk.md:114 e551475697984f66a419fb4af60a5d7f
+msgid "Feature Flags"
+msgstr "Feature Flags"
+
+#: ../../src/ondisk/core_ondisk.md:116 c4b0021fb85c4e2f8140aac2540010a7
+msgid "`feature_compat` — Compatible Feature Flags"
+msgstr "`feature_compat` —— 兼容特性标志"
+
+#: ../../src/ondisk/core_ondisk.md:118 f6160ff0c4124c22ae0a5a75ac739003
+msgid ""
+"A mount implementation that does not recognise a bit in `feature_compat` "
+"may still mount the filesystem without loss of correctness."
+msgstr "若 mount 实现无法识别 `feature_compat` 中的某位，仍可挂载文件系统且不损失正确性。"
+
+#: ../../src/ondisk/core_ondisk.md a01bbd968f8946aa820fcd12972455b1
+msgid "Bit mask"
+msgstr "位掩码"
+
+#: ../../src/ondisk/core_ondisk.md f3dc8b15e1d84f0f98c270269c079806
+msgid "`0x00000001`"
+msgstr "`0x00000001`"
+
+#: ../../src/ondisk/core_ondisk.md 7240185bce3b4360ba821308d6438f82
+msgid "`EROFS_FEATURE_COMPAT_SB_CHKSUM`"
+msgstr "`EROFS_FEATURE_COMPAT_SB_CHKSUM`"
+
+#: ../../src/ondisk/core_ondisk.md 46edb92234f64f30af4a4bb64e05520f
+msgid "Superblock CRC32-C checksum is present; see {ref}`superblock-checksum`"
+msgstr "存在 superblock CRC32-C checksum；参见 {ref}`superblock-checksum`"
+
+#: ../../src/ondisk/core_ondisk.md 8c5797e75dbe4d7595bbd94a82c1030c
+msgid "`0x00000002`"
+msgstr "`0x00000002`"
+
+#: ../../src/ondisk/core_ondisk.md 387e1df6dd334c5ea1a5e6a6215cacb0
+msgid "`EROFS_FEATURE_COMPAT_MTIME`"
+msgstr "`EROFS_FEATURE_COMPAT_MTIME`"
+
+#: ../../src/ondisk/core_ondisk.md afc99004e287422e9d3ac67c785387f3
+msgid "Per-inode mtime is stored in extended inodes"
+msgstr "每个 inode 的 mtime 存储在 extended inode 中"
+
+#: ../../src/ondisk/core_ondisk.md:127 c009af569e8c4cebaacf6284590044a2
+msgid ""
+"For new filesystem builders, it is recommended to always set "
+"`EROFS_FEATURE_COMPAT_MTIME`, since it indicates that all inode "
+"timestamps record modification time (mtime) rather than change time "
+"(ctime)."
+msgstr "对于新的文件系统构建工具，建议始终设置 `EROFS_FEATURE_COMPAT_MTIME`，因为它表示所有 inode 时间戳记录的是修改时间（mtime）而非变更时间（ctime）。"
+
+#: ../../src/ondisk/core_ondisk.md:132 b90dfbadf8b04be8aecfa0d7d01f5733
+msgid "`feature_incompat` — Incompatible Feature Flags"
+msgstr "`feature_incompat` —— 不兼容特性标志"
+
+#: ../../src/ondisk/core_ondisk.md:134 6d8169cb9e0c4d088fd7b22e8621343f
+msgid ""
+"A runtime implementation that doesn't implement any feature implied by a "
+"bit in `feature_incompat` must refuse to mount the entire filesystem."
+msgstr "若运行时实现未实现 `feature_incompat` 中某位所暗示的任何特性，则必须拒绝挂载整个文件系统。"
+
+#: ../../src/ondisk/core_ondisk.md:137 824643eeb6b7470f96a331abdf4ad653
+msgid ""
+"The core on-disk format defines no incompatible feature flags. A non-zero"
+" `feature_incompat` value indicates one or more non-core feature "
+"extensions."
+msgstr "核心磁盘格式未定义任何不兼容特性标志。非零的 `feature_incompat` 值表示存在一个或多个非核心特性扩展。"
+
+#: ../../src/ondisk/core_ondisk.md:141 2cbe3a7c7c5c40b896a38538dfabf529
+msgid "`blocks` and `inos` Fields"
+msgstr "`blocks` 与 `inos` 字段"
+
+#: ../../src/ondisk/core_ondisk.md:143 6192db948c1f498da9131f038e8efb90
+msgid ""
+"The `blocks` and `inos` fields are primarily intended for `statvfs(3)` "
+"reporting. For dynamically generated EROFS filesystems, these fields can "
+"be set to `0`."
+msgstr "`blocks` 和 `inos` 字段主要用于 `statvfs(3)` 报告。对于动态生成的 EROFS 文件系统，这些字段可设为 `0`。"
+
+#: ../../src/ondisk/core_ondisk.md:147 42135f37995c47cc98876a9c010ec9aa
+msgid ""
+"Implementations should **not** use the `blocks` field to validate whether"
+" a block address or NID is valid. Such checks are unnecessary; malicious "
+"block addresses or NIDs will simply result in -EIO or reading corrupted "
+"(meta)data without causing any real harmful behaviors. Furthermore, a "
+"maliciously crafted image can easily bypass bounds checking by modifying "
+"the `blocks` field accordingly, making such validation meaningless."
+msgstr "实现**不应**使用 `blocks` 字段来验证块地址或 NID 是否有效。此类检查没有必要；恶意的块地址或 NID 只会导致 -EIO 或读取损坏的（元）数据，而不会造成任何真正的危害。此外，恶意构造的镜像可以通过相应修改 `blocks` 字段轻易绕过边界检查，使此类验证失去意义。"
+
+#: ../../src/ondisk/core_ondisk.md:155 570f29d16dd146879018e12bd70bd868
+msgid "Inodes"
+msgstr "Inodes"
+
+#: ../../src/ondisk/core_ondisk.md:157 225bf150a52b4998829661276a73eb2d
+msgid ""
+"Each on-disk inode must be aligned to a **32-byte inode slot** boundary, "
+"which is set to be kept in line with the compact inode size. Given a NID "
+"`nid`, its inode can be located in O(1) time by computing the absolute "
+"byte offset as follows:"
+msgstr "每个磁盘 inode 必须与 **32 字节 inode slot** 边界对齐，这与 compact inode 大小保持一致。给定 NID `nid`，可通过以下方式在 O(1) 时间内计算其绝对字节偏移来定位 inode："
+
+#: ../../src/ondisk/core_ondisk.md:165 e495d78da21a49b889e784f0133512b5
+msgid ""
+"The NIDs for the root directory and special-purpose inodes are stored in "
+"the superblock. Valid inode sizes are either **32 bytes** (compact) or "
+"**64 bytes** (extended), distinguished by bit 0 of the `i_format` field."
+msgstr "根目录和特殊用途 inode 的 NID 存储在 superblock 中。有效 inode 大小为 **32 字节**（compact）或 **64 字节**（extended），由 `i_format` 字段的第 0 位区分。"
+
+#: ../../src/ondisk/core_ondisk.md:169 52c2e67389384ed0b1c2d7a14fe20993
+msgid "Compact Inode (32 bytes)"
+msgstr "Compact Inode（32 字节）"
+
+#: ../../src/ondisk/core_ondisk.md:171 4a645281acdd4a8690b25f8036f10c32
+msgid ""
+"Defined as [`struct "
+"erofs_inode_compact`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/erofs/erofs_fs.h):"
+msgstr "定义见 [`struct erofs_inode_compact`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/erofs/erofs_fs.h)："
+
+#: ../../src/ondisk/core_ondisk.md:126 dc68bda22d9d4883b93814ca126bd40b
+#: dea6433d606043c9a90a876b32692df2
+msgid "`i_format`"
+msgstr "`i_format`"
+
+#: ../../src/ondisk/core_ondisk.md:126 8e8d834903d6451a88a15afb568123c3
+#: f6acfbee79a24d3ba5fd491760d3b115
+msgid "Inode format hints; see {ref}`i_format-field`"
+msgstr "Inode 格式提示；参见 {ref}`i_format-field`"
+
+#: ../../src/ondisk/core_ondisk.md:126 41f0ab37ecf448948725ff0134795e3a
+#: a52a2a666e29492cb01745b360e8ba42
+msgid "0x02"
+msgstr "0x02"
+
+#: ../../src/ondisk/core_ondisk.md:126 7b61100b20dc4127bbfb2e5f4414cbc1
+#: e46e0cedf48a43d582d2dbbf9cd0e272
+msgid "Xattr specific; must be 0 if no xattrs"
+msgstr "Xattr 专用；若无 xattr 必须为 0"
+
+#: ../../src/ondisk/core_ondisk.md:126 3b12e511d0754f5aa6cf95f4ab743973
+#: fa963dc1b7634174aea6a93502f134fc
+msgid "`i_mode`"
+msgstr "`i_mode`"
+
+#: ../../src/ondisk/core_ondisk.md:126 a143e9762ff04e338986518ddcda44f4
+#: abb3ad089d8c4cff9c42320603176abd
+msgid "File type and permission bits"
+msgstr "文件类型与权限位"
+
+#: ../../src/ondisk/core_ondisk.md:126 eabcc171f5c2419cb91caf4b63d71b3e
+#: ff840c0a77c04e65a4342cbf33e62053
+msgid "0x06"
+msgstr "0x06"
+
+#: ../../src/ondisk/core_ondisk.md:126 3a61da0c16054b2ca9a3a3e2855e6692
+#: 9d6341bc35d24a499d70b111bae77483
+msgid "`i_nlink`"
+msgstr "`i_nlink`"
+
+#: ../../src/ondisk/core_ondisk.md:126 4a3659648cbe41b9bc1dabe98ca69f23
+msgid "Hard link count"
+msgstr "硬链接计数"
+
+#: ../../src/ondisk/core_ondisk.md:126 dfafe7022a5e45c58e2174dee861fa14
+#: f8d0b67453bc44749acb19798de91f42
+msgid "`i_size`"
+msgstr "`i_size`"
+
+#: ../../src/ondisk/core_ondisk.md:126 128d5263d9914f36b4c17840a56f347c
+msgid "File size in bytes (32-bit)"
+msgstr "文件大小，以字节为单位（32 位）"
+
+#: ../../src/ondisk/core_ondisk.md:126 2918854ed4024b31af7d5af66cf0da01
+#: a3db12861daa4670b525bb24a357d931
+msgid "`i_u`"
+msgstr "`i_u`"
+
+#: ../../src/ondisk/core_ondisk.md:126 4459d6f1ee8d45488c09855008ebfc9a
+#: 80075537d56543c4b984bf78e1e84524
+msgid "Union; see {ref}`i_u-union`"
+msgstr "联合体；参见 {ref}`i_u-union`"
+
+#: ../../src/ondisk/core_ondisk.md:126 819bd052e3104a508cc9f0a231dfe480
+#: 94c4706c4c4649b8a09cb4cdc3936333
+msgid "0x14"
+msgstr "0x14"
+
+#: ../../src/ondisk/core_ondisk.md:126 12228635a0924a888b023c2a45a26b44
+#: aa24dfa022b8475a85fd8d73a76f9c08
+msgid "`i_ino`"
+msgstr "`i_ino`"
+
+#: ../../src/ondisk/core_ondisk.md:126 ddc28e2e5cd14c25b7728d1a1ecfcc17
+#: e468766d90c84b81b8cad3fac6aeaee4
+msgid "Inode serial number for 32-bit `stat(2)` compatibility"
+msgstr "用于兼容 32 位 `stat(2)` 的 inode 序列号"
+
+#: ../../src/ondisk/core_ondisk.md:126 0bd2c2195c6a4af083c2d1adddabfc82
+#: cc5e4f9e019a4a06babe88119e8bc8fc
+msgid "`i_uid`"
+msgstr "`i_uid`"
+
+#: ../../src/ondisk/core_ondisk.md:126 c9b120a9510c440ab31b3e3ce81e1d27
+msgid "Owner UID (16-bit)"
+msgstr "所有者 UID（16 位）"
+
+#: ../../src/ondisk/core_ondisk.md:126 2bcf846a6a0e4d2992d631149aa83676
+msgid "0x1A"
+msgstr "0x1A"
+
+#: ../../src/ondisk/core_ondisk.md:126 38c81fdca9384520b11a129946e62927
+#: f58e831c224f44758eac9aa651d510bd
+msgid "`i_gid`"
+msgstr "`i_gid`"
+
+#: ../../src/ondisk/core_ondisk.md:126 cf00e967f8064aa581e6c2eb270a8b36
+msgid "Owner GID (16-bit)"
+msgstr "所有者 GID（16 位）"
+
+#: ../../src/ondisk/core_ondisk.md:126 3051b911a23a4ec0a4ccaaccd5afb6ab
+#: cabfc743a10c4bd488d12660d17d28bc
+msgid "0x1C"
+msgstr "0x1C"
+
+#: ../../src/ondisk/core_ondisk.md:188 cd7e3e20512647f0a8f5100c7f77a027
+msgid "Modification Time in Compact Inodes"
+msgstr "Compact Inode 中的修改时间"
+
+#: ../../src/ondisk/core_ondisk.md:190 aebd941f72ed4424b035a9598388ecc6
+msgid ""
+"Due to space constraints, compact inodes cannot store a full 64-bit per-"
+"inode timestamp, let alone an additional nanosecond field. Consequently, "
+"when the 48-bit layout extension is unused, the effective timestamp for "
+"all compact inodes is `(epoch, fixed_nsec)`, which has been the case "
+"since Linux 5.4."
+msgstr "由于空间限制，compact inode 无法存储完整的 64-bit 单 inode 时间戳，更无法额外存储纳秒字段。因此，当未使用 48-bit 布局扩展时，所有 compact inode 的有效时间戳为 `(epoch, fixed_nsec)`，自 Linux 5.4 起一直如此。"
+
+#: ../../src/ondisk/core_ondisk.md:195 1ec1c5304b204e2b8e832d1cdb870be4
+msgid "Extended Inode (64 bytes)"
+msgstr "Extended Inode（64 字节）"
+
+#: ../../src/ondisk/core_ondisk.md:197 eccf25d651474dea99eb5583e8ab3b21
+msgid ""
+"Defined as [`struct "
+"erofs_inode_extended`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/erofs/erofs_fs.h):"
+msgstr "定义见 [`struct erofs_inode_extended`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/erofs/erofs_fs.h)："
+
+#: ../../src/ondisk/core_ondisk.md:126 b26f7ac865a64be29dec8ce0e2f707f3
+msgid "File size in bytes (64-bit)"
+msgstr "文件大小，以字节为单位（64 位）"
+
+#: ../../src/ondisk/core_ondisk.md:126 61788e3cf19249d19ded333f33737d4c
+msgid "Owner UID (32-bit)"
+msgstr "所有者 UID（32 位）"
+
+#: ../../src/ondisk/core_ondisk.md:126 c35570ec37cd4cd991172794b7e295be
+msgid "Owner GID (32-bit)"
+msgstr "所有者 GID（32 位）"
+
+#: ../../src/ondisk/core_ondisk.md:126 5e4689a11f55438d8bfe6d0064ccdadd
+msgid "`i_mtime`"
+msgstr "`i_mtime`"
+
+#: ../../src/ondisk/core_ondisk.md:126 ffd85ec4a62a461bbae55c0405c32b2a
+msgid "Modification time, seconds since UNIX epoch"
+msgstr "修改时间，自 UNIX epoch 起的秒数"
+
+#: ../../src/ondisk/core_ondisk.md:126 91d4f0a0acc0473db0950d3c245e4492
+msgid "`i_mtime_nsec`"
+msgstr "`i_mtime_nsec`"
+
+#: ../../src/ondisk/core_ondisk.md:126 b6e5b392885341bdb9fb38bfd411c744
+msgid "Nanoseconds component of `i_mtime`"
+msgstr "`i_mtime` 的纳秒分量"
+
+#: ../../src/ondisk/core_ondisk.md:126 eeafb9fbe11447dcb43e669ef3023106
+msgid "Hard link count (32-bit)"
+msgstr "硬链接计数（32 位）"
+
+#: ../../src/ondisk/core_ondisk.md:216 5c21b6062e384848a46662e4033ce11f
+msgid "`i_format` Field"
+msgstr "`i_format` 字段"
+
+#: ../../src/ondisk/core_ondisk.md:218 bb0203cc165c4f75969de9a423dc6804
+msgid ""
+"The `i_format` field is present at offset 0x00 in both inode variants and"
+" encodes layout metadata:"
+msgstr "`i_format` 字段位于两种 inode 变体的偏移 0x00 处，用于编码布局元数据："
+
+#: ../../src/ondisk/core_ondisk.md:126 72995b3549284db7aef05708d06bb3da
+msgid "Bits"
+msgstr "位"
+
+#: ../../src/ondisk/core_ondisk.md:126 2f05da7f4c2f4aac828d8cd4fc8588dd
+msgid "Width"
+msgstr "宽度"
+
+#: ../../src/ondisk/core_ondisk.md:126 c2df9dbf320044ad86d5db76456d8c68
+msgid "Inode version: 0 = compact (32-byte), 1 = extended (64-byte)"
+msgstr "Inode 版本：0 = compact（32 字节），1 = extended（64 字节）"
+
+#: ../../src/ondisk/core_ondisk.md:126 a5721f8320e54c8b80baa9ff9522197d
+msgid "1–3"
+msgstr "1–3"
+
+#: ../../src/ondisk/core_ondisk.md:126 ../../src/ondisk/core_ondisk.md:268
+#: 810738a158bc4d34ae1125f819472664 8f7b8ff1d53f411bae2a277e1b13b3fe
+msgid "3"
+msgstr "3"
+
+#: ../../src/ondisk/core_ondisk.md:126 158c4b7d9d334ac88d37eb629682164d
+msgid ""
+"Data layout: values 0–4 are defined; 5–7 are reserved. See "
+"{ref}`inode_data_layouts`"
+msgstr "数据布局：0–4 为已定义值，5–7 为保留值。参见 {ref}`inode_data_layouts`"
+
+#: ../../src/ondisk/core_ondisk.md:126 46de5e9df3d748aa91d51e7a35140c9f
+msgid "5–15"
+msgstr "5–15"
+
+#: ../../src/ondisk/core_ondisk.md:126 3e43a4f995044932ac37881d51a88d2f
+msgid "11"
+msgstr "11"
+
+#: ../../src/ondisk/core_ondisk.md:229 0a35dcca95784250b8e324c6592b784c
+msgid ""
+"When bits 1–3 contain reserved values (5–7), the inode uses an "
+"unsupported data layout. Implementations must reject such inodes and "
+"return an appropriate error (e.g., \"not supported\"). This typically "
+"indicates a maliciously crafted or corrupted image."
+msgstr "当第 1–3 位包含保留值（5–7）时，该 inode 使用了不支持的数据布局。实现必须拒绝此类 inode 并返回适当的错误（例如“not supported”）。这通常表示镜像被恶意构造或已损坏。"
+
+#: ../../src/ondisk/core_ondisk.md:236 73d459ce60b74ead9763017dbe88b96c
+msgid "`i_u` Union"
+msgstr "`i_u` 联合体"
+
+#: ../../src/ondisk/core_ondisk.md:238 ce1c3e8afc7347b6963cb5226453382a
+msgid ""
+"The `i_u` field (4 bytes at offset 0x10) is interpreted based on the data"
+" layout:"
+msgstr "`i_u` 字段（偏移 0x10 处的 4 字节）根据数据布局进行解释："
+
+#: ../../src/ondisk/core_ondisk.md:228 ec7b0946957b4432b02d4c5a641ad50c
+msgid "Applicable when"
+msgstr "适用情况"
+
+#: ../../src/ondisk/core_ondisk.md:228 d4e7e0d4d1b04f63ba30f06ab26a6502
+msgid "`i_u.startblk`"
+msgstr "`i_u.startblk`"
+
+#: ../../src/ondisk/core_ondisk.md:228 4851724315b846a8a4c05540823caa7d
+msgid "Flat inodes"
+msgstr "Flat inode"
+
+#: ../../src/ondisk/core_ondisk.md:228 407808ba7d4a467da86347072972e2e3
+msgid "Starting block number"
+msgstr "起始块号"
+
+#: ../../src/ondisk/core_ondisk.md:228 fc1b33a6749248d9b4c675ccadaabbea
+msgid "`i_u.rdev`"
+msgstr "`i_u.rdev`"
+
+#: ../../src/ondisk/core_ondisk.md:228 a358e00b41b844478e7ac60114d1eaa7
+msgid "Character/block device inodes"
+msgstr "字符/块设备 inode"
+
+#: ../../src/ondisk/core_ondisk.md:228 ec95ab0911834279bfc3dac27e6d708b
+msgid "Device ID"
+msgstr "设备 ID"
+
+#: ../../src/ondisk/core_ondisk.md:246 16d88bb594ba4d3bb1bd56e384336d9b
+msgid "Inode Data Layouts"
+msgstr "Inode 数据布局"
+
+#: ../../src/ondisk/core_ondisk.md:248 b42107aaef8642af862e41413ceb7072
+msgid ""
+"The data layout of an inode is encoded in bits 1–3 of `i_format`. The "
+"core format defines two flat layouts."
+msgstr "inode 的数据布局编码在 `i_format` 的第 1–3 位中。核心格式定义了两种 flat 布局。"
+
+#: ../../src/ondisk/core_ondisk.md:251 6dac1858df5b4a91b81ffb2e9043b722
+msgid "`EROFS_INODE_FLAT_PLAIN` (0)"
+msgstr "`EROFS_INODE_FLAT_PLAIN` (0)"
+
+#: ../../src/ondisk/core_ondisk.md:253 ../../src/ondisk/core_ondisk.md:260
+#: 8cc3ad402a504f9b90d2c41f161c84c2 c85a1870dadf4889a1a6000df659c7ad
+msgid "`i_u` is interpreted as `startblk` (the 32-bit starting block address)."
+msgstr "`i_u` 被解释为 `startblk`（32 位起始块地址）。"
+
+#: ../../src/ondisk/core_ondisk.md:255 2a206c8df7f24e6594c6bc9fa7c7e530
+msgid ""
+"The inode's data lies in consecutive blocks starting from that address, "
+"occupying `ceil(i_size / block_size)` consecutive blocks."
+msgstr "inode 的数据从该地址开始存放在连续块中，占用 `ceil(i_size / block_size)` 个连续块。"
+
+#: ../../src/ondisk/core_ondisk.md:258 eea16d39a11b4402974611bbccbfb82a
+msgid "`EROFS_INODE_FLAT_INLINE` (2)"
+msgstr "`EROFS_INODE_FLAT_INLINE` (2)"
+
+#: ../../src/ondisk/core_ondisk.md:262 a153c3f2d9d147abbfafb96fab4b75b3
+msgid ""
+"The inode's data lies in consecutive blocks starting from that address, "
+"except for the tail part (`i_size % block_size`) that is inlined in the "
+"block immediately following the inode metadata. If `i_size` is small "
+"enough that the entire content fits in the inline tail, there are no "
+"preceding blocks and `i_u` is a don't-care field."
+msgstr "inode 的数据从该地址开始存放在连续块中，但尾部（`i_size % block_size`）内联在 inode 元数据之后的块中。若 `i_size` 足够小，整个内容都能放入内联尾部，则不存在前置块，且 `i_u` 为 don't-care 字段。"
+
+#: ../../src/ondisk/core_ondisk.md:269 a49e135218d64fc3bd91c7a5364c15e8
+msgid ""
+"This layout is not allowed if the tail inode data block cannot be inlined"
+" (e.g., if inlining the tail data would cause the inode to cross a "
+"physical block boundary)."
+msgstr "如果尾部 inode 数据块无法内联，则不允许使用此布局（例如，内联尾部数据会导致 inode 跨越 physical block 边界）。"
+
+#: ../../src/ondisk/core_ondisk.md:275 fdb356a79f764742b5f9fb2e98a1d248
+msgid "Directories"
+msgstr "Directories"
+
+#: ../../src/ondisk/core_ondisk.md:277 40442dda62864989be2daefc53e258e6
+msgid ""
+"All on-disk directories are organized in the form of **directory blocks**"
+" of size `2^(blkszbits + dirblkbits)`. `dirblkbits` is strictly 0 for "
+"now."
+msgstr "所有磁盘 directory 都以大小为 `2^(blkszbits + dirblkbits)` 的 **directory block** 形式组织。目前 `dirblkbits` 严格为 0。"
+
+#: ../../src/ondisk/core_ondisk.md:280 7c2bce74487648bebdae3f83a8e8e1d2
+msgid "Directory Block Structure"
+msgstr "Directory Block 结构"
+
+#: ../../src/ondisk/core_ondisk.md:282 bcfcc9de7c5844559f867e576f1a8715
+msgid "Each directory block is divided into two contiguous regions:"
+msgstr "每个 directory block 分为两个连续区域："
+
+#: ../../src/ondisk/core_ondisk.md:284 26d9d9dd7ad84d35881e6a57fc00eb77
+msgid ""
+"An array of fixed-size directory entry records starting from the "
+"beginning of the block."
+msgstr "从块起始位置开始的固定大小 directory entry 记录数组。"
+
+#: ../../src/ondisk/core_ondisk.md:286 6d516d8cf411443781d2ceffc1bc7df5
+msgid "Variable-length filename strings following the directory entry array."
+msgstr "紧跟 directory entry 数组之后的变长文件名字符串。"
+
+#: ../../src/ondisk/core_ondisk.md:288 4fd05d2238a94be5a7b7efe46d0a54d8
+msgid ""
+"The `nameoff` field of the **first** entry in a block indicates the total"
+" number of directory entries in that block:"
+msgstr "块中**第一个**条目的 `nameoff` 字段表示该块中 directory entry 的总数："
+
+#: ../../src/ondisk/core_ondisk.md:295 4dc0e717875b441590870571a9d25f42
+msgid ""
+"All entries within a directory block, including `.` and `..`, are stored "
+"in strict **lexicographic (byte-value ascending) order** to enable an "
+"improved prefix binary search algorithm."
+msgstr "directory block 中的所有条目（包括 `.` 和 `..`）都按严格的**字典序（字节值升序）**存储，以便实现改进的前缀二分搜索算法。"
+
+#: ../../src/ondisk/core_ondisk.md:299 7fc7d53d86b84a069a81a0a5d368958a
+msgid "Directory Entry Record"
+msgstr "Directory Entry 记录"
+
+#: ../../src/ondisk/core_ondisk.md:301 723ef642f6424feaa6af2b0972cb34f7
+msgid ""
+"Defined as [`struct "
+"erofs_dirent`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/erofs/erofs_fs.h):"
+msgstr "定义见 [`struct erofs_dirent`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/erofs/erofs_fs.h)："
+
+#: ../../src/ondisk/core_ondisk.md:268 cd7a35d7af564022ab22f2526105ebd0
+msgid "`nid`"
+msgstr "`nid`"
+
+#: ../../src/ondisk/core_ondisk.md:268 070a034a70d44eabb11d0339fa62a9b3
+msgid "Node number of the target inode"
+msgstr "目标 inode 的节点号"
+
+#: ../../src/ondisk/core_ondisk.md:268 6e00b701624a412aab4b30f63eee6357
+msgid "`nameoff`"
+msgstr "`nameoff`"
+
+#: ../../src/ondisk/core_ondisk.md:268 12a3b929819c4e35a2875b9a7dfa554b
+msgid "Byte offset of the filename within this directory block"
+msgstr "文件名在该 directory block 内的字节偏移"
+
+#: ../../src/ondisk/core_ondisk.md:268 3e572ec459a048708f1275b633b3e583
+msgid "0x0A"
+msgstr "0x0A"
+
+#: ../../src/ondisk/core_ondisk.md:268 db718f3aee89421a935ebbebdcc1c40f
+msgid "`file_type`"
+msgstr "`file_type`"
+
+#: ../../src/ondisk/core_ondisk.md:268 7936417429ee43768c3558c11c425eca
+msgid "File type code (see below)"
+msgstr "文件类型代码（见下文）"
+
+#: ../../src/ondisk/core_ondisk.md:268 ae9dfc94df1e4fde88aeb3884cf26081
+msgid "0x0B"
+msgstr "0x0B"
+
+#: ../../src/ondisk/core_ondisk.md:310 d59c73d16477432c90f75a235024137d
+msgid "`file_type` Values"
+msgstr "`file_type` 取值"
+
+#: ../../src/ondisk/core_ondisk.md:268 5b5228308614444dba807c4797b6df21
+msgid "Value"
+msgstr "值"
+
+#: ../../src/ondisk/core_ondisk.md:268 960d51602bf843b2b878441b258247c6
+msgid "Constant"
+msgstr "常量"
+
+#: ../../src/ondisk/core_ondisk.md:268 fdeb675c37de4f58bff3834eb416c495
+msgid "POSIX type"
+msgstr "POSIX 类型"
+
+#: ../../src/ondisk/core_ondisk.md:268 46d66c22ccb94b24846ed29962cfa711
+msgid "`EROFS_FT_UNKNOWN`"
+msgstr "`EROFS_FT_UNKNOWN`"
+
+#: ../../src/ondisk/core_ondisk.md:268 b2803a49645c45498ff3b5b753f269a2
+msgid "Unknown"
+msgstr "未知"
+
+#: ../../src/ondisk/core_ondisk.md:268 a2f703f07c5e4afebfa437b2f0c6e7e5
+msgid "`EROFS_FT_REG_FILE`"
+msgstr "`EROFS_FT_REG_FILE`"
+
+#: ../../src/ondisk/core_ondisk.md:268 c47ce705e85e4738b37bf7649965e6f3
+msgid "Regular file"
+msgstr "普通文件"
+
+#: ../../src/ondisk/core_ondisk.md:268 6f83d24672df415b814badbbf11df077
+msgid "`EROFS_FT_DIR`"
+msgstr "`EROFS_FT_DIR`"
+
+#: ../../src/ondisk/core_ondisk.md:268 781a42a401414726aa2219dc7497e198
+msgid "Directory"
+msgstr "目录"
+
+#: ../../src/ondisk/core_ondisk.md:268 5b5b277d52744ed59eb1b5aaa880538c
+msgid "`EROFS_FT_CHRDEV`"
+msgstr "`EROFS_FT_CHRDEV`"
+
+#: ../../src/ondisk/core_ondisk.md:268 46e42cb60c2f438bbf860a403830c49c
+msgid "Character device"
+msgstr "字符设备"
+
+#: ../../src/ondisk/core_ondisk.md:268 94682a5e90a34bdc9641832133bdb09b
+msgid "`EROFS_FT_BLKDEV`"
+msgstr "`EROFS_FT_BLKDEV`"
+
+#: ../../src/ondisk/core_ondisk.md:268 b8f0eb2d561245a081e22e499a1e9850
+msgid "Block device"
+msgstr "块设备"
+
+#: ../../src/ondisk/core_ondisk.md:268 c6511214742c45a2939e555a13f37a1a
+msgid "`EROFS_FT_FIFO`"
+msgstr "`EROFS_FT_FIFO`"
+
+#: ../../src/ondisk/core_ondisk.md:268 e8ad8cab198e4be1bdf1d87a2a016856
+msgid "FIFO"
+msgstr "FIFO"
+
+#: ../../src/ondisk/core_ondisk.md:268 bccdbbc3c60c425b967938ec297fb445
+msgid "6"
+msgstr "6"
+
+#: ../../src/ondisk/core_ondisk.md:268 070b0464c1774e60bd05a15f92dc3314
+msgid "`EROFS_FT_SOCK`"
+msgstr "`EROFS_FT_SOCK`"
+
+#: ../../src/ondisk/core_ondisk.md:268 0771072f3ef34e98b1b3772173b6090b
+msgid "Socket"
+msgstr "套接字"
+
+#: ../../src/ondisk/core_ondisk.md:268 2f8291c9e5ed482398889589a6ed7143
+msgid "7"
+msgstr "7"
+
+#: ../../src/ondisk/core_ondisk.md:268 0d9c75e3185b496280a7846d84fe52de
+msgid "`EROFS_FT_SYMLINK`"
+msgstr "`EROFS_FT_SYMLINK`"
+
+#: ../../src/ondisk/core_ondisk.md:268 fc8ff606f6374434bac8b1323eda4710
+msgid "Symbolic link"
+msgstr "符号链接"
+
+#: ../../src/ondisk/core_ondisk.md:323 a6a0e94051d64ef69c93db9eb0d18a13
+msgid "Filename Encoding"
+msgstr "Filename 编码"
+
+#: ../../src/ondisk/core_ondisk.md:325 61276b282c7b48b0956e141d7c250f9f
+msgid ""
+"Filenames are not null-terminated (`\\0`) except for the last one in each"
+" directory block. For each directory block, if the last filename doesn't "
+"reach up to the end of the block, the remaining bytes must start with "
+"`0x00`."
+msgstr "除每个 directory block 中的最后一个文件名外，文件名不以空字符（`\\0`）结尾。对于每个 directory block，若最后一个文件名未延伸至块末尾，则剩余字节必须以 `0x00` 开头。"
+
+#: ../../src/ondisk/core_ondisk.md:329 aca6101ecb72408898c354544674699b
+msgid "So the length of entry `i` is derived as:"
+msgstr "因此，条目 `i` 的长度按如下方式推导："
+
+#: ../../src/ondisk/core_ondisk.md:331 af43ff5179764f08ac3fc67815a3d4ca
+msgid "For all entries except the last: `nameoff[i+1] − nameoff[i]`."
+msgstr "对于除最后一个以外的所有条目：`nameoff[i+1] − nameoff[i]`。"
+
+#: ../../src/ondisk/core_ondisk.md:332 23d65912f729485f9efabf50832816a4
+msgid ""
+"For the last entry in the block: `strnlen(filename, block_end − "
+"nameoff[last])`."
+msgstr "对于块中最后一个条目：`strnlen(filename, block_end − nameoff[last])`。"
+
+#: ../../src/ondisk/core_ondisk.md:334 2d16092b5a334693ada702c50ece3783
+msgid "No character encoding is mandated; UTF-8 is recommended."
+msgstr "不强制要求字符编码；推荐使用 UTF-8。"
+
+#: ../../src/ondisk/core_ondisk.md:338 7811b00eb43b4c5d8661f5eb655b7f84
+msgid ""
+"Other alternative forms (e.g., `Eytzinger order`) were also considered "
+"(that is why there was once "
+"[.*_classic](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/erofs/namei.c?h=v5.4#n90)"
+" naming). Here are some reasons those forms were not supported:"
+msgstr "也曾考虑过其他替代形式（例如 `Eytzinger order`），这也是曾经有过 [.*_classic](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/erofs/namei.c?h=v5.4#n90) 命名方式的原因）。以下是这些形式未被支持的一些原因："
+
+#: ../../src/ondisk/core_ondisk.md:342 f2b864c3bc4345608f8f09941eb426b8
+msgid ""
+"Filenames are variable-sized strings, which makes `Eytzinger order` "
+"harder to utilize unless `namehash` is also introduced, but that "
+"complicates the overall implementation and expands directory sizes."
+msgstr "文件名是变长字符串，除非同时引入 `namehash`，否则很难利用 `Eytzinger order`，但这会使整体实现复杂化并增大 directory 大小。"
+
+#: ../../src/ondisk/core_ondisk.md:346 fd3834bdeaca4b568301c27f759d7c27
+msgid ""
+"It is harder to keep filenames and directory entries in the same "
+"directory block (especially _large directories_) to minimize I/O "
+"amplification."
+msgstr "难以将文件名和 directory entry 保持在同一个 directory block 中（尤其是_大目录_），从而最小化 I/O 放大。"
+
+#: ../../src/ondisk/core_ondisk.md:349 e4835c1c03d24653bcfcf29c2cbabbbf
+msgid ""
+"`readdir(3)` would be impacted too if strict alphabetical order were "
+"required."
+msgstr "若要求严格按字母顺序排列，`readdir(3)` 也会受到影响。"
+
+#: ../../src/ondisk/core_ondisk.md:351 0f0d26f681784c288b220f3c68f50b83
+msgid ""
+"If there are better ideas to resolve these, the on-disk definition could "
+"be updated in the future."
+msgstr "若有更好的方案解决这些问题，未来可对磁盘定义进行更新。"
+

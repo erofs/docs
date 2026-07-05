@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/ondisk/index.md:2 ba3bcb240f3440878fbbcda2bb049c5c
+msgid "EROFS On-disk Format"
+msgstr "EROFS 磁盘格式"
+
+#: ../../src/ondisk/index.md:4 412f1ea16c4a4d1d8a49ca1e291dc293
+msgid ""
+"EROFS uses a flexible, hierarchical, block-aligned on-disk layout that is"
+" built with the following goals:"
+msgstr ""
+"EROFS 采用灵活、分层、块对齐的磁盘布局，"
+"其设计目标如下："
+
+#: ../../src/ondisk/index.md:7 c604eb1e787641bbb21498c904bf81e5
+msgid ""
+"DMA- and mmap-friendly, block-aligned data to maximize runtime "
+"performance on all kinds of storage devices;"
+msgstr ""
+"支持 DMA 和 mmap 的、块对齐的数据，以在各类存储设备上"
+"最大化运行时性能；"
+
+#: ../../src/ondisk/index.md:9 bdc678e5296b4fef88822437cb3d4b5c
+msgid ""
+"A simple core on-disk format that is easy to parse and has zero "
+"unnecessary metadata redundancy for archive use unlike other generic "
+"filesystems, ideal for data auditing and accessing remote untrusted data;"
+msgstr ""
+"一种简洁的核心磁盘格式，易于解析，且不像其他通用文件系统那样"
+"为归档用途保留任何不必要的元数据冗余，"
+"非常适合数据审计和访问远程不可信数据；"
+
+#: ../../src/ondisk/index.md:12 ec9e362c850c4b3284b5c5ee5ea079eb
+msgid ""
+"Advanced on-disk features like compression (compressed inodes and "
+"metadata compression) are completely optional and aren’t mixed with the "
+"core design: you can use them only when needed."
+msgstr ""
+"压缩之类的高级磁盘特性（包括压缩 inode 与元数据压缩）完全可选，"
+"且不与核心设计混杂：仅在需要时使用。"
+
+#: ../../src/ondisk/index.md:16 672b443616b74da3a0250c8d2e999670
+msgid ""
+"The entire filesystem tree is built from just three core on-disk "
+"structures:"
+msgstr "整个文件系统树仅由三种核心磁盘结构构成："
+
+#: ../../src/ondisk/index.md:18 05b34717ae984999a3b81562263a8291
+msgid ""
+"**Superblock** — located at a fixed offset of 1024 bytes; the only "
+"structure at a fixed position in the filesystem."
+msgstr ""
+"**Superblock** — 位于 1024 字节的固定偏移处，是文件系统中唯一"
+"处于固定位置的结构。"
+
+#: ../../src/ondisk/index.md:20 53ebed62fc264965a337d8cf781fe425
+msgid ""
+"**Compact/Extended inodes** — per regular file, device, symlink, or "
+"directory; addressed in O(1) time via a simple NID-to-offset formula."
+msgstr ""
+"**Compact/Extended inodes** — 每个普通文件、设备、符号链接或目录各一个；"
+"通过简单的 NID-to-offset 公式以 O(1) 时间寻址。"
+
+#: ../../src/ondisk/index.md:22 194d0d28be2c472882c10ae18a9efbb0
+msgid ""
+"**Directory entries** — 12-byte records, sorted lexicographically by "
+"filename at the beginning of each directory block (each data block of a "
+"directory inode)."
+msgstr ""
+"**Directory entries** — 12 字节记录，按文件名字典序排序，"
+"位于每个目录块（即目录 inode 的每个数据块）的开头。"
+
+#: ../../src/ondisk/index.md:25 56f9b1bb639f4e729adcd93657a3822e
+msgid "Optional features extend this foundation without breaking the core design:"
+msgstr "可选特性在不破坏核心设计的前提下扩展了这一基础："
+
+#: ../../src/ondisk/index.md:27 bfed7ff8e78144f0b1d0d34555383f5b
+msgid ""
+"**{doc}`Extended attributes (xattrs) <xattrs>`** support per-inode "
+"metadata. Several mechanisms — including a shared xattr pool, long prefix"
+" tables, and a per-inode Bloom filter — keep storage overhead low even "
+"when xattrs are used extensively."
+msgstr ""
+"**{doc}`扩展属性（xattrs）<xattrs>`** 支持 per-inode 元数据。"
+"包括共享 xattr 池、长前缀表和 per-inode Bloom filter 在内的多种机制，"
+"即使在大量使用 xattrs 时也能保持较低的存储开销。"
+
+#: ../../src/ondisk/index.md:31 9740471db2d343c999bab7f60302af79
+msgid ""
+"**{doc}`Chunk-based layout <chunked_format>`** splits large files into "
+"fixed-size, independently-addressed chunks, enabling cross-file "
+"deduplication and multi-device storage."
+msgstr ""
+"**{doc}`分块布局 <chunked_format>`** 将大文件拆分为固定大小、独立寻址的块，"
+"从而实现跨文件去重与多设备存储。"

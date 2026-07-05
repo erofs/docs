@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/comparison/dedupe.md:1 e4a18373ba3a45dc960ee2fbbbe6af0e
+msgid "Deduplication among versions"
+msgstr "版本间去重"
+
+#: ../../src/comparison/dedupe.md:3 827dc40eeaff4f9eacf276a9215cfc59
+msgid "Minor container image updates"
+msgstr "容器镜像的小幅更新"
+
+#: ../../src/comparison/dedupe.md:5 5e2a10d1b7ba4e21a9a8f3eb29182594
+msgid ""
+"Examine 10 versions of ubuntu:jammy from [Docker "
+"Hub](https://hub.docker.com/_/ubuntu), specifically "
+"jammy-{20221130,20230126,20230301,20230308,20230425,20230522,20230605,20230624,20230804,20230816};"
+msgstr "查看 [Docker Hub](https://hub.docker.com/_/ubuntu) 上 ubuntu:jammy 的 10 个版本，分别为 jammy-{20221130,20230126,20230301,20230308,20230425,20230522,20230605,20230624,20230804,20230816};"
+
+#: ../../src/comparison/dedupe.md:8 6f1acb8a7a694deca0defa56da80ba5f
+msgid "These images only have one layer which is in the tar.gz format;"
+msgstr "这些镜像仅有一个层，采用 tar.gz 格式；"
+
+#: ../../src/comparison/dedupe.md:10 815753ded43141059bc4005d2a164406
+msgid ""
+"Uncompressed EROFS images are built with `-Ededupe` and compressed EROFS "
+"images are built with `-Ededupe,all-fragments` and LZ4HC, DEFLATE "
+"algorithms."
+msgstr "未压缩的 EROFS 镜像使用 `-Ededupe` 构建，压缩的 EROFS 镜像则使用 `-Ededupe,all-fragments` 与 LZ4HC、DEFLATE 算法构建。"
+
+#: ../../src/comparison/dedupe.md a3af943141184cbba03fae6698029574
+msgid "Total Size (MiB)"
+msgstr "总大小（MiB）"
+
+#: ../../src/comparison/dedupe.md 7517998f3c8e4ef48b063c6f9262900e
+msgid "Average layer size (MiB)"
+msgstr "平均层大小（MiB）"
+
+#: ../../src/comparison/dedupe.md 8efbee82c1254466bdddd1b71470424a
+msgid "Saved / 766.1MiB"
+msgstr "节省 / 766.1MiB"
+
+#: ../../src/comparison/dedupe.md 8040f9b63ec84e97a5c87be23507503f
+msgid "Compressed OCI (tar.gz)"
+msgstr "压缩 OCI（tar.gz）"
+
+#: ../../src/comparison/dedupe.md e724f7a070f649aab8075567e090fbc2
+msgid "282.5"
+msgstr "282.5"
+
+#: ../../src/comparison/dedupe.md 8e7c2d86ea5c4fbb977fd8d40662be5c
+msgid "28.3"
+msgstr "28.3"
+
+#: ../../src/comparison/dedupe.md 2d6d95e8710b4db39e0264a14a0e0450
+msgid "63%"
+msgstr "63%"
+
+#: ../../src/comparison/dedupe.md 629ab2e263f844769b15554ef7be1bf4
+msgid "Uncompressed OCI (tar)"
+msgstr "未压缩 OCI（tar）"
+
+#: ../../src/comparison/dedupe.md 3aa9a0ce81d24f57a22dfbd4e240bd5e
+msgid "766.1"
+msgstr "766.1"
+
+#: ../../src/comparison/dedupe.md 4c90cbcd8844473ab12eb4b5bd406562
+msgid "76.6"
+msgstr "76.6"
+
+#: ../../src/comparison/dedupe.md 8d4efc8ba25948cc87adaebdc9dcf4bf
+#: 8f98088070ed4d25b552a86d25d448d1
+msgid "0%"
+msgstr "0%"
+
+#: ../../src/comparison/dedupe.md 561f14c69e6b48719ad5f2a8cc0611b9
+msgid "Uncompressed EROFS"
+msgstr "未压缩 EROFS"
+
+#: ../../src/comparison/dedupe.md 5e68b9dcb9364bf59ba285f762308499
+msgid "109.5"
+msgstr "109.5"
+
+#: ../../src/comparison/dedupe.md 84a681880e474f79b1d0545f183001a0
+msgid "11.0"
+msgstr "11.0"
+
+#: ../../src/comparison/dedupe.md e425f8c8ec9e42faba4ca73827f4ebcc
+msgid "86%"
+msgstr "86%"
+
+#: ../../src/comparison/dedupe.md e2105e4e10b544aca8ba7b389f0a1054
+msgid "EROFS (DEFLATE,9,32k)"
+msgstr "EROFS (DEFLATE,9,32k)"
+
+#: ../../src/comparison/dedupe.md 6fb49f600435489b8d6a2b5fcfb570df
+msgid "46.4"
+msgstr "46.4"
+
+#: ../../src/comparison/dedupe.md 288f20b77ec642e39fa8b96a9207383d
+msgid "4.6"
+msgstr "4.6"
+
+#: ../../src/comparison/dedupe.md 12491dc8b2794857bfba0f2e849782ca
+#: 47142f772f0146cf91178119878f8f7d
+msgid "94%"
+msgstr "94%"
+
+#: ../../src/comparison/dedupe.md d162e02ac78b4f77bfcd76dac361059f
+msgid "EROFS (LZ4HC,12,64k)"
+msgstr "EROFS (LZ4HC,12,64k)"
+
+#: ../../src/comparison/dedupe.md 2f80d4c1fdc341b0ae5a1cc0ccc75206
+msgid "54.2"
+msgstr "54.2"
+
+#: ../../src/comparison/dedupe.md 9883944fcd864f4593570c7038a9449d
+msgid "5.4"
+msgstr "5.4"
+
+#: ../../src/comparison/dedupe.md 53495c8444e5432e902d2c99893b951c
+#: e1fab671124841f78eaeccc5b3bc8ad0
+msgid "93%"
+msgstr "93%"
+
+#: ../../src/comparison/dedupe.md 101fb3b1c83a4469be1ce5bd473abbde
+msgid "SquashFS (GZIP,9,128k,-noI [^1])"
+msgstr "SquashFS (GZIP,9,128k,-noI [^1])"
+
+#: ../../src/comparison/dedupe.md 51fab67752744f4c885e7afd3af53cfc
+msgid "47.0"
+msgstr "47.0"
+
+#: ../../src/comparison/dedupe.md 8ff9298cd44542a783254656f01ada2d
+msgid "4.7"
+msgstr "4.7"
+
+#: ../../src/comparison/dedupe.md 571ba7be86b04ec3b38824fa67d0eea1
+msgid "SquashFS (LZ4HC,12,128k,-noI)"
+msgstr "SquashFS (LZ4HC,12,128k,-noI)"
+
+#: ../../src/comparison/dedupe.md b459f576b4b144ab8dfdf779249cdde0
+msgid "54.7"
+msgstr "54.7"
+
+#: ../../src/comparison/dedupe.md e972659f18a84f1facc0e93b39168487
+msgid "5.5"
+msgstr "5.5"
+
+#: ../../src/comparison/dedupe.md:26 7ac760a279e8428cbb8f68be4271bf59
+msgid ""
+"It shows that EROFS gets **smaller sizes** even with smaller compression "
+"granularity."
+msgstr "结果表明，即使压缩粒度更小，EROFS 也能获得**更小的体积**。"
+
+#: ../../src/comparison/dedupe.md:29 078633bf6858478b8da49447565abaa0
+msgid "[Wikipedia](https://en.wikipedia.org) snapshots"
+msgstr "[Wikipedia](https://en.wikipedia.org) 快照"
+
+#: ../../src/comparison/dedupe.md:31 252ae508bd4a4f13b530180a7f275ddd
+msgid ""
+"Two [snapshots](https://dumps.wikimedia.org/enwiki) were selected: "
+"`20230201` and `20230220`:"
+msgstr "选定了两个[快照](https://dumps.wikimedia.org/enwiki)：`20230201` 和 `20230220`："
+
+#: ../../src/comparison/dedupe.md:34 f74e6505d1c14ee1ac68a8659cec7d6a
+msgid "Each snapshot included the first 100 pages at that time."
+msgstr "每个快照都包含当时的前 100 个页面。"
+
+#: ../../src/comparison/dedupe.md:36 95d5d7370b624724ae1082d6060522f0
+msgid "There was 20-day difference between each other."
+msgstr "两者相隔 20 天。"
+
+#: ../../src/comparison/dedupe.md 21f631a93bcb4936b3d50e93db59c296
+#: f4c64c85648d4441ace7652dc78e967d
+msgid "Deduped?"
+msgstr "已去重？"
+
+#: ../../src/comparison/dedupe.md d15cd1bd4116439a9f8b9874d9f5a063
+msgid "Size (MiB)"
+msgstr "大小（MiB）"
+
+#: ../../src/comparison/dedupe.md bb9dec815ede4a41af4a897dc56e7583
+msgid "Saved / 1888MiB"
+msgstr "节省 / 1888MiB"
+
+#: ../../src/comparison/dedupe.md cb4e44c1e16d4ea68e846bd688f19d0d
+msgid "Uncompressed text"
+msgstr "未压缩文本"
+
+#: ../../src/comparison/dedupe.md 2dd783a47d7e4eefb339f84c7e0d383b
+#: 5b95a573be20404cb645f89bedf8c3fa 652a10b64eda492db8fd60015cb4cc9a
+#: 673a56d628274f5e9a1936058284714f 70c33c3ea6d44f59b24bc3fc70c09c8e
+#: 79b994e56fda432bb07bbe5486055524 7f2512b71fc4404598f6327791a29bcd
+#: a2f15228a6c14e419e12219efc7341d7 db4b7725932a4de1a2e982b857ad7c9f
+msgid "No"
+msgstr "否"
+
+#: ../../src/comparison/dedupe.md c6d8a398ebd24abc95af091b34fa5b19
+msgid "1888"
+msgstr "1888"
+
+#: ../../src/comparison/dedupe.md 13290b6d06c04cbd837ef37f5afcb85e
+msgid "SquashFS [4k] [^2]"
+msgstr "SquashFS [4k] [^2]"
+
+#: ../../src/comparison/dedupe.md 316e61ae8e1742069e2b5f4980105823
+msgid "1235"
+msgstr "1235"
+
+#: ../../src/comparison/dedupe.md cd191c8f1ece416b945ee8cfebbb0f9d
+msgid "34.6%"
+msgstr "34.6%"
+
+#: ../../src/comparison/dedupe.md 5e34e0ca739b42b8bed591e95cf07db0
+#: a3ade7486fb9441c819c28b4b894da2e
+msgid "EROFS [4k, _default_]"
+msgstr "EROFS [4k, _default_]"
+
+#: ../../src/comparison/dedupe.md b0c4a7b63cf54385ae89578f92d66059
+msgid "1201"
+msgstr "1201"
+
+#: ../../src/comparison/dedupe.md 2a8cb71c9c10424b8663db546330d9d2
+msgid "36.4%"
+msgstr "36.4%"
+
+#: ../../src/comparison/dedupe.md 7b0f7b834ce7407fafcc5e08dd519ce4
+msgid "SquashFS [8k]"
+msgstr "SquashFS [8k]"
+
+#: ../../src/comparison/dedupe.md 4d668872bce0418d8876690e2b4d8eb2
+msgid "1150"
+msgstr "1150"
+
+#: ../../src/comparison/dedupe.md 15e74c39ad5a4aa08dc71ca9376b514d
+msgid "39.1%"
+msgstr "39.1%"
+
+#: ../../src/comparison/dedupe.md 9a279ab7a2e843d19b5f2fa9daad925b
+msgid "EROFS [4k] [^3]"
+msgstr "EROFS [4k] [^3]"
+
+#: ../../src/comparison/dedupe.md 097b3d56d2434fd1b586c809cb45c9aa
+#: 1aed03b60d1640988a44d02405643ac6 3806d5c4ed8249bb9a6ef8f31620f81f
+#: 49c069b25f8f4627a73cb32b58e78506 4d447b39ea8f44ccbbd60f176820fbe0
+#: 62c2403b49304e1799ee34fe9061c38a 7bb0d2ddfbeb44449a9c420ff6b89046
+#: 8055d1f6c55c488f99cab6c2dab21771 9b10fe2e50ae4a7ab598c3a448d11991
+#: a22d4df5622b4e2dbeeb795fac092bfd afc7618ee67146a49e91df2d6124fbb4
+#: c0b21cf3f76a496a9951681ed0421381 c5803d4fb9184e6d80b269c3ee7ca086
+#: dc271a5cc95249a982bcda21dbf88f9a
+msgid "Yes"
+msgstr "是"
+
+#: ../../src/comparison/dedupe.md 62c484b7b76246a7bdfb326c3b39558b
+msgid "1147"
+msgstr "1147"
+
+#: ../../src/comparison/dedupe.md 17b5eb0c160147cbadc28f001f5acce5
+msgid "39.2%"
+msgstr "39.2%"
+
+#: ../../src/comparison/dedupe.md 9743638157324c9dae5a6a41f2773bb2
+#: 9dc6e1f26b3d4cfe8147be9b656d975f
+msgid "SquashFS [128k, _default_]"
+msgstr "SquashFS [128k, _default_]"
+
+#: ../../src/comparison/dedupe.md e77e8a19ae9e4fe7956a0cc3844658f6
+msgid "1110"
+msgstr "1110"
+
+#: ../../src/comparison/dedupe.md 13017f7642754a17adf6cb53823db6a5
+msgid "41.2%"
+msgstr "41.2%"
+
+#: ../../src/comparison/dedupe.md 18ecb1972e844147ad84b3ac42e148b6
+#: b06227dd059343519681ecfc382bd0a5
+msgid "EROFS [64k]"
+msgstr "EROFS [64k]"
+
+#: ../../src/comparison/dedupe.md eaa3f90fb7d648b0baa55a191569acd0
+msgid "988"
+msgstr "988"
+
+#: ../../src/comparison/dedupe.md cd85be05b03a4edcba5b1a99d74f651d
+msgid "47.7%"
+msgstr "47.7%"
+
+#: ../../src/comparison/dedupe.md:51 eca6bd7135ff48e787a79c48cfcb82ba
+msgid "[Linux kernel source code](https://www.kernel.org) releases"
+msgstr "[Linux kernel source code](https://www.kernel.org) 发布版本"
+
+#: ../../src/comparison/dedupe.md:53 d9d51924878a40809eb998b8b30991c1
+msgid ""
+"[Three kernel releases](https://www.kernel.org/pub/linux/kernel/v5.x) are"
+" selected: `5.10`, `5.10.50`, `5.10.100`:"
+msgstr "选定了 [三个内核发布版本](https://www.kernel.org/pub/linux/kernel/v5.x)：`5.10`、`5.10.50`、`5.10.100`："
+
+#: ../../src/comparison/dedupe.md:56 901a1e5b9e664cb5ae3bb89dc69ac0a9
+msgid ""
+"Images from both filesystems are compressed with `LZ4HC, 12` since "
+"SquashFS uses the maximum level 12 for LZ4HC;"
+msgstr "两种文件系统的镜像均使用 `LZ4HC, 12` 压缩，因为 SquashFS 对 LZ4HC 使用的最高级别为 12；"
+
+#: ../../src/comparison/dedupe.md:59 3939206b5f8f4e2ea2971211ec77a33d
+msgid ""
+"EROFS images are built with `-T0 --force-uid=1000 --force-gid=100` in "
+"order to force 32-byte inodes to approximately match SquashFS metadata "
+"size;"
+msgstr "EROFS 镜像使用 `-T0 --force-uid=1000 --force-gid=100` 构建，以强制使用 32 字节 inode，大致匹配 SquashFS 的元数据大小；"
+
+#: ../../src/comparison/dedupe.md f4315918c6f34f6c90a663119fc4640b
+msgid "Fragments?"
+msgstr "分片？"
+
+#: ../../src/comparison/dedupe.md 4112266dafa14e42b510ed34bcbcf01e
+msgid "Size"
+msgstr "大小"
+
+#: ../../src/comparison/dedupe.md 865ecada1d0949679ef3e2970a9d7717
+msgid "SquashFS [16k]"
+msgstr "SquashFS [16k]"
+
+#: ../../src/comparison/dedupe.md 54271b60d7bf4df48689b368c6053893
+msgid "409 MiB"
+msgstr "409 MiB"
+
+#: ../../src/comparison/dedupe.md 37f9e9f963614956b0b3748e3766a5bb
+msgid "379 MiB"
+msgstr "379 MiB"
+
+#: ../../src/comparison/dedupe.md 8fdb2c2871e44d37ba2124437c135983
+msgid "SquashFS [32k]"
+msgstr "SquashFS [32k]"
+
+#: ../../src/comparison/dedupe.md be82047e285548dbbe573b1cf5460a61
+msgid "365 MiB"
+msgstr "365 MiB"
+
+#: ../../src/comparison/dedupe.md 8bb760b38ad947adb6aeca0bcc8fd95c
+msgid "EROFS [8k]"
+msgstr "EROFS [8k]"
+
+#: ../../src/comparison/dedupe.md ece3471476b6409e8416b954cf373b07
+msgid "347 MiB"
+msgstr "347 MiB"
+
+#: ../../src/comparison/dedupe.md 454769edb7364655b33d56676498172d
+msgid "SquashFS [64k]"
+msgstr "SquashFS [64k]"
+
+#: ../../src/comparison/dedupe.md c5a8a60a7cbf45128e0a27106390e1a0
+msgid "334 MiB"
+msgstr "334 MiB"
+
+#: ../../src/comparison/dedupe.md de3b94840bcc403c905b1bb29854a762
+msgid "EROFS [32k]"
+msgstr "EROFS [32k]"
+
+#: ../../src/comparison/dedupe.md d496ae7d98464f30a57b610a98c14c93
+msgid "313 MiB"
+msgstr "313 MiB"
+
+#: ../../src/comparison/dedupe.md a5b09b67e3d34bd3aee8771b60dfce2c
+msgid "312 MiB"
+msgstr "312 MiB"
+
+#: ../../src/comparison/dedupe.md 5ce98e9f013f40119951966de8c447c8
+msgid "310 MiB"
+msgstr "310 MiB"
+
+#: ../../src/comparison/dedupe.md:23 7bc6bb3fb47545afa154ea483ab72b98
+msgid ""
+"SquashFS uses `–b 131072` by default, `-noI` will disable its metadata "
+"compression."
+msgstr "SquashFS 默认使用 `–b 131072`，`-noI` 会禁用其元数据压缩。"
+
+#: ../../src/comparison/dedupe.md:48 7cbcf2686c9d4bcabe0e98b8fe6b302a
+msgid "SquashFS command line: `-comp lz4 -b # -noappend`"
+msgstr "SquashFS 命令行：`-comp lz4 -b # -noappend`"
+
+#: ../../src/comparison/dedupe.md:49 557b41f585be45f398e7d028f8ee8664
+msgid "EROFS command line: `-zlz4 -Ededupe -C #`"
+msgstr "EROFS 命令行：`-zlz4 -Ededupe -C #`"

@@ -1,3 +1,4 @@
 myst_parser
 sphinx_design
 sphinx-book-theme==1.0.1
+sphinx-intl

@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/mkfs.md:1 37cc12178c6b449385b933f53f1e0ad3
+msgid "📦 Build & Mount"
+msgstr "📦 构建与挂载"
+
+#: ../../src/mkfs.md:3 1ee12a11c51d4e049f359a865fe2614d
+msgid "Creating an EROFS filesystem"
+msgstr "创建 EROFS 文件系统"
+
+#: ../../src/mkfs.md:5 f25b984c5b42473283c7965b073d9288
+msgid ""
+"To create an EROFS image, use the **mkfs.erofs(1)** utility provided by "
+"erofs-utils."
+msgstr "要创建 EROFS 镜像，请使用 erofs-utils 提供的 **mkfs.erofs(1)** 工具。"
+
+#: ../../src/mkfs.md:8 bf3739b7dfab411981ab2b5888bfde89
+msgid "From a local directory"
+msgstr "从本地目录"
+
+#: ../../src/mkfs.md:10 1f06db26b7324edcbede6f3780343239
+msgid "You can create an EROFS image directly from a local directory:"
+msgstr "你可以直接从本地目录创建 EROFS 镜像："
+
+#: ../../src/mkfs.md:15 acc34985d59641abb3f7cd198ac53f51
+msgid ""
+"By default, `mkfs.erofs` creates plain images, as compression is an "
+"optional on-disk feature.  Compression and other behaviors can be "
+"configured via command-line options."
+msgstr "默认情况下，`mkfs.erofs` 创建未压缩镜像，因为压缩是一项可选的磁盘特性。压缩和其他行为可以通过命令行选项进行配置。"
+
+#: ../../src/mkfs.md:19 33544b06dfff43a69472674a0afae77a
+msgid "Here are some frequently used options for mkfs.erofs:"
+msgstr "以下是 mkfs.erofs 的一些常用选项："
+
+#: ../../src/mkfs.md ../../src/mkfs.md:47 4ca4d56928d941a9a417436d3296ae41
+#: cba5e646cea645028378bd33fd078e08
+msgid "Option"
+msgstr "选项"
+
+#: ../../src/mkfs.md ../../src/mkfs.md:47 1b4319aee0414ca09ce0e9a4fb98a5d6
+#: e32a7291ba2d417dbbf56c20f4129ab2
+msgid "Description"
+msgstr "说明"
+
+#: ../../src/mkfs.md 87a73a320cd4473fa451b31e13cd3e8d
+msgid "-z X[,level=#]"
+msgstr "-z X[,level=#]"
+
+#: ../../src/mkfs.md 0ac545bd161943f8b778757eeca8cba8
+msgid "Specify a valid compressor [^1] and, optionally, a compression level."
+msgstr "Specify a valid compressor [^1] and, optionally, a compression level."
+
+#: ../../src/mkfs.md 9268d21ac42649d5988947f432815b04
+msgid "-C #"
+msgstr "-C #"
+
+#: ../../src/mkfs.md 48c6d496040d41089d491807bb0686db
+msgid ""
+"Specify the physical cluster size for compression (default: filesystem "
+"block size)."
+msgstr "指定用于压缩的 physical cluster 大小（默认：文件系统块大小）。"
+
+#: ../../src/mkfs.md a69343fdd03348cea45669da00176617
+msgid "-b #"
+msgstr "-b #"
+
+#: ../../src/mkfs.md e01e7b4984dc486da9ec6ab8f938995b
+msgid "Specify the filesystem block size (default: system page size, e.g. 4096)."
+msgstr "指定文件系统块大小（默认：系统页大小，例如 4096）。"
+
+#: ../../src/mkfs.md 0a9844ec2c734a87af24d5da383815d3
+msgid "-T #"
+msgstr "-T #"
+
+#: ../../src/mkfs.md bd4a9ebbeef947a2a8123262973bde26
+msgid ""
+"Set the UNIX timestamp for the filesystem. It will behave as `--all-time`"
+" if `--mkfs-time` is not specified."
+msgstr "设置文件系统的 UNIX 时间戳。如果未指定 `--mkfs-time`，则其行为与 `--all-time` 相同。"
+
+#: ../../src/mkfs.md b909f16387bf4ad6af397867a1f0daa1
+msgid "--all-time"
+msgstr "--all-time"
+
+#: ../../src/mkfs.md e732206c50a94608b75f6518bbedc3ca
+msgid "(used together with `-T`) Set all files to the fixed timestamp."
+msgstr "（与 `-T` 一起使用）将所有文件设置为固定时间戳。"
+
+#: ../../src/mkfs.md cedf96e7f64a4f27a3a4966357647f5e
+msgid "--mkfs-time"
+msgstr "--mkfs-time"
+
+#: ../../src/mkfs.md e88c6220ea984ebdb688e18eed9135f3
+msgid ""
+"(used together with `-T`) The given timestamp is only applied to the "
+"image creation time."
+msgstr "（与 `-T` 一起使用）给定的时间戳仅应用于镜像创建时间。"
+
+#: ../../src/mkfs.md fa5b420eed3a4dd18946de3545cdd6cf
+msgid "-U X"
+msgstr "-U X"
+
+#: ../../src/mkfs.md e6517bc621004f51a1aa4d1ee961a75a
+msgid "Specify the filesystem UUID, or one of the following value: clear, random."
+msgstr "指定文件系统 UUID，或以下值之一：clear、random。"
+
+#: ../../src/mkfs.md 4e56d69eaeb041cc8acf6b90ae8d72d3
+msgid "-E ztailpacking"
+msgstr "-E ztailpacking"
+
+#: ../../src/mkfs.md d6e3e044d690477f990105c2f8b548f9
+msgid "Inline the tail parts of compressed files into their metadata."
+msgstr "将压缩文件的尾部内联到其元数据中。"
+
+#: ../../src/mkfs.md 2223976b5bf64f2c802b29201481c825
+msgid "-E fragments"
+msgstr "-E fragments"
+
+#: ../../src/mkfs.md cc888b4b65274664a80ebba1dcf9df76
+msgid ""
+"Pack the tail parts of compressed files, or entire files if they are "
+"small, into a special inode."
+msgstr "将压缩文件的尾部，或较小的整个文件，打包到一个特殊的 inode 中。"
+
+#: ../../src/mkfs.md 2b38a630949c47ab89d02a9ed78a5fa1
+msgid "-E all-fragments"
+msgstr "-E all-fragments"
+
+#: ../../src/mkfs.md 9b6e94f431e24ff5922d1df7c5d973e4
+msgid ""
+"(not recommended) Pack entire files into a special inode to reduce image "
+"size."
+msgstr "（不推荐）将整个文件打包到一个特殊的 inode 中，以减小镜像大小。"
+
+#: ../../src/mkfs.md d8c7d5e4d3274c9aaa52ffa9f2d8191d
+msgid "-E dedupe"
+msgstr "-E dedupe"
+
+#: ../../src/mkfs.md befc0e6a101e4411a5ecc9e2793401c8
+msgid ""
+"Enable global data deduplication [^2]. Note: not supported with multi-"
+"threading *yet*."
+msgstr ""
+"Enable global data deduplication [^2]. Note: not supported with multi-"
+"threading *yet*."
+
+#: ../../src/mkfs.md:35 0c9ee35b7d004ce9b9bced382a1fa0e4
+msgid "For example, to generate an uncompressed EROFS image from `foo/`:"
+msgstr "例如，要从 `foo/` 生成未压缩的 EROFS 镜像："
+
+#: ../../src/mkfs.md:41 661710d9bbb54a83ad00a2e31a28e17d
+msgid ""
+"To generate a compressed EROFS image using LZ4HC (level 12), with "
+"`fragments` and `ztailpacking` features enabled, and the physical cluster"
+" size of 65536:"
+msgstr "要使用 LZ4HC（级别 12）生成压缩的 EROFS 镜像，并启用 `fragments` 和 `ztailpacking` 特性，且 physical cluster 大小为 65536："
+
+#: ../../src/mkfs.md:49 6facf41a5a924930b341182e80c2833d
+msgid ""
+"By default, EROFS just uses a physical cluster size equal to the block "
+"size (e.g., 4096 on x86) and disables advanced features to keep the "
+"random access performance. Consider increasing `-C` (e.g., to 65536 or "
+"131072) and enabling advanced features if a smaller image size is "
+"desired. Note that larger cluster sizes may increase memory footprint "
+"during decompression and degrade random access performance."
+msgstr "默认情况下，EROFS 使用等于块大小的 physical cluster 大小（例如 x86 上为 4096），并禁用高级特性以保持随机访问性能。如果希望获得更小的镜像大小，可以考虑增大 `-C`（例如到 65536 或 131072）并启用高级特性。请注意，较大的 cluster 大小可能会增加解压缩时的内存占用，并降低随机访问性能。"
+
+#: ../../src/mkfs.md:56 0ffcb548183c4489883bcb084ed26410
+msgid ""
+"Using `-Eall-fragments` is not recommended now, as it can degrade runtime"
+" performance unless minimizing image size is the top priority. "
+"`-Efragments` already supports multi-threading."
+msgstr "目前不推荐使用 `-Eall-fragments`，因为它会降低运行时性能，除非最小化镜像大小是最高优先级。`-Efragments` 已支持多线程。"
+
+#: ../../src/mkfs.md:67 967a1873461241e1a556b3b3bfcc22e1
+msgid "From a tarball file"
+msgstr "从 tar 归档文件"
+
+#: ../../src/mkfs.md:69 9f99fd6c256d4af0b7617b2862e5be0d
+msgid ""
+"Alternatively, an EROFS image can also be generated from a tarball file "
+"using the `--tar` command-line option."
+msgstr "此外，还可以使用 `--tar` 命令行选项从 tarball 文件生成 EROFS 镜像。"
+
+#: ../../src/mkfs.md:72 0c4377a6c89e4bde9f45cdeef513e01d
+msgid ""
+"Here are some frequently used additional options for `mkfs.erofs` tar "
+"mode:"
+msgstr "以下是 `mkfs.erofs` tar 模式的一些常用附加选项："
+
+#: ../../src/mkfs.md:47 86b63b04d23e451bb4230ef45924fd7a
+msgid "--tar=f"
+msgstr "--tar=f"
+
+#: ../../src/mkfs.md:47 41e1ff7828924721a1789b87c6efffa9
+msgid "Generate a full EROFS image from a regular tarball."
+msgstr "从常规 tarball 生成完整的 EROFS 镜像。"
+
+#: ../../src/mkfs.md:47 b25fe093e1ff46daa9c371b3d8b2e304
+msgid "--tar=i"
+msgstr "--tar=i"
+
+#: ../../src/mkfs.md:47 b0570d4100a64685aaf9042c305e046b
+msgid "Generate a meta-only EROFS image from a regular tarball."
+msgstr "从常规 tarball 生成仅包含元数据的 EROFS 镜像。"
+
+#: ../../src/mkfs.md:47 79ca49f821ab4f039deed9f6d7920af8
+msgid "--aufs"
+msgstr "--aufs"
+
+#: ../../src/mkfs.md:47 f53b451365c24c22bb973c84e04a0743
+msgid ""
+"Convert AUFS special files to OverlayFS metadata (commonly used in "
+"Docker/OCI images)."
+msgstr "将 AUFS 特殊文件转换为 OverlayFS 元数据（常用于 Docker/OCI 镜像）。"
+
+#: ../../src/mkfs.md:47 26ebd13a5ec4468898fb66aca787b246
+msgid "--sort=none"
+msgstr "--sort=none"
+
+#: ../../src/mkfs.md:47 798d1fe72c504a92ab29ed960d80aa8b
+msgid ""
+"(only valid with `--tar=f`) Keep inode data order consistent with tar "
+"data order."
+msgstr "（仅对 `--tar=f` 有效）保持 inode 数据顺序与 tar 数据顺序一致。"
+
+#: ../../src/mkfs.md:47 7e4a9eb2dba14e9caabb7e0e8e4a0a57
+msgid "--sort=path"
+msgstr "--sort=path"
+
+#: ../../src/mkfs.md:47 4cf98fb282ec46139702c2b3af276e09
+msgid ""
+"(only valid with `--tar=f`) Data order strictly follows the tree "
+"generation order (default)."
+msgstr "（仅对 `--tar=f` 有效）数据顺序严格遵循树生成顺序（默认）。"
+
+#: ../../src/mkfs.md:82 00e64fe81b19424586843a4bf648f188
+msgid "For example, to generate a full EROFS image from a tarball `foo.tar`:"
+msgstr "例如，要从 tarball `foo.tar` 生成完整的 EROFS 镜像："
+
+#: ../../src/mkfs.md:88 f62ffac390cc425dafd022e1b30ddd43
+msgid ""
+"Note that `--sort=none` is used if strict data order is not required; it "
+"helps eliminate unnecessary data writes."
+msgstr "如果不需要严格的数据顺序，可以使用 `--sort=none`；这有助于消除不必要的数据写入。"
+
+#: ../../src/mkfs.md:91 52ad0e02a5254511bcf400f4675f181f
+msgid ""
+"Additionally, `--tar=i` can be used to generate a minimized EROFS "
+"metadata index that references external tar data:"
+msgstr "此外，`--tar=i` 可用于生成一个最小化的 EROFS 元数据索引，该索引引用外部 tar 数据："
+
+#: ../../src/mkfs.md:98 816af86baee74da6a40b164ffeea16fd
+msgid ""
+"The generated tar index EROFS image can be used with the original tar "
+"file specified using the mount option `-odevice=`. Alternatively, you can"
+" append the original tar file to the tar index:"
+msgstr "生成的 tar 索引 EROFS 镜像可以与使用挂载选项 `-odevice=` 指定的原始 tar 文件一起使用。或者，你也可以将原始 tar 文件追加到 tar 索引之后："
+
+#: ../../src/mkfs.md:105 9f13da0a738c422599deb3e67033f717
+msgid "Mount"
+msgstr "挂载"
+
+#: ../../src/mkfs.md:107 5017e4f7215a47f884ecf2617ba8f91b
+msgid ""
+"To mount an EROFS image, use the **mount(8)** command on a block device "
+"or a regular EROFS image file, as shown below:"
+msgstr "要挂载 EROFS 镜像，请在 block device 或常规 EROFS 镜像文件上使用 **mount(8)** 命令，如下所示："
+
+#: ../../src/mkfs.md:115 fa9da3fdb2604b77b1f57fa65545b888
+msgid ""
+"All files contained in `/dev/sdX` will now be accessible under the "
+"`~/mnt` mount point."
+msgstr "`/dev/sdX` 中的所有文件现在都可以在 `~/mnt` 挂载点下访问。"
+
+#: ../../src/mkfs.md:118 9cd11bffa6364eff9a25c07256b12921
+msgid ""
+"If the image is a regular file and the command above doesn't work (e.g., "
+"due to an older version of util-linux), you can use the `-o loop` option:"
+msgstr "如果镜像是常规文件且上述命令不起作用（例如，由于 util-linux 版本较旧），可以使用 `-o loop` 选项："
+
+#: ../../src/mkfs.md:126 a2d27c60a4fe499581f93b0b3f257138
+msgid ""
+"Alternatively, unprivileged users can mount an EROFS image using "
+"**erofsfuse**:"
+msgstr "或者，非特权用户可以使用 **erofsfuse** 挂载 EROFS 镜像："
+
+#: ../../src/mkfs.md:133 8afc14eb55b644b186fa41bc2d639251
+msgid "Unmount"
+msgstr "卸载"
+
+#: ../../src/mkfs.md:135 56f9c2462c24460794b900ce0521889e
+msgid ""
+"To unmount the filesystem, use the **umount (8)** command for privileged "
+"users:"
+msgstr "要卸载文件系统，特权用户可以使用 **umount (8)** 命令："
+
+#: ../../src/mkfs.md:141 312152cc31f9447388d9ee731d9b0726
+msgid ""
+"For unprivileged users, you could also use the **fusermount** command to "
+"unmount an instance out of ``erofsfuse``:"
+msgstr "对于非特权用户，也可以使用 **fusermount** 命令来卸载由 ``erofsfuse`` 挂载的实例："
+
+#: ../../src/mkfs.md:62 74fd1151a2d14b50bdeb8eecd3588d33
+msgid "Supported compressors: lz4, lz4hc, lzma, deflate, libdeflate, and zstd."
+msgstr "支持的压缩器：lz4、lz4hc、lzma、deflate、libdeflate 和 zstd。"
+
+#: ../../src/mkfs.md:63 fb57467d78df484198e82c9b69bdd68b
+msgid ""
+"If data compression (encoded data) is enabled, rolling-hash-based   "
+"deduplication will be used; otherwise, block-based deduplication will be"
+"   applied."
+msgstr "如果启用了数据压缩（编码数据），将使用基于滚动哈希的去重；否则将应用基于块的去重。"

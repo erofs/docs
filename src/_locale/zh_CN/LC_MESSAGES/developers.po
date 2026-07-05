@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/developers.md:1 1d3d1a908a7342c0b466ed601c190378
+msgid "📚 Developer Guides"
+msgstr "📚 开发者指南"
+
+#: ../../src/developers.md:3 b5b44fb3c9804d67b7ae330492c7afcc
+msgid "Git Repositories"
+msgstr "Git 仓库"
+
+#: ../../src/developers.md:5 dbc4aa00bd2c4fb0ad881ae229832ee2
+msgid "erofs-utils"
+msgstr "erofs-utils"
+
+#: ../../src/developers.md:7 d9e6a9bbec834fa4bd77dae333d16c05
+msgid ""
+"erofs-utils is developed with [Git](https://git-scm.com), and multiple "
+"branches are available for different needs:"
+msgstr ""
+"erofs-utils 使用 [Git](https://git-scm.com) 开发，针对不同需求提供了多个分支："
+
+#: ../../src/developers.md 187e9c3ff2d949f8a7cf42d0d99bfde6
+#: 1cdef374739a42cb97217cda20461143
+msgid "branch"
+msgstr "分支"
+
+#: ../../src/developers.md 39cafbf5d4154e288cbc9053b6d3b21c
+#: 94d5375dfae24aba94337b4dd6703b66
+msgid "description"
+msgstr "描述"
+
+#: ../../src/developers.md a7a0b1f5195d49b8a1b4a5a459fc6fa9
+#: c6945e1d346648a08c3f0f4e66dd23bd
+msgid "rebase?"
+msgstr "是否 rebase？"
+
+#: ../../src/developers.md 03ec2a1ac8884aefa1b3d696ccd2533b
+#: fcacbee46c554463b87eec4a4edb1c6f
+msgid "dev"
+msgstr "dev"
+
+#: ../../src/developers.md 490e790146e64227b11c37b943bc2edd
+msgid "erofs-utils development tree"
+msgstr "erofs-utils 开发树"
+
+#: ../../src/developers.md 8c0cb37c22134fcaa5c7de279743f5bf
+msgid "Maybe"
+msgstr "可能"
+
+#: ../../src/developers.md 282a19030815486f8277d100eb81c40b
+msgid "experimental"
+msgstr "experimental"
+
+#: ../../src/developers.md 4abbe039c17a406fb574bcc19e933d72
+msgid "erofs-utils tree with unstable patches for testing"
+msgstr "包含不稳定补丁、用于测试的 erofs-utils 树"
+
+#: ../../src/developers.md 19e37be925114b458f2263fda91e9004
+#: 6040d672fbfb46e8b748cbec220098f3 f88c15d2e2364530a0353bfaf3947c74
+msgid "Yes"
+msgstr "是"
+
+#: ../../src/developers.md d8a92d6fa6174b248d6434b0f6ce9592
+msgid "master"
+msgstr "master"
+
+#: ../../src/developers.md 26ef0c6ec92c479f80df055b97ad797b
+msgid "erofs-utils stable tree"
+msgstr "erofs-utils 稳定树"
+
+#: ../../src/developers.md 74a16a843caf4065ad275a52b2f6ca98
+msgid "No"
+msgstr "否"
+
+#: ../../src/developers.md:20 d0983bd6742b4138b0cf66f00f220d6e
+msgid "Linux kernel source"
+msgstr "Linux 内核源码"
+
+#: ../../src/developers.md:21 d89b04a1a9104c918370d8e63bf21683
+msgid ""
+"If you're interested in EROFS kernel development, it is recommended to "
+"keep your local code in sync with the latest [EROFS development "
+"repo](https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs.git):"
+msgstr ""
+"如果你有兴趣参与 EROFS 内核开发，建议将本地代码与最新的 [EROFS 开发仓库]"
+"(https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs.git)保持同步："
+
+#: ../../src/developers.md 12a9752bb4944e43a79372aaf3f206f4
+msgid "fixes"
+msgstr "fixes"
+
+#: ../../src/developers.md c0c16d14e4dc4151a31226a78c73eeb8
+msgid "EROFS kernel fixes-only tree (for this cycle)"
+msgstr "仅包含修复的 EROFS 内核树（当前周期）"
+
+#: ../../src/developers.md 6e9b26704e84412784ad9faa5891852a
+msgid "EROFS kernel development tree (for the next cycle)"
+msgstr "EROFS 内核开发树（下一周期）"
+
+#: ../../src/developers.md:33 aefd4b87e1e5499bbc8c5f4546ed679e
+msgid "Mailing List"
+msgstr "邮件列表"
+
+#: ../../src/developers.md:35 3838f75281ec4e7eb3a1455ce90c2d63
+msgid ""
+"EROFS has its own development mailing list hosted by "
+"[OzLabs](https://www.ozlabs.org): <[linux-erofs@lists.ozlabs.org](mailto"
+":linux-erofs@lists.ozlabs.org)>"
+msgstr ""
+"EROFS 拥有由 [OzLabs](https://www.ozlabs.org) 托管的专属开发邮件列表："
+"<[linux-erofs@lists.ozlabs.org](mailto:linux-erofs@lists.ozlabs.org)>"
+
+#: ../../src/developers.md:38 6304df58ab014a66ba383f09cb3d0395
+msgid ""
+"You can [subscribe to the mailing list](https://lists.ozlabs.org/listinfo"
+"/linux-erofs) to receive the latest status of EROFS."
+msgstr ""
+"你可以[订阅邮件列表](https://lists.ozlabs.org/listinfo/linux-erofs)，以获取 "
+"EROFS 的最新动态。"
+
+#: ../../src/developers.md:41 0021947c52b5455bb5e54795094e2da4
+msgid "When posting, it is helpful to:"
+msgstr "发帖时，建议："
+
+#: ../../src/developers.md:43 bf838ceef5db4126a29a6ef99dc90ad6
+msgid ""
+"Add an additional tag in the subject like `[PATCH]`, `[question]` or "
+"`[bug report]`, etc.;"
+msgstr ""
+"在主题中添加额外标签，例如 `[PATCH]`、`[question]` 或 `[bug report]` 等；"
+
+#: ../../src/developers.md:46 7431978ba8b741aabb509965ce3e93f3
+msgid ""
+"Avoid [top-posting](https://daringfireball.net/2007/07/on_top) if "
+"possible."
+msgstr ""
+"尽可能避免[顶部回复](https://daringfireball.net/2007/07/on_top)。"
+
+#: ../../src/developers.md:48 e7a5090c3ddd4672baf5243ee1c20497
+msgid ""
+"All patches should follow the Linux kernel's coding style. Additionally, "
+"as one of the Linux kernel development communities, patches require the "
+"\"sign-off\" procedure."
+msgstr ""
+"所有补丁都应遵循 Linux 内核的编码风格。此外，作为 Linux 内核开发社区的一"
+"员，补丁需要经过 \"sign-off\" 流程。"
+
+#: ../../src/developers.md:52 6eec84ffc7fa4b7296b59eb77bb52c63
+msgid ""
+"The sign-off should be appended as a simple line at the end of the commit"
+" message for the patch, which claims that you agree to [Developer "
+"Certificate of Origin](https://developercertificate.org/). In other "
+"words, it certifies that either you wrote it or have the right to pass it"
+" on as an open-source patch."
+msgstr ""
+"\"sign-off\" 应以一行简单的说明附加在补丁提交信息的末尾，表明你同意 "
+"[Developer Certificate of Origin](https://developercertificate.org/)。换言"
+"之，它证明该补丁要么是你亲自编写，要么你有权将其作为开源补丁提交。"
+
+#: ../../src/developers.md:57 aeb5b6901a84424b8a09723599676e31
+msgid "Then you just add a line saying:"
+msgstr "然后只需添加一行："
+
+#: ../../src/developers.md:63 db885462a9d74a9ca1495e435058730c
+msgid "using your real name (sorry, no pseudonyms or anonymous contributions.)"
+msgstr "并使用真实姓名（抱歉，不接受化名或匿名贡献）。"
+
+#: ../../src/developers.md:65 fc1698ac7d5e4f75899b6cc15115e901
+msgid "Matrix room"
+msgstr "Matrix 聊天室"
+
+#: ../../src/developers.md:67 730d8937abbd4460bd56b9cec6bb40a4
+msgid ""
+"You can also join our Matrix room "
+"([#erofs:matrix.org](https://matrix.to/#/#erofs:matrix.org)) for informal"
+" discussions."
+msgstr ""
+"你也可以加入我们的 Matrix 聊天室 "
+"([#erofs:matrix.org](https://matrix.to/#/#erofs:matrix.org)) 进行非正式讨论。"
+
+#: ../../src/developers.md:71 291e818928df4a14a0c3550b325ae0ab
+msgid ""
+"However, proposals, bug reports, and/or patches should be sent to the "
+"mailing list eventually so that they can be properly archived."
+msgstr ""
+"不过，提案、错误报告和/或补丁最终应发送到邮件列表，以便妥善归档。"

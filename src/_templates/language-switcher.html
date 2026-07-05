@@ -1,0 +1,21 @@
+{# Simple language switcher for local side-by-side builds.
+   Assumes English is at build/html/ and Chinese at build/html_zh/.
+   Adjust the prefix when deploying to a different URL scheme.
+#}
+{% set depth = pagename.count('/') %}
+{% set up = '../' * (depth + 1) %}
+{% if language and language.startswith("zh") %}
+  {% set other_label = "English" %}
+  {% set other_url = up + "html/" + pagename + ".html" %}
+{% else %}
+  {% set other_label = "中文" %}
+  {% set other_url = up + "html_zh/" + pagename + ".html" %}
+{% endif %}
+
+<a class="btn language-switcher"
+   href="{{ other_url }}"
+   title="{{ other_label }}"
+   aria-label="{{ other_label }}">
+  <i class="fas fa-language" aria-hidden="true"></i>
+  <span class="visually-hidden">{{ other_label }}</span>
+</a>

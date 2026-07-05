@@ -1,0 +1,759 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/ondisk/xattrs.md:2 a1d240cbae634fc2bc67a7dbf9b1a1a1
+msgid "Extended Attributes (Xattrs)"
+msgstr "扩展属性（Xattrs）"
+
+#: ../../src/ondisk/xattrs.md:4 30535274ff3b4b4e9ac073de694b4d68
+msgid ""
+"EROFS supports Extended Attributes ([xattr(7)](https://man7.org/linux"
+"/man-pages/man7/xattr.7.html)) which are `name:value` pairs associated "
+"permanently with inodes since the initial Linux 5.4 version."
+msgstr "EROFS 自最初的 Linux 5.4 "
+"版本起就支持扩展属性（[xattr(7)](https://man7.org/linux/man-pages/man7/xattr.7.html)），"
+"即与 inodes 永久关联的 `name:value` 对。"
+
+#: ../../src/ondisk/xattrs.md:9 7e57bcb4f0bf46b99e062548a027b67d
+msgid "Superblock Fields for Xattr Support"
+msgstr "支持 Xattr 的 Superblock 字段"
+
+#: ../../src/ondisk/xattrs.md:11 e378949bb6db4d4597d5dd8c852a0f06
+msgid ""
+"The core superblock format is defined in {ref}`on_disk_superblock`. This "
+"section lists the extended fields dedicated to the xattr features."
+msgstr "核心 superblock 格式在 {ref}`on_disk_superblock` 中定义。本节列出专用于 xattr "
+"功能的扩展字段。"
+
+#: ../../src/ondisk/xattrs.md 34d453faab4a4743b16858da33ce4564
+#: 3506d57a51014d66af76122158c51adc 366c54e2c3c04aa686fc96a52d096691
+#: 9c55038797d644ae89c1a8f3dd839bdd d690d58265a449b68f4cfee01c89d9fd
+msgid "Offset"
+msgstr "偏移"
+
+#: ../../src/ondisk/xattrs.md 615e9b7b16cf4aa7b074cf3ff173eecb
+#: 6e1f6cb77ed34e1881f95a9c62d3b464 bbc6dbc5348d4edea2f0f57912e4696b
+#: c6216a99e16e400fa27537e3b15b8335 e0cf962fef5244f6b09a0423a77dbe4c
+msgid "Size"
+msgstr "大小"
+
+#: ../../src/ondisk/xattrs.md 06dfa0d90574420b82dc190ce08c1d75
+#: 2fc2d005c3924d518a61faf74ddbc027 549ab465ac554408a04aae9910e1b1d2
+#: 8bf2a8a99bbb49bdb27a65a93d8b098d 945bbb04df8647e9af3549d69445f0e0
+msgid "Type"
+msgstr "类型"
+
+#: ../../src/ondisk/xattrs.md 1029689a613540cba59ed7eeed65eb2d
+#: 551c180e159a4f91b45a1ce16d853a8c 68dd2865f7994eb78bc90666528c625c
+#: 73e081e15a5d4e7f979ad0e9adde104c bd6c9ca2a50e4061ad84655700aa23dc
+#: e6952a09802345dda6bfc745e161a443 fdda8b250de84a4484400c88261accc4
+msgid "Name"
+msgstr "名称"
+
+#: ../../src/ondisk/xattrs.md 04121c787ffc498aad061a54217f1f53
+#: 2a91faf3e2ac48bfbec8727368736c5e 6ad8df132b234011b7713304f89a915e
+#: 8970a9a33f354aebbe904b9eeecafe28 91cc8e806a0f4e1ab7f669ef2b73656a
+#: d4b454085f3c4a6b973a42f7c3cf9c82 e42a4d1ab19b4d54ba80d309b228a187
+msgid "Description"
+msgstr "描述"
+
+#: ../../src/ondisk/xattrs.md 7042148e377649a5993603a72ff9994d
+msgid "0x08"
+msgstr "0x08"
+
+#: ../../src/ondisk/xattrs.md 5a49d21c01c64736809688a2df334e4f
+#: 824faaa3f9124022aa0024c91fe40da1 969018bf3beb492c8bfdd35a21b712df
+#: 99439f1d3bd2421aa141dab6a1f56613 b673726040444449869221d1951af269
+#: da4c59c5fef143479cc2e7293d8a7894
+msgid "4"
+msgstr "4"
+
+#: ../../src/ondisk/xattrs.md 5d24833e891c4a9ab335ce2284aa88fc
+#: 6371e8a77cfb4df1a886d8418d061a07 91c248ec91a24a3e9fce060f5210aa2f
+#: d165d7989bf0424683dc5047e6c10c36 f971a263f1cc455990a1830c6352b186
+msgid "`u32`"
+msgstr "`u32`"
+
+#: ../../src/ondisk/xattrs.md 15c7867ee4404f4b9dd11c5a4bab89ae
+msgid "`feature_compat`"
+msgstr "`feature_compat`"
+
+#: ../../src/ondisk/xattrs.md 4f5bf6fbae8d4ebf9f97f7574b44cda3
+msgid "Compatible feature flags; see {ref}`xattr_feature_flags`"
+msgstr "兼容特性标志；参见 {ref}`xattr_feature_flags`"
+
+#: ../../src/ondisk/xattrs.md 53ad7396b55a4e2387f22bed888826fb
+msgid "0x2C"
+msgstr "0x2C"
+
+#: ../../src/ondisk/xattrs.md 656c018acabd447c9915e27cd234804e
+msgid "`xattr_blkaddr`"
+msgstr "`xattr_blkaddr`"
+
+#: ../../src/ondisk/xattrs.md f0e4d43a25574715b139250809b26338
+msgid "Start block address of the shared xattr area; see {ref}`shared_xattr_area`"
+msgstr "共享 xattr 区域的起始块地址；参见 {ref}`shared_xattr_area`"
+
+#: ../../src/ondisk/xattrs.md 88ca10faa9ac4169810e68f5c90296aa
+msgid "0x50"
+msgstr "0x50"
+
+#: ../../src/ondisk/xattrs.md b9460ca8ef064723bb7d988203ce928a
+msgid "`feature_incompat`"
+msgstr "`feature_incompat`"
+
+#: ../../src/ondisk/xattrs.md b9289364dd164d3fa99687c31e908c5d
+msgid "Incompatible feature flags; see {ref}`xattr_feature_flags`"
+msgstr "不兼容特性标志；参见 {ref}`xattr_feature_flags`"
+
+#: ../../src/ondisk/xattrs.md 7b1334ca74de4cb1832909918c66cf2a
+msgid "0x5B"
+msgstr "0x5B"
+
+#: ../../src/ondisk/xattrs.md 12c24a51549f427dad369f1bd68a83fa
+#: 321a17031e064c21ac93ff959e7a6832 3c9f9f8d233f45a19e02a3e7b2c7a798
+#: 6109aab4f78f474a810b6d63b0fe31ee 62e84d2802a244b991e5baf83d78b089
+#: 8f792adbde2242f78538b65ceaa35dc7 a72e36bf7b4949bdb8585758c65b6026
+#: f3af551748754aeeac78d7fd9eb2fa23
+msgid "1"
+msgstr "1"
+
+#: ../../src/ondisk/xattrs.md 38c5685df4924ab08ed42ef6aaceabdd
+#: 609584b6568c4eb6b4f425982b6f6ea3 6b229f5450364f7e9b220f99c637ca4d
+#: cb7472036aef406daaee2790ac16c8ac cfda5176d5b146738433a6ae7e015621
+#: e4c0c600ab724cfa9af1fc3ab66dfdc8 fce4eb3edfed44ee89d86cc1216d3656
+msgid "`u8`"
+msgstr "`u8`"
+
+#: ../../src/ondisk/xattrs.md a82299611a75411fb36647e9aa72b674
+msgid "`xattr_prefix_count`"
+msgstr "`xattr_prefix_count`"
+
+#: ../../src/ondisk/xattrs.md a5c2fde6cea54db3a028be52cdfac804
+msgid ""
+"Number of long xattr name prefixes; valid when "
+"`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` is set; see "
+"{ref}`long_xattr_prefixes`"
+msgstr "长 xattr 名称前缀的数量；仅在设置了 `EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` 时有效；参见 "
+"{ref}`long_xattr_prefixes`"
+
+#: ../../src/ondisk/xattrs.md f0c52869441246e1b81aba46e703b425
+msgid "0x5C"
+msgstr "0x5C"
+
+#: ../../src/ondisk/xattrs.md d7f273af2f454b03b8808b2990158886
+msgid "`xattr_prefix_start`"
+msgstr "`xattr_prefix_start`"
+
+#: ../../src/ondisk/xattrs.md e86b49d318d841ddbfbce0179b6bd568
+msgid ""
+"Location of the long xattr prefix table; valid when "
+"`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` is set; see "
+"{ref}`long_xattr_prefixes`"
+msgstr "长 xattr 前缀表的位置；仅在设置了 `EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` 时有效；参见 "
+"{ref}`long_xattr_prefixes`"
+
+#: ../../src/ondisk/xattrs.md 687c5994dab14206b710344003a81475
+msgid "0x60"
+msgstr "0x60"
+
+#: ../../src/ondisk/xattrs.md 05c69e731a8f45d6a1927e0020b433bd
+#: 7cb7e8fe93e442c885f4ce7c04d37092
+msgid "8"
+msgstr "8"
+
+#: ../../src/ondisk/xattrs.md 350a6a44cb3a49dab68e8711092476be
+#: 478d42e4ebd44a838acb9cdf86f38d57
+msgid "`u64`"
+msgstr "`u64`"
+
+#: ../../src/ondisk/xattrs.md 9b65a933c9b5459ebd504b268e4824be
+msgid "`packed_nid`"
+msgstr "`packed_nid`"
+
+#: ../../src/ondisk/xattrs.md b395a06789424a1fb367cc372b348f1d
+msgid ""
+"Packed inode NID. Relevant when long xattr prefixes are embedded in the "
+"packed inode's data region"
+msgstr "打包 inode NID。当长 xattr 前缀嵌入在打包 inode 的数据区域中时相关"
+
+#: ../../src/ondisk/xattrs.md e8a1b7dd267b4b89b6201946a778e6c2
+msgid "0x68"
+msgstr "0x68"
+
+#: ../../src/ondisk/xattrs.md 1eacbc1a702b45c4ab7ced7c89a705e3
+msgid "`xattr_filter_reserved`"
+msgstr "`xattr_filter_reserved`"
+
+#: ../../src/ondisk/xattrs.md a0de9aa8408647859dedf6d4814bd818
+msgid "Must be 0 for the xattr Bloom filter to operate; see {ref}`xattr_filter`"
+msgstr "xattr Bloom 过滤器正常工作必须置为 0；参见 {ref}`xattr_filter`"
+
+#: ../../src/ondisk/xattrs.md a0de9a13fb504743b70ed5652dfa1a05
+msgid "0x69"
+msgstr "0x69"
+
+#: ../../src/ondisk/xattrs.md 7e1735ec4f74410992155002351dffde
+msgid "`ishare_xattr_prefix_id`"
+msgstr "`ishare_xattr_prefix_id`"
+
+#: ../../src/ondisk/xattrs.md 527d607dc02f4cefbc7274519d31d072
+msgid ""
+"Long-prefix table index used by image-share xattrs; valid when both "
+"`EROFS_FEATURE_COMPAT_ISHARE_XATTRS` and "
+"`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` are set; see "
+"{ref}`image_share_xattrs`"
+msgstr "镜像共享 xattr 使用的长前缀表索引；仅在同时设置了 `EROFS_FEATURE_COMPAT_ISHARE_XATTRS` 和 "
+"`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` 时有效；参见 {ref}`image_share_xattrs`"
+
+#: ../../src/ondisk/xattrs.md 2a731d8c506644b8ae47cf53960e237e
+msgid "0x80"
+msgstr "0x80"
+
+#: ../../src/ondisk/xattrs.md 457ec9c5bda1409fa8b3712c3f51fe72
+msgid "`metabox_nid`"
+msgstr "`metabox_nid`"
+
+#: ../../src/ondisk/xattrs.md b2640970c14843ed9f4f9a307bb6ddc7
+msgid ""
+"Metabox inode NID. Relevant when shared xattrs or long xattr prefixes are"
+" stored in the metabox inode's data region"
+msgstr "Metabox inode NID。当共享 xattr 或长 xattr 前缀存储在 metabox inode 的数据区域中时相关"
+
+#: ../../src/ondisk/xattrs.md:27 cd0d4ee279cb4983bb224e5f6e19649e
+msgid "Xattr Feature Flags"
+msgstr "Xattr 特性标志"
+
+#: ../../src/ondisk/xattrs.md:29 c81568dab25f4f18bd6e473585028465
+msgid ""
+"The following superblock feature bits are directly relevant to xattr "
+"support."
+msgstr "以下 superblock 特性位与 xattr 支持直接相关。"
+
+#: ../../src/ondisk/xattrs.md:31 c094d7b5706b43429cf22ab9f0f0ba97
+msgid "`feature_compat` Bits"
+msgstr "`feature_compat` 位"
+
+#: ../../src/ondisk/xattrs.md 60002d60b3ca48eda1ee1ea2e6fd5e57
+#: c1c254dbc3e944cf8fbbd05b4b678cf0
+msgid "Bit mask"
+msgstr "位掩码"
+
+#: ../../src/ondisk/xattrs.md 7dbc11c8cc4b4f8fbfe8c48b412f5a58
+msgid "`0x00000004`"
+msgstr "`0x00000004`"
+
+#: ../../src/ondisk/xattrs.md 705976ce6e9c469784efc6d4451e35b8
+msgid "`EROFS_FEATURE_COMPAT_XATTR_FILTER`"
+msgstr "`EROFS_FEATURE_COMPAT_XATTR_FILTER`"
+
+#: ../../src/ondisk/xattrs.md 566c7f992c824dfe8a81dfc043699c71
+msgid "Enables the per-inode xattr Bloom filter described in {ref}`xattr_filter`"
+msgstr "启用 {ref}`xattr_filter` 中描述的 per-inode xattr Bloom 过滤器"
+
+#: ../../src/ondisk/xattrs.md e6b72528a16c404cb008f3deed97cefb
+msgid "`0x00000008`"
+msgstr "`0x00000008`"
+
+#: ../../src/ondisk/xattrs.md 14ca56c4f2f549bd8cb7b37b5281e7ac
+msgid "`EROFS_FEATURE_COMPAT_SHARED_EA_IN_METABOX`"
+msgstr "`EROFS_FEATURE_COMPAT_SHARED_EA_IN_METABOX`"
+
+#: ../../src/ondisk/xattrs.md 795622ddafd045099e8d16f57f1490fb
+msgid ""
+"Stores the shared xattr area in the metabox inode's decoded data region "
+"instead of at `xattr_blkaddr`"
+msgstr "将共享 xattr 区域存储在 metabox inode 的解码数据区域中，而不是 `xattr_blkaddr` 处"
+
+#: ../../src/ondisk/xattrs.md 8f531f23ea6949178ecb0a1b8cbeb0a5
+msgid "`0x00000010`"
+msgstr "`0x00000010`"
+
+#: ../../src/ondisk/xattrs.md 9a28158386c04c618a7cb6996976a874
+msgid "`EROFS_FEATURE_COMPAT_PLAIN_XATTR_PFX`"
+msgstr "`EROFS_FEATURE_COMPAT_PLAIN_XATTR_PFX`"
+
+#: ../../src/ondisk/xattrs.md 3b945a2d71c24c948c79d7846008ae1a
+msgid ""
+"Stores the long xattr prefix table as a standalone region; valid when "
+"`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` is set; see "
+"{ref}`long_xattr_prefixes`"
+msgstr "将长 xattr 前缀表存储为独立区域；仅在设置了 `EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` "
+"时有效；参见 {ref}`long_xattr_prefixes`"
+
+#: ../../src/ondisk/xattrs.md cf00f0c41e924bc38bfde44ac477cc7c
+msgid "`0x00000020`"
+msgstr "`0x00000020`"
+
+#: ../../src/ondisk/xattrs.md a74e75b9d4a04a66b7fa0f8030744979
+msgid "`EROFS_FEATURE_COMPAT_ISHARE_XATTRS`"
+msgstr "`EROFS_FEATURE_COMPAT_ISHARE_XATTRS`"
+
+#: ../../src/ondisk/xattrs.md c5f4a5536c574bb3b8dce562434b0da4
+msgid ""
+"Enables image-share xattrs. `ishare_xattr_prefix_id` is valid only when "
+"this bit and `EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` are both set; see "
+"{ref}`image_share_xattrs`"
+msgstr "启用镜像共享 xattr。`ishare_xattr_prefix_id` 仅在此位与 "
+"`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` 均设置时有效；参见 {ref}`image_share_xattrs`"
+
+#: ../../src/ondisk/xattrs.md:40 0800e29fff014036a0dcc6a7c7fffbcd
+msgid "`feature_incompat` Bits"
+msgstr "`feature_incompat` 位"
+
+#: ../../src/ondisk/xattrs.md 954d0249d6ac42daa75dddfd0ff17030
+msgid "`0x00000040`"
+msgstr "`0x00000040`"
+
+#: ../../src/ondisk/xattrs.md c0d35c4bfcbf48518e5fbf093c3f90f2
+msgid "`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES`"
+msgstr "`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES`"
+
+#: ../../src/ondisk/xattrs.md fa817d039d0848f3992ea5d79cb71ce3
+msgid ""
+"Enables the long xattr prefix table described in "
+"{ref}`long_xattr_prefixes`"
+msgstr "启用 {ref}`long_xattr_prefixes` 中描述的长 xattr 前缀表"
+
+#: ../../src/ondisk/xattrs.md:47 e8d81ad29164490bb40f9624c9dea463
+msgid "Inode Fields for Xattr Support"
+msgstr "支持 Xattr 的 Inode 字段"
+
+#: ../../src/ondisk/xattrs.md:49 0dbce39333fb4e6e8379437849a94f19
+msgid ""
+"The full compact and extended inode layouts are defined in "
+"{ref}`on_disk_inodes`. For xattr support, both inode variants share the "
+"same feature-specific field:"
+msgstr "完整的紧凑型和扩展型 inode 布局在 {ref}`on_disk_inodes` 中定义。为支持 xattr，两种 inode "
+"变体共享同一个特性专用字段："
+
+#: ../../src/ondisk/xattrs.md 4aa5affd400a4faf9525223b53e5afb2
+#: 6cfc11e8ebf0467eb68e496655468f4a ed6e5f4ce510434ba5857658e3948ae9
+msgid "0x02"
+msgstr "0x02"
+
+#: ../../src/ondisk/xattrs.md 1a8fb81e816743249fad3560a274d360
+#: 4dda795d175b41a1a6e93290324d75c7 82699dd62d0d426f8050a8bf79c67821
+#: 8d1070f301e641bda08cc6f5ca831830
+msgid "2"
+msgstr "2"
+
+#: ../../src/ondisk/xattrs.md 10da573a909e4017957e895733e8ed11
+#: 3ab2364a10954419b227d7a6f767b87d ee735f0043ad440b8921c30419405282
+msgid "`u16`"
+msgstr "`u16`"
+
+#: ../../src/ondisk/xattrs.md e20aa09748c640e886eaec25619f88ec
+msgid "`i_xattr_icount`"
+msgstr "`i_xattr_icount`"
+
+#: ../../src/ondisk/xattrs.md c6f69367c22041d5ab2a2bf60653320a
+msgid ""
+"When non-zero, the inline xattr region size is `(i_xattr_icount - 1) * 4 "
+"+ 12` bytes"
+msgstr "非零时，内联 xattr 区域大小为 `(i_xattr_icount - 1) * 4 + 12` 字节"
+
+#: ../../src/ondisk/xattrs.md:56 e295671f9dc44be499fb126b8b85f523
+msgid "Two storage classes exist:"
+msgstr "存在两种存储类别："
+
+#: ../../src/ondisk/xattrs.md:58 aebeadcde7f1433a95f5ed48c5308abd
+msgid ""
+"**Inline xattrs**: stored directly in the metadata block immediately "
+"following the inode body (and any inline data tail). They are private to "
+"the inode and encoded as a sequence of xattr entry records within the "
+"inline xattr region described by `i_xattr_icount`."
+msgstr "**内联 xattr**：直接存储在紧接 inode 主体（以及任何内联数据尾部）之后的元数据块中。它们专属于该 inode，并在 "
+"`i_xattr_icount` 所描述的内联 xattr 区域内编码为一系列 xattr 条目记录。"
+
+#: ../../src/ondisk/xattrs.md:62 ea39cc7ab7574920824455a2caaec1e6
+msgid ""
+"**Shared xattrs**: stored once in the global shared xattr area. An inode "
+"references a shared entry through a 4-byte index stored immediately after"
+" the fixed 12-byte inline xattr header. Multiple inodes that carry an "
+"identical xattr (same name and value) can reference the same shared "
+"entry, avoiding redundant per-inode copies."
+msgstr "**共享 xattr**：在全局共享 xattr 区域中只存储一次。inode 通过存放在固定 12 字节内联 xattr 头部之后的 "
+"4 字节索引来引用共享条目。多个携带相同 xattr（名称和值均相同）的 inode 可以引用同一个共享条目，从而避免每个 inode 重复拷贝。"
+
+#: ../../src/ondisk/xattrs.md:68 003367827f844a95a8fc7899491bc49f
+msgid ""
+"To further reduce storage overhead for xattrs whose names share a common "
+"prefix (for example `trusted.overlay.*` or `security.ima.*`), EROFS "
+"supports a long xattr prefix table "
+"(`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES`). Each prefix entry records a "
+"`base_index` that refers to one of the standard short namespace prefixes "
+"and an additional infix string. An xattr entry whose `e_name_index` "
+"selects a long prefix stores only the suffix that follows the full "
+"reconstructed prefix, rather than repeating the prefix in every entry."
+msgstr "为了进一步降低名称具有共同前缀的 xattr 所占用的存储空间（例如 `trusted.overlay.*` 或 "
+"`security.ima.*`），EROFS 支持长 xattr "
+"前缀表（`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES`）。每个前缀条目记录一个指向标准短命名空间前缀之一的 "
+"`base_index`，以及一个额外的中缀字符串。当某个 xattr 条目的 `e_name_index` "
+"选择了一个长前缀时，它只存储完整重建前缀之后的后缀，而无需在每个条目中重复该前缀。"
+
+#: ../../src/ondisk/xattrs.md:77 b979dd318b6247c9bf57e3f9ef2ca9aa
+msgid "Inline Xattr Region Layout"
+msgstr "内联 Xattr 区域布局"
+
+#: ../../src/ondisk/xattrs.md:79 e29aad4d7a0240fd8b833c82026e525f
+msgid ""
+"The inline xattr region immediately follows the inode body (at a 4-byte "
+"aligned offset). Its total size is `(i_xattr_icount - 1) * 4 + 12` bytes,"
+" where 12 is the fixed size of the inline xattr body header. The region "
+"is structured as:"
+msgstr "内联 xattr 区域紧接 inode 主体之后（按 4 字节对齐的偏移）。其总大小为 `(i_xattr_icount - 1) * "
+"4 + 12` 字节，其中 12 是内联 xattr 主体头部的固定大小。该区域结构如下："
+
+#: ../../src/ondisk/xattrs.md:83 5b4464e3b0ee4a45820998759b3b0b0a
+msgid "The {ref}`inline_xattr_body_header` (12 bytes, fixed)."
+msgstr "{ref}`inline_xattr_body_header`（12 字节，固定）。"
+
+#: ../../src/ondisk/xattrs.md:84 b9276d41aa0748189d7dc89ff77e6477
+msgid "`h_shared_count` × 4-byte shared xattr index values."
+msgstr "`h_shared_count` 个 4 字节共享 xattr 索引值。"
+
+#: ../../src/ondisk/xattrs.md:85 06358528ee094203a4c97b467d9a5db8
+msgid "Zero or more {ref}`xattr_entry_record` (inline entries)."
+msgstr "零个或多个 {ref}`xattr_entry_record`（内联条目）。"
+
+#: ../../src/ondisk/xattrs.md:88 537621d4a9594f4eb4034d105e499c3f
+msgid "Inline Xattr Body Header"
+msgstr "内联 Xattr 主体头部"
+
+#: ../../src/ondisk/xattrs.md 2a8465782bba401797d5cb7cb733df96
+#: 376eafead45e494193bd0fdd100a4adb cade5d3a87f84ee1976e4170b5247b27
+msgid "0x00"
+msgstr "0x00"
+
+#: ../../src/ondisk/xattrs.md 8d166e69b8264956a14c2a64e1e26bb7
+msgid "`h_name_filter`"
+msgstr "`h_name_filter`"
+
+#: ../../src/ondisk/xattrs.md dc5b369795c64824b9bec3eec1b0998f
+msgid ""
+"Inverted Bloom filter over xattr names; valid when "
+"`EROFS_FEATURE_COMPAT_XATTR_FILTER` is set; see {ref}`Xattr Filter "
+"<xattr_filter>`"
+msgstr "针对 xattr 名称的反向 Bloom 过滤器；仅在设置了 `EROFS_FEATURE_COMPAT_XATTR_FILTER` "
+"时有效；参见 {ref}`Xattr 过滤器 <xattr_filter>`"
+
+#: ../../src/ondisk/xattrs.md 5788913779d24633bc0c48faeb76b554
+msgid "0x04"
+msgstr "0x04"
+
+#: ../../src/ondisk/xattrs.md 36a372e8333e4c1383f1bba829261757
+msgid "`h_shared_count`"
+msgstr "`h_shared_count`"
+
+#: ../../src/ondisk/xattrs.md d2228ac8e59f4a69be5dff827564fcc7
+msgid "Number of shared xattr index entries"
+msgstr "共享 xattr 索引条目的数量"
+
+#: ../../src/ondisk/xattrs.md 316aaad507834563b21e783b7a14224e
+msgid "0x05"
+msgstr "0x05"
+
+#: ../../src/ondisk/xattrs.md 8ad7d22b260e4b4d979efbf1cfea3a75
+msgid "7"
+msgstr "7"
+
+#: ../../src/ondisk/xattrs.md 8f7d53305fd74860979280320a6bc090
+msgid "`u8[]`"
+msgstr "`u8[]`"
+
+#: ../../src/ondisk/xattrs.md 8f77087ff6b7479b8e3ef5f8c10abf46
+msgid "_reserved_"
+msgstr "_reserved_"
+
+#: ../../src/ondisk/xattrs.md ec0fbf5ab9bd4c768fd323ebcda05a54
+msgid "Reserved; must be 0"
+msgstr "保留；必须为 0"
+
+#: ../../src/ondisk/xattrs.md:97 5f832abd0e0e4d53a33e56e142ada97e
+msgid "Xattr Entry Record"
+msgstr "Xattr 条目记录"
+
+#: ../../src/ondisk/xattrs.md:99 b5c356e2f188424293bd7bb986ed380b
+msgid "Each inline or shared xattr entry has the following layout:"
+msgstr "每个内联或共享 xattr 条目都具有以下布局："
+
+#: ../../src/ondisk/xattrs.md beddea78986f4748833c0c5ff3a3d9cd
+msgid "`e_name_len`"
+msgstr "`e_name_len`"
+
+#: ../../src/ondisk/xattrs.md cca1b1fc1b4649a58007e7c9e9a5256d
+msgid "Length of the name suffix in bytes"
+msgstr "名称后缀的字节长度"
+
+#: ../../src/ondisk/xattrs.md 782606f5bec447cba08ffb537f33f010
+msgid "0x01"
+msgstr "0x01"
+
+#: ../../src/ondisk/xattrs.md f2d603200efb4c73b48d87be10d758c5
+msgid "`e_name_index`"
+msgstr "`e_name_index`"
+
+#: ../../src/ondisk/xattrs.md d7c7cfb08adb4504adf26f43d574d76b
+msgid "Namespace index (maps to a prefix string); see below"
+msgstr "命名空间索引（映射到前缀字符串）；见下文"
+
+#: ../../src/ondisk/xattrs.md faebc795363d445f91ca87f24769c6d8
+msgid "`e_value_size`"
+msgstr "`e_value_size`"
+
+#: ../../src/ondisk/xattrs.md 6fda9cf9bb3748d4b58e9e8c5b49ae36
+msgid "Length of the value in bytes"
+msgstr "值的字节长度"
+
+#: ../../src/ondisk/xattrs.md:107 d06e61f9e0ce430bbefeef6cdceb130b
+msgid ""
+"Immediately following the 4-byte xattr entry header: `e_name_len` bytes "
+"of name suffix, then `e_value_size` bytes of value. The entire entry "
+"(header + name + value) is padded to a 4-byte boundary."
+msgstr "紧随 4 字节 xattr 条目头部之后：先是 `e_name_len` 字节的名称后缀，然后是 `e_value_size` "
+"字节的值。整个条目（头部 + 名称 + 值）填充到 4 字节边界。"
+
+#: ../../src/ondisk/xattrs.md:112 956c01c43dd34740babf3b6e50c09473
+msgid "`e_name_index` Namespace Mapping"
+msgstr "`e_name_index` 命名空间映射"
+
+#: ../../src/ondisk/xattrs.md:114 20509c2e820343b2aa9d0e6fa44e2fd4
+msgid ""
+"Rather than storing the full namespace prefix string in every entry, "
+"EROFS encodes the xattr namespace prefix as a 1-byte index. Bit 7 of "
+"`e_name_index` is the `EROFS_XATTR_LONG_PREFIX` flag. When set, the lower"
+" 7 bits index into the long xattr name prefix table (see "
+"{ref}`long_xattr_prefixes`). When clear, the full byte selects one of the"
+" built-in short namespace prefixes:"
+msgstr "为了避免在每个条目中存储完整的命名空间前缀字符串，EROFS 将 xattr 命名空间前缀编码为 1 "
+"字节索引。`e_name_index` 的第 7 位是 `EROFS_XATTR_LONG_PREFIX` 标志。置位时，低 7 位索引到长 "
+"xattr 名称前缀表（参见 {ref}`long_xattr_prefixes`）。清零时，整个字节选择某个内置短命名空间前缀："
+
+#: ../../src/ondisk/xattrs.md 9a305e8f3f474e81bb1f746a6d5110d0
+msgid "Value"
+msgstr "值"
+
+#: ../../src/ondisk/xattrs.md 23bdf4595d1244bfa30c470c25e2870b
+msgid "Prefix"
+msgstr "前缀"
+
+#: ../../src/ondisk/xattrs.md 413c5e34b40946768cf84331e8053271
+msgid "`user.`"
+msgstr "`user.`"
+
+#: ../../src/ondisk/xattrs.md 663e882697b34cc8a0438d2bfcd4c64f
+msgid "`system.posix_acl_access`"
+msgstr "`system.posix_acl_access`"
+
+#: ../../src/ondisk/xattrs.md 829ece1799c74843bfd47b8b221c0cab
+msgid "3"
+msgstr "3"
+
+#: ../../src/ondisk/xattrs.md 668bfccf7c1847538e2deef4207358a6
+msgid "`system.posix_acl_default`"
+msgstr "`system.posix_acl_default`"
+
+#: ../../src/ondisk/xattrs.md bc7266ffdab8438db5c4b600aed3fd05
+msgid "`trusted.`"
+msgstr "`trusted.`"
+
+#: ../../src/ondisk/xattrs.md f5c74f12cc534372879cbdcb00037507
+msgid "6"
+msgstr "6"
+
+#: ../../src/ondisk/xattrs.md e13233bba50a46848b36ed745559250b
+msgid "`security.`"
+msgstr "`security.`"
+
+#: ../../src/ondisk/xattrs.md:129 bad9fdd55f0c44fd8dd80f6baa6eb02f
+msgid "Shared Xattr Area"
+msgstr "共享 Xattr 区域"
+
+#: ../../src/ondisk/xattrs.md:131 0471e7729c514ffe9acd2f2f9702a989
+msgid ""
+"Normally, the shared xattr area begins at block address `xattr_blkaddr`. "
+"Each shared entry is an xattr entry record stored contiguously in this "
+"area. An inode references a shared entry by its 32-bit index, stored in "
+"the inline xattr region immediately after the 12-byte inline xattr "
+"header. The index is a byte offset within the shared area divided by 4."
+msgstr "通常情况下，共享 xattr 区域起始于块地址 `xattr_blkaddr`。每个共享条目都是连续存储在该区域中的 xattr "
+"条目记录。inode 通过存放在内联 xattr 区域中 12 字节内联 xattr 头部紧后方的 32 "
+"位索引来引用共享条目。该索引是共享区域内字节偏移量除以 4 的结果。"
+
+#: ../../src/ondisk/xattrs.md:137 8fe1a984e41a4d9a858e7c48a6c18f48
+msgid ""
+"When `EROFS_FEATURE_COMPAT_SHARED_EA_IN_METABOX` is set, the shared xattr"
+" pool is stored in the metabox inode's decoded data region rather than at"
+" `xattr_blkaddr`."
+msgstr "当设置了 `EROFS_FEATURE_COMPAT_SHARED_EA_IN_METABOX` 时，共享 xattr 池存储在 "
+"metabox inode 的解码数据区域中，而不是 `xattr_blkaddr` 处。"
+
+#: ../../src/ondisk/xattrs.md:141 58829b3901b242dc8e4d71b9617552fd
+msgid "Long Xattr Name Prefixes"
+msgstr "长 Xattr 名称前缀"
+
+#: ../../src/ondisk/xattrs.md:143 8d74644ffea94efabdbd5eeb69c48117
+msgid "This section applies when `EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` is set."
+msgstr "本节适用于设置了 `EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` 的情况。"
+
+#: ../../src/ondisk/xattrs.md:145 1367362d32d24878bb7825666a07b81a
+msgid ""
+"When this feature is set, a table of `xattr_prefix_count` prefix entries "
+"is present; see {ref}`xattr_prefix_table_placement` for where that table "
+"is stored. Each entry has the following fixed header, padded together "
+"with the variable-length `infix` payload to a 4-byte boundary:"
+msgstr "当设置了该特性时，会存在一个包含 `xattr_prefix_count` 个前缀条目的表；该表的存储位置参见 "
+"{ref}`xattr_prefix_table_placement`。每个条目都有以下固定头部，并与可变长度的 `infix` 负载一起填充到 4 "
+"字节边界："
+
+#: ../../src/ondisk/xattrs.md 122e52a160cf416eb54681985c58749c
+msgid "`size`"
+msgstr "`size`"
+
+#: ../../src/ondisk/xattrs.md 8c1844654a4f4290b737ebb6296342f0
+msgid ""
+"Byte length of the following content: `base_index` plus the variable-"
+"length `infix` payload"
+msgstr "后续内容的字节长度：`base_index` 加上可变长度的 `infix` 负载"
+
+#: ../../src/ondisk/xattrs.md 6287c4de10ff42cc928f04d4518714cc
+msgid "`base_index`"
+msgstr "`base_index`"
+
+#: ../../src/ondisk/xattrs.md 767b0460f5c54b228097fe6b17f0a2e1
+msgid ""
+"Built-in short namespace prefix index (see {ref}`e_name_index-namespace-"
+"mapping`)"
+msgstr "内置短命名空间前缀索引（参见 {ref}`e_name_index-namespace-mapping`）"
+
+#: ../../src/ondisk/xattrs.md:155 89ef0dedca1841bf9649c1ffe2862041
+msgid ""
+"The variable-length `infix` bytes begin at offset `0x03`. Their length is"
+" `size - 1`, and they are not null-terminated."
+msgstr "可变长度的 `infix` 字节从偏移 `0x03` 开始。其长度为 `size - 1`，且不以空字符结尾。"
+
+#: ../../src/ondisk/xattrs.md:158 6f1adf788eb94d229ca0f781dae5ef02
+msgid ""
+"The full reconstructed prefix is the concatenation of the short prefix "
+"indicated by `base_index` and the `infix` bytes. An xattr entry using a "
+"long prefix stores only the name suffix after the reconstructed prefix; "
+"`e_name_len` counts only those suffix bytes."
+msgstr "完整重建前缀是 `base_index` 所指示的短前缀与 `infix` 字节的拼接。使用长前缀的 xattr "
+"条目仅存储重建前缀之后的名称后缀；`e_name_len` 只统计这些后缀字节。"
+
+#: ../../src/ondisk/xattrs.md:163 a287c2cb674a4b3491afeffa53e8848f
+msgid ""
+"For example, an xattr named `trusted.overlay.opaque` can be represented "
+"with `base_index = 4` (`trusted.`) and `infix = \"overlay.\"`, yielding "
+"the full prefix `trusted.overlay.`; the stored name suffix is `opaque` "
+"with `e_name_len = 6`."
+msgstr "例如，名为 `trusted.overlay.opaque` 的 xattr 可以表示为 `base_index = "
+"4`（`trusted.`）和 `infix = "overlay."`，从而得到完整前缀 `trusted.overlay.`；存储的名称后缀为 "
+"`opaque`，且 `e_name_len = 6`。"
+
+#: ../../src/ondisk/xattrs.md:168 f257fa695c674c7e9a1d0d8ac871a049
+msgid "Prefix Table Placement"
+msgstr "前缀表位置"
+
+#: ../../src/ondisk/xattrs.md:170 32c8857258e749698db7b54683a9fc26
+msgid ""
+"The xattr prefix table start offset is recorded in `xattr_prefix_start`. "
+"The table may be:"
+msgstr "xattr 前缀表的起始偏移记录在 `xattr_prefix_start` 中。该表可能："
+
+#: ../../src/ondisk/xattrs.md:172 7a1e3741925649e6b5584bd363483e23
+msgid ""
+"embedded in the metabox or packed inode's data region when "
+"`EROFS_FEATURE_COMPAT_PLAIN_XATTR_PFX` is not set; or"
+msgstr "在 `EROFS_FEATURE_COMPAT_PLAIN_XATTR_PFX` 未设置时嵌入 metabox 或打包 inode "
+"的数据区域中；或"
+
+#: ../../src/ondisk/xattrs.md:173 e9030167887f417fa1415ad70dae485d
+msgid ""
+"stored in a standalone region when `EROFS_FEATURE_COMPAT_PLAIN_XATTR_PFX`"
+" is set."
+msgstr "在 `EROFS_FEATURE_COMPAT_PLAIN_XATTR_PFX` 设置时存储于独立区域中。"
+
+#: ../../src/ondisk/xattrs.md:176 d0cd2bcf8cf94533807ad29ef7c97698
+msgid "Xattr Filter"
+msgstr "Xattr 过滤器"
+
+#: ../../src/ondisk/xattrs.md:178 3706646e987349dc999f70563daef0c7
+msgid "This section applies when `EROFS_FEATURE_COMPAT_XATTR_FILTER` is set."
+msgstr "本节适用于设置了 `EROFS_FEATURE_COMPAT_XATTR_FILTER` 的情况。"
+
+#: ../../src/ondisk/xattrs.md:180 58f940095df74aa6a3b5f4342a3789a5
+msgid ""
+"When this feature is set, `h_name_filter` in the inline xattr body header"
+" holds a 32-bit inverted Bloom filter over the inode's xattr names. Each "
+"bit position corresponds to one hash bucket:"
+msgstr "当设置了该特性时，内联 xattr 主体头部中的 `h_name_filter` 保存一个针对该 inode 的 xattr 名称的 "
+"32 位反向 Bloom 过滤器。每个位位置对应一个哈希桶："
+
+#: ../../src/ondisk/xattrs.md:184 6617b17253dc43ecba26cdc1b72c34e7
+msgid ""
+"A bit value of **1** guarantees that no xattr present on this inode "
+"hashes to that bucket, so the queried name is **definitely absent**."
+msgstr "位值为 **1** 保证该 inode 上没有任何 xattr 会散列到该桶，因此查询的名称**肯定不存在**。"
+
+#: ../../src/ondisk/xattrs.md:186 6d50c0413dee4d549c89b8cdc0ec3b93
+msgid ""
+"A bit value of **0** means a matching xattr **may exist** and a full scan"
+" is required."
+msgstr "位值为 **0** 表示匹配的 xattr**可能存在**，需要进行完整扫描。"
+
+#: ../../src/ondisk/xattrs.md:189 60a935914d774445869144e1a9da3cad
+msgid ""
+"When `xattr_filter_reserved` in the superblock is non-zero, the Bloom "
+"filter is disabled unconditionally for all inodes in the image."
+msgstr "当 superblock 中的 `xattr_filter_reserved` 非零时，Bloom 过滤器将对镜像中所有 inode "
+"无条件禁用。"
+
+#: ../../src/ondisk/xattrs.md:193 782d483087714fd49b1819ba0c8e9488
+msgid "Image-share Xattrs"
+msgstr "镜像共享 Xattrs"
+
+#: ../../src/ondisk/xattrs.md:195 73a8dcde6a734d31a51b5d54c38001c0
+msgid ""
+"This section applies when both `EROFS_FEATURE_COMPAT_ISHARE_XATTRS` and "
+"`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` are set."
+msgstr "本节适用于同时设置了 `EROFS_FEATURE_COMPAT_ISHARE_XATTRS` 和 "
+"`EROFS_FEATURE_INCOMPAT_XATTR_PREFIXES` 的情况。"
+
+#: ../../src/ondisk/xattrs.md:198 7a8f44be288f49acb1862e4b23c5d7ee
+msgid ""
+"When these features are set, the superblock field "
+"`ishare_xattr_prefix_id` is valid and identifies an entry in the long "
+"xattr prefix table. Regular files may carry an xattr whose name equals "
+"the prefix identified by `ishare_xattr_prefix_id` (i.e. `e_name_index` "
+"selects that entry and `e_name_len` is 0) and whose value is a SHA-256 "
+"content fingerprint in the form `sha256:<hex-digest>`."
+msgstr "当这些特性设置后，superblock 字段 `ishare_xattr_prefix_id` 有效，并标识长 xattr "
+"前缀表中的一个条目。普通文件可以携带一个 xattr，其名称等于 `ishare_xattr_prefix_id` 所标识的前缀（即 "
+"`e_name_index` 选择该条目且 `e_name_len` 为 0），其值为形如 `sha256:<hex-digest>` 的 "
+"SHA-256 内容指纹。"
+
+#: ../../src/ondisk/xattrs.md:204 7458b7a83f0646389d6b6aa07fbeb4d2
+msgid ""
+"This convention enables tools to identify files with identical content "
+"across different EROFS images by comparing these fingerprints."
+msgstr "这一约定使工具能够通过比较这些指纹，识别不同 EROFS 镜像中具有相同内容的文件。"
+

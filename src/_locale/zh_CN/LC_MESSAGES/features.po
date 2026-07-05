@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/features.md:1 2c85c2ebe3554c398e845640120da399
+msgid "⚖️ Features and Comparison"
+msgstr "⚖️ 特性与对比"
+
+#: ../../src/features.md:9 893e86d6ad614e3c980d062c8dcf98e6
+msgid ""
+"Note that it's just **an incomplete list** for the qualitative "
+"evaluation. The overall purpose of this is to show EROFS benefits "
+"compared to other in-kernel approaches when making technical decisions."
+msgstr ""
+"请注意，这仅是一个用于定性评估的**不完整列表**。其总体目的是在"
+"技术决策时展示 EROFS 相较于其他内核内方案的优势。"
+
+#: ../../src/features.md:3 91c2990482c04bfa98e78500fef19f9c
+msgid "Feature  (as of Linux 6.17)"
+msgstr "特性（截至 Linux 6.17）"
+
+#: ../../src/features.md:3 ea73cf63371d4438844ba72d5fe8855b
+msgid "EROFS"
+msgstr "EROFS"
+
+#: ../../src/features.md:3 ba8d2b5ac59548c6979cea6ee113dbbc
+msgid "EXT4"
+msgstr "EXT4"
+
+#: ../../src/features.md:3 35589bf64a374e1a83512d205be36c9b
+msgid "SquashFS"
+msgstr "SquashFS"
+
+#: ../../src/features.md:3 58f99cbc200549f0a2dfaac807f92647
+msgid "Minimal block size"
+msgstr "最小块大小"
+
+#: ../../src/features.md:3 87e52b363e404bd6b2601d1e9bff062a
+msgid "512 B [^1]"
+msgstr "512 B [^1]"
+
+#: ../../src/features.md:3 8ee9043f5eed45efbcefc311609f2c5f
+msgid "1 KiB"
+msgstr "1 KiB"
+
+#: ../../src/features.md:3 522d6e6ac0b14a84ad5c817592a269aa
+msgid "Unaligned[^2]"
+msgstr "Unaligned[^2]"
+
+#: ../../src/features.md:3 f582149cb48a4b749f3ec13c766564ff
+msgid "Inode size"
+msgstr "inode 大小"
+
+#: ../../src/features.md:3 d6e1dccb1a2c46bc8869dec83ad9e2c0
+msgid "32/64 B"
+msgstr "32/64 B"
+
+#: ../../src/features.md:3 9210a4f46747402fb70562a8816e963e
+msgid "128/256 B"
+msgstr "128/256 B"
+
+#: ../../src/features.md:3 0a00e7079cf4483f9fabd08137eaa3f7
+msgid "Varied [^3]"
+msgstr "Varied [^3]"
+
+#: ../../src/features.md:3 81c691e5dbcf4abdbda9af86ecc37c0a
+msgid "Limitation of total UIDs/GIDs"
+msgstr "UID/GID 总数限制"
+
+#: ../../src/features.md:3 0647298ccb3f4843924270d48e1cf0d9
+#: e28a7bfb7f3a44679578ed5858850314
+msgid "Unlimited"
+msgstr "无限制"
+
+#: ../../src/features.md:3 c62bee479ee44aaa8b1a0877e6d12166
+msgid "65536 [^4]"
+msgstr "65536 [^4]"
+
+#: ../../src/features.md:3 c96c6e2b1eec426ead9082a0c5942753
+msgid "Pre-1970 / ns timestamps"
+msgstr "1970 年前 / 纳秒时间戳"
+
+#: ../../src/features.md:3 0050997395a147d89ef2f6279db6c8b9
+#: 07f6fe84dba446719a541b8bb77e1031 129fd95bbebb42aa873b3352ede1c880
+#: 15216c96b4a7437f93e613d2e49db406 16fbdfe21f5d45c2ba1f8bf1a2de5c12
+#: 193868b56e444c469733ab6100465091 2de63d87ef9c43708eef8d39368b29c9
+#: 31413a33f8314a77abfba2e68c6371b9 44be869796314a52b4429f1b62acbf3e
+#: 5221f02def8442ab9dc54a2cca5db9b3 573a5889bfdd4668b6701fe02b24f25f
+#: 67729a8af0ae48d9b122364591fd7425 89d53982a21e4b55a5804289e8b5bc48
+#: 928a118662fb43ab8c372a33d402d2d1 969b96a125b04e62aa8564be0a069ea5
+#: 9860dd4468a14d4aa0b8a65a8a6a434c a1088a49a22e43f5bf812ebcc9a85cbf
+#: a6283673110044fa97e72be540298c63 ba29cb78757f4404af5645575094f34f
+#: beb7f473f82549f488e417c9d5101bf4 c55096e7e9a74b5ebcbeffe551b99ec0
+#: ca10d161f5514a4ba021df4b34980383 d2053ffca2fb4bb59ef551cc721d4646
+#: e4f6a4b3cb9b458db845dcb12952e4f2 fbada368600241f0af5e3bb334f460ba
+msgid "Yes"
+msgstr "是"
+
+#: ../../src/features.md:3 0102f446f4684b619fba51567eed7911
+#: 0402e84921da422c9090f85a4f51669c 0a0e8816e2bc4041b71fd7b64c8c8a84
+#: 219324a3934641d0af80785672f3f10d 23b306ab72d74540ae40ed53e96247eb
+#: 2cbb84304761446f98d58bda45df39d3 40ce490a8213497ba9b71612b03adfd5
+#: 4f5592815b1f45b0b1472d0cc3c082c5 6dbf3d4052ec45569dcfc0cbfc204265
+#: 734ce2f1659943e7a6498f58bb95816c 7e3fc4b459d44648a03466e36eca344a
+#: 87036b94e986486f95d7dc411a0200c4 a66b0370814e4e5aa1829bedfcf379a6
+#: ae8c92b567e849aab2bc13b6d1488947 b601e270203846219e1a0ddcb66f9233
+#: dade2219c7264ce4af5b26af35d8ad3a f440d8f8cc6544f3b5683b212ae656af
+#: fa388d88454e44f0af447487ed9f68f5
+msgid "No"
+msgstr "否"
+
+#: ../../src/features.md:3 cc81c19a20ee4610b8814ad0529af6bc
+msgid "Filesystem UUID"
+msgstr "文件系统 UUID"
+
+#: ../../src/features.md:3 889edc80512446ffb35c42352acd3c8b
+msgid "Filesystem label (Volume label)"
+msgstr "文件系统标签（卷标）"
+
+#: ../../src/features.md:3 8acf4abe7ff74508a9d21bc8c37927ad
+msgid "Inline data"
+msgstr "内联数据"
+
+#: ../../src/features.md:3 f23b6879b6bd441f9041e2a4fd7611e0
+msgid "Yes (Inline tail)"
+msgstr "是（内联尾部）"
+
+#: ../../src/features.md:3 7394efb80df44ab3bb609ed235f455d6
+msgid "Data compression"
+msgstr "数据压缩"
+
+#: ../../src/features.md:3 91283f5d86954840988942440f70b317
+msgid "Yes [^5]"
+msgstr "Yes [^5]"
+
+#: ../../src/features.md:3 e35fc88175fb4930aacbd1f7b3dab10c
+msgid "Largest compression granularity"
+msgstr "最大压缩粒度"
+
+#: ../../src/features.md:3 4960e1479feb419aa034ccf218cbd35b
+#: d763362d3f5341d3b0d1792b0bbed059
+msgid "1 MiB"
+msgstr "1 MiB"
+
+#: ../../src/features.md:3 05b24fc39bea48b4be1bff81c3cfee22
+#: 306d97d1fe954220a9a007736eb51bd3 462443d9e88c479bb6a70a2d55cee632
+#: 834c4660d83643ca84860a1f58049113 ff394d308a9e4103aad0a5461e2875d7
+msgid "N/A"
+msgstr "不适用"
+
+#: ../../src/features.md:3 7a796c4832d54155b84637ec0bb07c20
+msgid "Default compression granularity"
+msgstr "默认压缩粒度"
+
+#: ../../src/features.md:3 60390e394c3345a0b0298dd5987eb5fa
+msgid "1 Block [^6]"
+msgstr "1 Block [^6]"
+
+#: ../../src/features.md:3 eeaf487c1c174bf8a0ff53f46de094c6
+msgid "128 KiB"
+msgstr "128 KiB"
+
+#: ../../src/features.md:3 333b244180f14a128a54d16365f0fd37
+msgid "Fragments"
+msgstr "片段"
+
+#: ../../src/features.md:3 edd0df78ac6c4bda9eddc24fda72f134
+msgid "File-backed mounts"
+msgstr "基于文件的挂载"
+
+#: ../../src/features.md:3 c85413dc6bd144298aa2ea7325596d38
+msgid "Yes [^7]"
+msgstr "Yes [^7]"
+
+#: ../../src/features.md:3 ff12e1836413424b92834b18f9145981
+msgid "Metadata compression"
+msgstr "元数据压缩"
+
+#: ../../src/features.md:3 6220e8d61ad049aeb74817e5f3911253
+msgid "Yes [^8]"
+msgstr "Yes [^8]"
+
+#: ../../src/features.md:3 9804102c4d824e9ba56a5958eed6ebdd
+msgid "Multiple compression algorithms"
+msgstr "多种压缩算法"
+
+#: ../../src/features.md:3 aefc90f400394bc2b360393feae21115
+msgid "Per-file"
+msgstr "按文件"
+
+#: ../../src/features.md:3 7933d395719244bc942c6b19a020c18b
+msgid "Data deduplication"
+msgstr "数据去重"
+
+#: ../../src/features.md:3 9c005fd41fef4ff98fbcb5987a384e90
+msgid "Extent-based"
+msgstr "基于 extent"
+
+#: ../../src/features.md:3 61c4536215b94b4cbbf6d1fb98902a27
+msgid "No? [^9]"
+msgstr "No? [^9]"
+
+#: ../../src/features.md:3 97e2e30e1c35413f9e615552f5e4645d
+msgid "File-based"
+msgstr "基于文件"
+
+#: ../../src/features.md:3 9db0291712f44de1996c61305046878b
+msgid "Extended attribute support"
+msgstr "扩展属性支持"
+
+#: ../../src/features.md:3 6fc04590a1274657972b46ffce585640
+msgid "External data (multi-devices)"
+msgstr "外部数据（多设备）"
+
+#: ../../src/features.md:3 e68eb6b441fb4d028adad5dd3e393a13
+msgid "POSIX.1e ACL support"
+msgstr "POSIX.1e ACL 支持"
+
+#: ../../src/features.md:3 6a33dfe603a24c98b69a882999164ca7
+msgid "Direct I/O support [^10]"
+msgstr "Direct I/O support [^10]"
+
+#: ../../src/features.md:3 a1f18091b1504c6b8b990a8613b8f40f
+msgid "FIEMAP support"
+msgstr "FIEMAP 支持"
+
+#: ../../src/features.md:3 3e4a9452f77b44109ac404ffa34fca66
+msgid "SEEK_{DATA,HOLE} support"
+msgstr "SEEK_{DATA,HOLE} 支持"
+
+#: ../../src/features.md:3 ea304dcf818b40ab97e42b8fb2289f51
+msgid "FSDAX support"
+msgstr "FSDAX 支持"
+
+#: ../../src/features.md:3 72a8c545da264581839c022263d18a64
+msgid "Large folio support"
+msgstr "大 folio 支持"
+
+#: ../../src/features.md:3 bbc3964debac4763a36e69d448800356
+msgid "Yes [^11]"
+msgstr "Yes [^11]"
+
+#: ../../src/features.md:3 9bcf20d6abfd4fde9a6d4416933451ab
+msgid "Yes [^12]"
+msgstr "Yes [^12]"
+
+#: ../../src/features.md:3 702c531f752e45acb413fb013f59b72d
+msgid "Hardware acceleration support"
+msgstr "硬件加速支持"
+
+#: ../../src/features.md:3 b5a5d9c387b0491c92b81365623fcea8
+msgid "Yes [^13]"
+msgstr "Yes [^13]"
+
+#: ../../src/features.md:40 7003779cefa3470b89aaea85fc5392c1
+msgid "512-byte blocks can be used for tarball data reference."
+msgstr "512 字节块可用于引用 tarball 数据。"
+
+#: ../../src/features.md:42 e954447c16b7484193336c8b865f0133
+msgid ""
+"It means a fixed minimal filesystem I/O size which SquashFS doesn't have."
+" Instead, SquashFS has its own \"block size\": its compressed files are "
+"split up in fixed-size blocks. See [Squashfs Binary Format/About](https"
+"://dr-emann.github.io/squashfs/squashfs.html#_about)."
+msgstr ""
+"它指的是 SquashFS 所没有的固定最小文件系统 I/O 大小。相反，SquashFS 有自"
+"己的“块大小”：其压缩文件会被拆分为固定大小的块。详见 [Squashfs Binary "
+"Format/About](https://dr-emann.github.io/squashfs/squashfs.html#_about)。"
+
+#: ../../src/features.md:46 3dcf27ae800446dc8bc9f0494d1cb986
+msgid ""
+"SquashFS has different on-disk inodes for each type of varying contents "
+"and size. See [Squashfs Binary Format/Inode Table](https://dr-"
+"emann.github.io/squashfs/squashfs.html#_inode_table)."
+msgstr ""
+"SquashFS 针对每种类型的不同内容和大小使用不同的磁盘 inode。详见 "
+"[Squashfs Binary Format/Inode Table](https://dr-emann.github.io/squashfs/"
+"squashfs.html#_inode_table)。"
+
+#: ../../src/features.md:49 d52dd3838d984b4bb2f7303d814194f5
+msgid ""
+"SquashFS allows 32-bit UIDs/GIDs, but only among 2{sup}`16` unique "
+"values. See [Squashfs Binary Format/Inode Table](https://dr-"
+"emann.github.io/squashfs/squashfs.html#_inode_table)."
+msgstr ""
+"SquashFS 允许 32 位 UID/GID，但仅限于 2{sup}`16` 个唯一值。详见 "
+"[Squashfs Binary Format/Inode Table](https://dr-emann.github.io/squashfs/"
+"squashfs.html#_inode_table)。"
+
+#: ../../src/features.md:52 f8896242d6f14402ab8539985acc2dd8
+msgid ""
+"Data compression is an optional feature of the EROFS filesystem. "
+"Currently, the supported compression algorithms include "
+"[LZ4](https://lz4.org), [MicroLZMA](https://tukaani.org/xz) (since Linux "
+"5.16), [DEFLATE](https://datatracker.ietf.org/doc/html/rfc1951) (since "
+"Linux 6.6 LTS) and "
+"[Zstandard](https://datatracker.ietf.org/doc/html/rfc8878) (since Linux "
+"6.10)."
+msgstr ""
+"数据压缩是 EROFS 文件系统的可选特性。目前支持的压缩算法包括 "
+"[LZ4](https://lz4.org)、[MicroLZMA](https://tukaani.org/xz)（自 Linux "
+"5.16 起）、[DEFLATE](https://datatracker.ietf.org/doc/html/rfc1951)（自 "
+"Linux 6.6 LTS 起）以及 "
+"[Zstandard](https://datatracker.ietf.org/doc/html/rfc8878)（自 Linux "
+"6.10 起）。"
+
+#: ../../src/features.md:59 a4291e0cf8184c12805aea67bd778a1b
+msgid "The default block size of EROFS is 4 KiB on x86 and x86-64."
+msgstr "EROFS 在 x86 与 x86-64 上的默认块大小为 4 KiB。"
+
+#: ../../src/features.md:61 f16cf78ba6d44974b487713ca9ab89d6
+msgid ""
+"EROFS has supported [EROFS over fscache](https://lwn.net/Articles/896140)"
+" (since Linux 5.19, deprecated in Linux 6.12) and [file-backed "
+"mounts](https://lwn.net/Articles/990750) (since Linux 6.12) to avoid "
+"unnecessary loop devices."
+msgstr ""
+"EROFS 支持 [EROFS over fscache](https://lwn.net/Articles/896140)（自 Linux "
+"5.19 起，在 Linux 6.12 中已弃用）和[基于文件的挂载](https://lwn.net/Articles/"
+"990750)（自 Linux 6.12 起），以避免不必要的 loop 设备。"
+
+#: ../../src/features.md:65 0793ecb507dc4224901037aa82594a60
+msgid ""
+"EROFS metadata is designed to be directly accessible from block devices "
+"without decoding, or deserialization, as these can lead to I/O "
+"amplification and additional runtime latency in performance-critical "
+"scenarios. Nevertheless, optional metadata compression has been supported"
+" since Linux 6.17 to minimize filesystem images."
+msgstr ""
+"EROFS 的元数据设计为可直接从块设备访问，无需解码或反序列化，因为这些操"
+"作可能在性能敏感场景下导致 I/O 放大和额外的运行时延迟。不过，自 Linux "
+"6.17 起已支持可选的元数据压缩，以最小化文件系统镜像。"
+
+#: ../../src/features.md:71 cee44ff0ae454e60b93d287beac8686a
+msgid ""
+"Strictly speaking, EXT4 has a feature named "
+"\"[shared_blocks](https://lore.kernel.org/r/20201005161941.GF4225@quack2.suse.cz)\","
+" which will prevent applications from writing to the filesystem."
+msgstr ""
+"严格来说，EXT4 有一个名为 "
+"\"[shared_blocks](https://lore.kernel.org/r/20201005161941.GF4225@quack2.suse.cz)\""
+" 的特性，开启后会阻止应用向文件系统写入。"
+
+#: ../../src/features.md:74 fc7a8db9cd2545ca9b09afcc7f25aeb7
+msgid ""
+"For example, `direct I/O` can be used for loop devices backed by "
+"unencoded files on the EROFS filesystem to avoid double caching. `Direct "
+"I/O` on encoded files is almost useless since it should not do ANY "
+"caching and thus will kill the overall performance."
+msgstr ""
+"例如，`direct I/O` 可用于由 EROFS 文件系统上未编码文件支持的 loop 设备，"
+"以避免双重缓存。在编码文件上使用 `Direct I/O` 几乎毫无用处，因为它不应做"
+"任何缓存，从而会严重影响整体性能。"
+
+#: ../../src/features.md:79 4d45b8a2c6334eb2baa84caeed1b148a
+msgid ""
+"EROFS has supported large folios [for uncompressed "
+"files](https://lwn.net/Articles/931794) (since Linux 6.2) and [compressed"
+" files](https://git.kernel.org/torvalds/c/e080a26725fb) (since Linux "
+"6.11)."
+msgstr ""
+"EROFS 已支持未压缩文件的[大 folio](https://lwn.net/Articles/931794)（自 "
+"Linux 6.2 起）以及压缩文件的[大 folio](https://git.kernel.org/torvalds/c/"
+"e080a26725fb)（自 Linux 6.11 起）。"
+
+#: ../../src/features.md:82 b2bc76b801324e3b88233cf2a8a25dd0
+msgid ""
+"EXT4 supports [large folios since Linux "
+"6.16](https://git.kernel.org/torvalds/c/d87d73895fcd)."
+msgstr ""
+"EXT4 自 [Linux 6.16 起支持大 folio](https://git.kernel.org/torvalds/c/"
+"d87d73895fcd)。"
+
+#: ../../src/features.md:84 d53695020e9143ca85c82ec541cbbcbd
+msgid ""
+"EROFS has supported [Intel QuickAssist Technology to accelerate DEFLATE "
+"algorithm since Linux "
+"6.16](https://git.kernel.org/torvalds/c/79b98edf918e)."
+msgstr ""
+"EROFS 自 [Linux 6.16 起支持 Intel QuickAssist Technology 加速 DEFLATE "
+"算法](https://git.kernel.org/torvalds/c/79b98edf918e)。"

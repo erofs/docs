@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/merging.md:1 be5ea7ff914f49229f9b0125a183b8ce
+msgid "Native sub-filesystem merging"
+msgstr "原生子文件系统合并"
+
+#: ../../src/merging.md:3 a638372078764dbaac444e4a808e0b9b
+msgid ""
+"In addition to the [OSTree/Composefs file-based "
+"model](https://github.com/containers/composefs), EROFS itself supports "
+"three native forms to merge common external binary sources (like sub-"
+"filesystem layers) into one filesystem and mount the merged filesystem in"
+" one go."
+msgstr ""
+"除了 [OSTree/Composefs 基于文件的模型](https://github.com/containers/composefs)"
+" 之外，EROFS 自身还支持三种原生形式，将常见的外部二进制源（如子文件系统层）"
+"合并为一个文件系统，并一次性挂载合并后的文件系统。"
+
+#: ../../src/merging.md:8 35688475bf3b407fbb31c68acb29956d
+msgid "Single device"
+msgstr "单设备"
+
+#: ../../src/merging.md:10 2182495b2c0a47e29816a9f40da092ad
+msgid ""
+"Unlike other kernel filesystems which have inflexible layouts, EROFS has "
+"only one fixed-offset on_disk part: {ref}`the superblock "
+"<on_disk_superblock>`. It's quite easy to compose external payloads such "
+"as binary formats like "
+"[tarballs](https://pubs.opengroup.org/onlinepubs/007908799/xcu/tar.html) "
+"or other filesystems (e.g., EROFS, EXT4, XFS, etc.) just with **linear "
+"physical mappings** to form the entire filesystem view."
+msgstr ""
+"与其他布局不够灵活的内核文件系统不同，EROFS 只有一个固定偏移的磁盘部分："
+"{ref}`superblock <on_disk_superblock>`。只需使用**线性物理映射**，即可轻松"
+"组合外部载荷，例如 "
+"[tarballs](https://pubs.opengroup.org/onlinepubs/007908799/xcu/tar.html) "
+"等二进制格式，或其他文件系统（如 EROFS、EXT4、XFS 等），以构成完整的文件系统视图。"
+
+#: ../../src/merging.md:17 bc1e7472d049420c8889e95d5457ef58
+msgid ""
+"It's particularly useful for virtualization cases since _only one EROFS "
+"mount_ will be passed in via [virtio-blk](https://docs.oasis-"
+"open.org/virtio/virtio/v1.3/csd01/virtio-v1.3-csd01.html#x1-3050002) or "
+"[virtio-pmem](https://docs.oasis-"
+"open.org/virtio/virtio/v1.3/csd01/virtio-v1.3-csd01.html#x1-68900019) "
+"instead of individual parts."
+msgstr ""
+"这在虚拟化场景中尤为有用，因为只需通过 [virtio-blk](https://docs.oasis-"
+"open.org/virtio/virtio/v1.3/csd01/virtio-v1.3-csd01.html#x1-3050002) 或 "
+"[virtio-pmem](https://docs.oasis-"
+"open.org/virtio/virtio/v1.3/csd01/virtio-v1.3-csd01.html#x1-68900019) "
+"传入_一个 EROFS 挂载_，而无需分别传入各个部分。"
+
+#: ../../src/merging.md:22 badef7789ce941ac8be09f5be46af6b4
+msgid "![Single block device with sub-filesystems](_static/merging_singledev.svg)"
+msgstr "![带子文件系统的单块设备](_static/merging_singledev.svg)"
+
+#: ../../src/merging.md:22 b245dfae95a648aaa38db7009bdde02c
+msgid "Single block device with sub-filesystems"
+msgstr "带子文件系统的单块设备"
+
+#: ../../src/merging.md:24 8ae4ce084db34a1e9f4951f16c21ac53
+msgid ""
+"Especially for each virtio-pmem instance, the host page cache can be "
+"easily shared at a finer sub-image granularity due to linear physical "
+"mappings compared to other approaches, which are typically based on "
+"traditional disk snapshots."
+msgstr ""
+"特别是对于每个 virtio-pmem 实例，得益于线性物理映射，主机 page cache 可以"
+"以更细的子镜像粒度轻松共享，而其他方法通常基于传统的磁盘快照。"
+
+#: ../../src/merging.md:29 3ac33618deef4a41aadeb34f2c22dcbe
+msgid ""
+"This way has already been usable since the initial EROFS version. "
+"However, if your use cases also cover multiple devices, an on-disk device"
+" table will be needed then; See below."
+msgstr ""
+"这种方式自 EROFS 首个版本起就已可用。不过，如果你的用例还涉及多个设备，"
+"那么就需要一个 on-disk device table；详见下文。"
+
+#: ../../src/merging.md:34 ef7166b8fa894fbc8b1796466eeb474a
+msgid "Multiple devices / blobs"
+msgstr "多设备 / blobs"
+
+#: ../../src/merging.md:36 9b71490d955b4b098badc5064beb2cb1
+msgid ""
+"Since [Linux 5.16](https://lwn.net/Articles/874683), EROFS has supported "
+"[multiple "
+"devices](https://git.kernel.org/torvalds/c/dfeab2e95a75a424adf39992ac62dcb9e9517d4a)"
+" explicitly as its external data sources. EROFS device table can indicate"
+" external data on extra devices as below:"
+msgstr ""
+"自 [Linux 5.16](https://lwn.net/Articles/874683) 起，EROFS 已明确支持将"
+"[多个设备](https://git.kernel.org/torvalds/c/dfeab2e95a75a424adf39992ac62dcb9e9517d4a)"
+"作为外部数据源。EROFS device table 可以指示额外设备上的外部数据，如下所示："
+
+#: ../../src/merging.md:41 63ed290d8da442eabcba51c4d66ead30
+msgid ""
+"![Multiple block devices with sub-"
+"filesystems](_static/merging_multidev.svg)"
+msgstr ""
+"![带子文件系统的多块设备](_static/merging_multidev.svg)"
+
+#: ../../src/merging.md:41 90c66e964d584583b49726d868b3abdd
+msgid "Multiple block devices with sub-filesystems"
+msgstr "带子文件系统的多块设备"
+
+#: ../../src/merging.md:43 5bdf47ebc1aa4fc7a292c9418c7cbe15
+msgid ""
+"Besides, it is quite useful for scenarios where we have no way to compose"
+" a single specific block device from individual sources as described in "
+"the previous section."
+msgstr ""
+"此外，对于无法像上一节所述将各个来源组合成单个特定 block device 的场景，"
+"它也非常有用。"
+
+#: ../../src/merging.md:47 9ebcc067bbbb4c869a14541240e08c08
+msgid ""
+"In addition, since [Linux 5.19](https://lwn.net/Articles/896140), EROFS "
+"has added __EROFS over fscache__ to make use of fscache caching framework"
+" without explicit block devices, which is currently used by [Dragonfly "
+"Nydus image service](https://nydus.dev). There are some benefits such as "
+"massive blobs and on-demand loading. For more details, please look into "
+"[this](https://lore.kernel.org/r/20220509074028.74954-1-jefflexu@linux.alibaba.com)."
+msgstr ""
+"此外，自 [Linux 5.19](https://lwn.net/Articles/896140) 起，EROFS 新增了 "
+"__EROFS over fscache__，可在没有显式 block device 的情况下利用 fscache "
+"缓存框架，目前 [Dragonfly Nydus image service](https://nydus.dev) 正在使用它。"
+"其优点包括海量 blob 和按需加载等。更多详情请查看"
+"[此链接](https://lore.kernel.org/r/20220509074028.74954-1-jefflexu@linux.alibaba.com)。"
+
+#: ../../src/merging.md:54 02ff9a1a5ccc41eba9281652e5f87cf7
+msgid "Single flattened device"
+msgstr "单扁平化设备"
+
+#: ../../src/merging.md:56 3cc313f0dcc440f1bea2ea7029ae256b
+msgid ""
+"EROFS can still be mounted as a [single, flattened "
+"device](https://git.kernel.org/torvalds/c/8b465fecc35a434e61728a6184d188c6daa37a5d)"
+" even if the on-disk device table exists. It's __highly recommended__ "
+"that an on-disk device table is always included in the long term for "
+"related use cases."
+msgstr ""
+"即使存在 on-disk device table，EROFS 仍可挂载为[单个扁平化设备]"
+"(https://git.kernel.org/torvalds/c/8b465fecc35a434e61728a6184d188c6daa37a5d)。"
+"对于相关用例，__强烈建议__从长远来看始终包含 on-disk device table。"

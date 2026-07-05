@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/roadmap.md:1 76e294ecac904978bc6a1d97d2061d41
+msgid "🗺 Roadmap"
+msgstr "🗺 路线图"
+
+#: ../../src/roadmap.md:3 a862c1f9b5774947b4cd0c18b3812847
+msgid ""
+"Note that items marked with **\\[GSoC\\]** are also intended for Google "
+"Summer of Code (GSoC) projects."
+msgstr ""
+"请注意，标有 **\\[GSoC\\]** 的项目也面向 Google "
+"Summer of Code (GSoC) 项目。"
+
+#: ../../src/roadmap.md:6 0c3f700f9f0c4a8faac9924755096c14
+msgid "Linux Kernel"
+msgstr "Linux 内核"
+
+#: ../../src/roadmap.md:8 f946c1d0a1c5466b9d760ff9878dab67
+msgid ""
+"[EROFS page cache sharing across different "
+"filesystems](https://lwn.net/Articles/984092);"
+msgstr ""
+"[跨不同文件系统的 EROFS page cache 共享]"
+"(https://lwn.net/Articles/984092);"
+
+#: ../../src/roadmap.md:10 c7dee7b5588f4c80941fabe8ee9d5c4a
+msgid ""
+"[Preliminary EROFS Rust in-kernel adaption (EXPERIMENTAL, program for "
+"students)](https://lore.kernel.org/r/20240916135634.98554-1-toolmanp@tlmp.cc);"
+msgstr ""
+"[EROFS Rust 内核适配初步方案（实验性，面向学生项目）]"
+"(https://lore.kernel.org/r/20240916135634.98554-1-toolmanp@tlmp.cc);"
+
+#: ../../src/roadmap.md:12 1938d9f0e5354ae8bb31a12cd571553f
+msgid "Userspace tools (erofs-utils)"
+msgstr "用户空间工具（erofs-utils）"
+
+#: ../../src/roadmap.md:14 f3588788802f4f3588487ee13c42e6d7
+msgid "Stabilize liberofs APIs;"
+msgstr "稳定 liberofs API；"
+
+#: ../../src/roadmap.md:16 704b6d30f62345ffa10891fde4dd84a4
+msgid ""
+"**\\[GSoC\\]** <a href=\"gsoc.html#multi-threaded-decompression-support-in-"
+"fsck-erofs\">Multi-threaded decompression</a>;"
+msgstr ""
+"**\\[GSoC\\]** <a href=\"gsoc.html#multi-threaded-decompression-support-in-"
+"fsck-erofs\">多线程解压</a>;"
+
+#: ../../src/roadmap.md:18 cd5f0d7071394ff2825d191efd57ca6c
+msgid "Fanotify on-demand loading support (using fanotify pre-content hooks);"
+msgstr "Fanotify 按需加载支持（使用 fanotify pre-content hooks）；"
+
+#: ../../src/roadmap.md:20 a9f202d6b89d454695796c7b49baa1f5
+msgid ""
+"Rebuild improvements (including incremental updates "
+"[\\[1\\]](https://git.kernel.org/xiang/erofs-utils/c/7550a30c332c))."
+msgstr ""
+"Rebuild 改进（包括增量更新 "
+"[\\[1\\]](https://git.kernel.org/xiang/erofs-utils/c/7550a30c332c)）。"
+
+#: ../../src/roadmap.md:22 aa1a308dc07645359afd6cc69ecb1015
+msgid "Containers"
+msgstr "容器"
+
+#: ../../src/roadmap.md:24 21bdf8713ee94991be335fda004ef1df
+msgid ""
+"[(containerd) EROFS Support and "
+"Improvements](https://github.com/containerd/containerd/issues/11340);"
+msgstr ""
+"[(containerd) EROFS 支持与改进]"
+"(https://github.com/containerd/containerd/issues/11340);"
+
+#: ../../src/roadmap.md:26 a044f799fcaf4f899a3eb77bc23329cf
+msgid ""
+"[(Kata Containers) EROFS Snapshotter Support in Kata](https://github.com"
+"/kata-containers/kata-containers/issues/11163);"
+msgstr ""
+"[(Kata Containers) Kata 中的 EROFS Snapshotter 支持](https://github.com"
+"/kata-containers/kata-containers/issues/11163);"
+
+#: ../../src/roadmap.md:28 a0ef46cc76404122b1f82373a5f15017
+msgid ""
+"[(gVisor) EROFS Snapshotter "
+"Support](https://docs.google.com/document/d/1JBBIAqEPwJHGOqML9wcEyZhKicfo9pWZOkahn31AfPs)."
+msgstr ""
+"[(gVisor) EROFS Snapshotter 支持]"
+"(https://docs.google.com/document/d/1JBBIAqEPwJHGOqML9wcEyZhKicfo9pWZOkahn31AfPs)。"
+
+#: ../../src/roadmap.md:30 6974026ca9ba4a4c974c31e003a6bf2d
+msgid "Miscellaneous items"
+msgstr "其他事项"
+
+#: ../../src/roadmap.md:32 91ccbdb8623847ffaf0a161938ba658a
+msgid ""
+"**\\[GSoC\\]** <a href=\"gsoc.html#porting-erofs-to-bsd-kernels-freebsd-"
+"focus\">Porting EROFS to BSD Kernels</a>."
+msgstr ""
+"**\\[GSoC\\]** <a href=\"gsoc.html#porting-erofs-to-bsd-kernels-freebsd-"
+"focus\">将 EROFS 移植到 BSD 内核</a>。"

@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/credits.md:1 a3832d1f82d84ca89b2c48e68ebb0d01
+msgid "🎉 Contributors"
+msgstr "🎉 贡献者"
+
+#: ../../src/credits.md:3 e4914b056917404383fd510c2510f9e4
+msgid ""
+"EROFS has been contributed by community developers around the world, "
+"including but not limited to (in alphabetical order):"
+msgstr ""
+"EROFS 由来自世界各地的社区开发者共同贡献，"
+"包括但不限于（按字母顺序排列）："
+
+#: ../../src/credits.md:6 576368c60b3548228beb7858fe6681a4
+msgid ""
+"By vendor "
+"([raw](https://github.com/erofs/docs/actions/workflows/credits.yml))"
+msgstr ""
+"按厂商划分 "
+"（[原始数据](https://github.com/erofs/docs/actions/workflows/credits.yml)）"
+
+#: ../../src/credits.md:7 7f8ed6744eb6471cbc80fa5037673594
+msgid "Alibaba Group (@linux.alibaba.com)"
+msgstr "Alibaba Group (@linux.alibaba.com)"
+
+#: ../../src/credits.md:8 a2c65b3629df4ec3beec895cf1fc7b9b
+msgid "ByteDance (@bytedance.com)"
+msgstr "ByteDance (@bytedance.com)"
+
+#: ../../src/credits.md:9 72ec8849973944f4827c23a083518da2
+msgid "Coolpad (@coolpad.com, @yulong.com)"
+msgstr "Coolpad (@coolpad.com, @yulong.com)"
+
+#: ../../src/credits.md:10 25d7b4e39c034d708966deb94bc3441c
+msgid "Docker (@docker.com)"
+msgstr "Docker (@docker.com)"
+
+#: ../../src/credits.md:11 6ea47821dc2a46a28f0073f7d4acafe4
+msgid "Google (@google.com)"
+msgstr "Google (@google.com)"
+
+#: ../../src/credits.md:12 68b58062301648d9a98e75675abf3e1f
+msgid "Huawei (@huawei.com)"
+msgstr "Huawei (@huawei.com)"
+
+#: ../../src/credits.md:13 d9af0054a1d74fab90f714159a578381
+msgid "Inspur (@inspur.com)"
+msgstr "Inspur (@inspur.com)"
+
+#: ../../src/credits.md:14 adac71f0f5e94083a720e649b3416e90
+msgid "NVIDIA (@nvidia.com)"
+msgstr "NVIDIA (@nvidia.com)"
+
+#: ../../src/credits.md:15 084d53218f7c4a27852463140182f65c
+msgid "OPPO (@oppo.com)"
+msgstr "OPPO (@oppo.com)"
+
+#: ../../src/credits.md:16 0bdb1b4adc5b4ad98beafaaa9294eff6
+msgid "Red Hat (@redhat.com)"
+msgstr "Red Hat (@redhat.com)"
+
+#: ../../src/credits.md:17 d283f3b15945413ba4430d6faea33ac2
+msgid "Shanghai Jiao Tong University (@sjtu.edu.cn)"
+msgstr "Shanghai Jiao Tong University (@sjtu.edu.cn)"
+
+#: ../../src/credits.md:18 545c66e2a20c4266b9f2e4cc1f646952
+msgid "Sony Group Corporation (@sony.com)"
+msgstr "Sony Group Corporation (@sony.com)"
+
+#: ../../src/credits.md:19 4becbb22cbb5462dabe8e011fd40cf89
+msgid "South China University of Technology (@mail.scut.edu.cn)"
+msgstr "South China University of Technology (@mail.scut.edu.cn)"
+
+#: ../../src/credits.md:20 7b357151016b490bbda89786934f1214
+msgid "Tencent (@tencent.com)"
+msgstr "Tencent (@tencent.com)"
+
+#: ../../src/credits.md:21 fb3a6b8b0356483aaacad71270bd4509
+msgid "Tuxera (@tuxera.com)"
+msgstr "Tuxera (@tuxera.com)"
+
+#: ../../src/credits.md:22 7fd9a9db91f34cfba595cbbfcb301feb
+msgid "Uniontech (@uniontech.com)"
+msgstr "Uniontech (@uniontech.com)"
+
+#: ../../src/credits.md:23 68e4b05f350c455cb020c3be69b3ef66
+msgid "Vivo (@vivo.com)"
+msgstr "Vivo (@vivo.com)"
+
+#: ../../src/credits.md:24 e8fb665116224a758abc44151b6da0bc
+msgid "Xiaomi (@xiaomi.com)"
+msgstr "Xiaomi (@xiaomi.com)"
+
+#: ../../src/credits.md:26 496e17b85b634db88ff9aa30905ca833
+msgid "Individuals"
+msgstr "个人贡献者"
+
+#: ../../src/credits.md:28 655a3e138d10432ab709424a5ec45f8d
+msgid ""
+"Since it's _an incomplete list_, feel free to submit a pull request to "
+"add yourself here if you'd like to be highlighted as an EROFS "
+"contributor."
+msgstr ""
+"由于这是一个_不完整的列表_，如果你想被列为 EROFS "
+"贡献者，欢迎提交 pull request 将自己的名字添加到这里。"
+

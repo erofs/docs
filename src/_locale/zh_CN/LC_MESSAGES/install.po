@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/install.md:1 ba4ae7e7e5434c9fa80d66f95d163d7d
+msgid "📥 Installation"
+msgstr "📥 安装"
+
+#: ../../src/install.md:3 cebdc47473c346ce93741873e94d70ba
+msgid "Install erofs-utils via Package Managers"
+msgstr "通过包管理器安装 erofs-utils"
+
+#: ../../src/install.md:5 65dfbbeb3d8b4e4d86c4d542fa267023
+msgid ""
+"erofs-utils is available on most popular Linux distributions, although it"
+" may not be the latest stable version."
+msgstr ""
+"erofs-utils 可在大多数主流 Linux 发行版上使用，但可能不是最新的稳定版本。"
+
+#: ../../src/install.md:8 059963b2663b4413beb10d9765c5ab5e
+msgid ""
+"Here are examples for `Arch Linux`, `Debian`, `Fedora`, `OpenAnolis` and "
+"`Ubuntu`:"
+msgstr ""
+"以下是 `Arch Linux`、`Debian`、`Fedora`、`OpenAnolis` 和 `Ubuntu` 的示例："
+
+#: ../../src/install.md:22 55b8c76d0a284401a2be5fa0c2149eec
+msgid "On macOS, erofs-utils can be installed using `MacPorts` or `Homebrew`:"
+msgstr "在 macOS 上，可以使用 `MacPorts` 或 `Homebrew` 安装 erofs-utils："
+
+#: ../../src/install.md:32 cb369e4182d94c248dd0b5e031c7a057
+msgid "Build from source"
+msgstr "从源码构建"
+
+#: ../../src/install.md:34 a29c8db01aa2496fa85ca6ed44165c58
+msgid "Install build dependencies"
+msgstr "安装构建依赖"
+
+#: ../../src/install.md:36 15e55fe09cd540f99f7b4366759dedc8
+msgid "To build erofs-utils, the following dependencies will be needed:"
+msgstr "构建 erofs-utils 需要以下依赖："
+
+#: ../../src/install.md:46 3fd67a274e54433a9a08f14c9060544e
+msgid "Download the erofs-utils source code"
+msgstr "下载 erofs-utils 源代码"
+
+#: ../../src/install.md:48 942abd769c7245eea6e9fa3fc3a8e446
+msgid ""
+"Use [Git](https://git-scm.com) to clone the [erofs-utils "
+"repository](https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-"
+"utils.git):"
+msgstr ""
+"使用 [Git](https://git-scm.com) 克隆 [erofs-utils "
+"仓库](https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-"
+"utils.git)："
+
+#: ../../src/install.md:55 7e98bd8e690a44988aa741b457c98043
+msgid ""
+"The repo defaults to the master development branch. You can also check "
+"out a release tag to build:"
+msgstr ""
+"该仓库默认位于 master 开发分支。你也可以检出发布标签来构建："
+
+#: ../../src/install.md:61 ee6f0d51f073484195d82c3ab7433b03
+msgid "Configure and build"
+msgstr "配置并构建"
+
+#: ../../src/install.md:63 2f804cc960914499956daef38f9c4200
+msgid ""
+"Please run `./autogen.sh; ./configure` from the repository's root "
+"directory. `./configure` will prompt you for the usability of erofs-utils"
+" dependencies and asks for additional build configuration options:"
+msgstr ""
+"请在仓库根目录下运行 `./autogen.sh; ./configure`。`./configure` 会提示你确认 "
+"erofs-utils 依赖的可用性，并询问额外的构建配置选项："
+
+#: ../../src/install.md:73 73f4c34cc7304ca48a849f3502a7a08a
+msgid "Install erofs-utils"
+msgstr "安装 erofs-utils"
+
+#: ../../src/install.md:75 bf95da91908746c8bd056f1d12bbe8b1
+msgid "Use `make install` to install the generated files of erofs-utils:"
+msgstr "使用 `make install` 安装 erofs-utils 生成的文件："

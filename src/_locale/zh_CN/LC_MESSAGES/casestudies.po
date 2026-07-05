@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/casestudies.md:1 e16c101073f441f29fe2d2a1dc857f15
+msgid "🔍 Case Studies"
+msgstr "🔍 案例研究"
+
+#: ../../src/casestudies.md:8 4db4024e2d7f42fc96cd05d460ddf15c
+msgid ""
+"The EROFS filesystem has been deployed in production at large scale since"
+" its inclusion in Linux 5.4 and is now part of several prominent open-"
+"source ecosystems."
+msgstr "自并入 Linux 5.4 以来，EROFS 文件系统已大规模投入生产环境，并已成为多个重要开源生态的一部分。"
+
+#: ../../src/casestudies.md:12 3db29419d2d84a268d95fda7472ba6a7
+#, python-format
+msgid ""
+"It started in 2017, when Linux image filesystems were still primitive "
+"([cramfs](https://docs.kernel.org/filesystems/cramfs.html) and "
+"[ROMFS](https://docs.kernel.org/filesystems/romfs.html)), or focused "
+"solely on extreme image size reduction "
+"([squashfs](https://docs.kernel.org/filesystems/squashfs.html)) for low-"
+"end embedded devices, while lacking good real-time response in [low "
+"memory "
+"scenarios](https://web.archive.org/web/20220322054637/https://source.android.com/devices/architecture/kernel/squashfs#:~:text=Unfortunately%20the%20performance%20of%20SquashFS%20lags%20behind%20ext4.)."
+" In addition, kernel development for most in-tree immutable filesystems "
+"(particularly on-disk format enhancements) was inactive for a decade at "
+"that time."
+msgstr "这一切始于 2017 年，当时 Linux 镜像文件系统仍十分原始（[cramfs](https://docs.kernel.org/filesystems/cramfs.html) 和 [ROMFS](https://docs.kernel.org/filesystems/romfs.html)），或者仅专注于为低端嵌入式设备极度缩减镜像体积（[squashfs](https://docs.kernel.org/filesystems/squashfs.html)），同时在[低内存场景](https://web.archive.org/web/20220322054637/https://source.android.com/devices/architecture/kernel/squashfs#:~:text=Unfortunately%20the%20performance%20of%20SquashFS%20lags%20behind%20ext4.)下缺乏良好的实时响应。此外，当时大多数内核内嵌的不可变文件系统（尤其是磁盘格式增强方面）的开发已停滞十年。"
+
+#: ../../src/casestudies.md:23 d08b1b14485e4ae683d1d7b2dd363bc9
+msgid ""
+"To meet our production performance needs and fill the gap for a better "
+"high-performance Linux image filesystem, the EROFS project was launched. "
+"Before being successfully upstreamed, it had already been successfully "
+"deployed on millions of Android smartphones and it should be billions of "
+"various devices now."
+msgstr "为满足生产环境的性能需求，并填补高性能 Linux 镜像文件系统的空白，EROFS 项目应运而生。在被成功合入上游之前，它已部署在数百万台 Android 智能手机上，而如今这一数字应已覆盖数十亿台各类设备。"
+
+#: ../../src/casestudies.md:29 42b8835ff8df4ebfb2bdb7375452f68c
+msgid ""
+"Note that the EROFS filesystem aims to be a generic image filesystem from"
+" the beginning, not limited to a specific use case (e.g. only for Android"
+" system partitions). We believe that even if image filesystems have "
+"certain useful use cases, in reality it often fails to attract many real "
+"experienced kernel filesystem developers. Designing a specialized "
+"filesystem for a single use case will lead to unhealthy development, "
+"unnecessary reinvention, and fragmentation."
+msgstr "请注意，EROFS 文件系统从一开始就旨在成为一种通用镜像文件系统，并不局限于特定用例（例如仅用于 Android 系统分区）。我们认为，即便镜像文件系统确实存在某些有益的用例，但实际上往往难以吸引众多真正经验丰富的内核文件系统开发者。为单一用例设计专门的文件系统将导致不健康的发展、不必要的重复造轮子以及碎片化。"
+
+#: ../../src/casestudies.md:36 081005630f6b43dd9dd84e7b46ef153f
+msgid ""
+"Currently, apart from the [initial Android use "
+"cases](https://source.android.com/docs/core/architecture/kernel/erofs), "
+"we are also focused on bringing up a better image filesystem for "
+"containers. Many recent features, such as native layering support, large "
+"folios, [file-backed mounts](https://lwn.net/Articles/990750/), [inode-"
+"based page cache sharing](https://lwn.net/Articles/984839/), and [direct "
+"access for files](https://docs.kernel.org/filesystems/dax.html), are "
+"dedicated to container image use cases."
+msgstr "目前，除了[最初的 Android 用例](https://source.android.com/docs/core/architecture/kernel/erofs)之外，我们还致力于构建一种更优秀的容器镜像文件系统。许多近期新增特性，例如原生分层支持、large folios、[基于文件的挂载](https://lwn.net/Articles/990750/)、[基于 inode 的 page cache 共享](https://lwn.net/Articles/984839/) 以及 [文件的直接访问](https://docs.kernel.org/filesystems/dax.html)，都是面向容器镜像用例而设计的。"
+
+#: ../../src/casestudies.md:44 4f8a9fe34e0e47e79b0fd0939c99f50d
+msgid ""
+"In several popular projects, EROFS is used as a powerful tool to provide "
+"advanced features or improve the de-facto standard Docker/OCI container "
+"images, such as [ComposeFS](https://github.com/containers/composefs) and "
+"the [EROFS containerd "
+"snapshotter](https://github.com/containerd/containerd/pull/10705). "
+"However, EROFS can also serve as a next-generation container filesystem "
+"on its own. We believe it should be more useful as the EROFS container "
+"ecosystem continues to evolve."
+msgstr "在多个热门项目中，EROFS 被用作一种强大的工具，以提供高级特性或改进事实上的 Docker/OCI 容器镜像标准，例如 [ComposeFS](https://github.com/containers/composefs) 和 [EROFS containerd snapshotter](https://github.com/containerd/containerd/pull/10705)。不过，EROFS 本身也可以作为下一代容器文件系统独立使用。我们相信，随着 EROFS 容器生态的不断演进，它将发挥更大的作用。"
+
+#: ../../src/casestudies.md:52 e3c9a350a3e049ab87395a771c170bd2
+msgid ""
+"The EROFS filesystem is now a completely community-driven, neutral open-"
+"source project and part of the Linux kernel. If you’re working on, or "
+"interested in image filesystem use cases, feel free to provide feedback "
+"and join us."
+msgstr "EROFS 文件系统现在是一个完全由社区驱动、中立的开源项目，也是 Linux 内核的一部分。如果你正在从事镜像文件系统用例相关工作，或对此感兴趣，欢迎提供反馈并加入我们。"
+
+#: ../../src/casestudies.md:56 2b58f1edeb5b4c10b110f33d76dd3578
+msgid ""
+"🚧 Detailed introduction to the current main use cases is still in "
+"progress."
+msgstr "🚧 当前主要用例的详细介绍仍在完善中。"

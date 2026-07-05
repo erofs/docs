@@ -1,0 +1,527 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/ondisk/chunked_format.md:2 0ef6d46d48c641888c3cab743691e889
+msgid "Chunk-based Inode Layout"
+msgstr "基于分块的 inode 布局"
+
+#: ../../src/ondisk/chunked_format.md:4 d108a86a44ac42aab9ec5adb2eea6b05
+msgid ""
+"The chunk-based inode layout splits inode data into fixed-size chunks, "
+"each mapped to a contiguous range of physical filesystem blocks. This "
+"format supports data deduplication and multi-device storage, allowing "
+"efficient data sharing among different inodes and images."
+msgstr ""
+"基于分块的 inode 布局将 inode 数据切分为固定大小的分块，每一块映射到一段连续的物理文件系统块。该格式支持数据去重与多设备存储，可在不同 "
+"inode 与镜像之间高效共享数据。"
+
+#: ../../src/ondisk/chunked_format.md:9 0b2d79d2f73d4db9b1d2db8f19fcf03f
+msgid "Superblock Extension for Chunk-based Inodes and Multiple Devices"
+msgstr "针对基于分块的 inode 与多设备的 Superblock 扩展"
+
+#: ../../src/ondisk/chunked_format.md:11 3c83c9a49fd74248945cc6e5372d5ce7
+msgid ""
+"The core superblock format is defined in {ref}`on_disk_superblock`. This "
+"section lists the extended fields dedicated to chunk-based inode support "
+"and multi-device addressing features."
+msgstr ""
+"核心 superblock 格式定义见 {ref}`on_disk_superblock`。本节列出专用于基于分块的 inode "
+"支持与多设备寻址功能的扩展字段。"
+
+#: ../../src/ondisk/chunked_format.md 29f105120cad41c1a4ee6c9669770fc1
+#: a782145468f749ca9bef6b09e53869df a7e4adaaa3474ef58a5cf3bf2af0208d
+#: b2c21e8582d84fad802f7f383efa371b fffd625231284819a0264232de4dba39
+msgid "Offset"
+msgstr "偏移"
+
+#: ../../src/ondisk/chunked_format.md 2698695da6ab4c388f339577260aa0d0
+#: 5849287584bf4f13befec86765599e8a 5b6dda186db041a595e11d171d031a4a
+#: 9e59053f3c144eada5f65d1af1250bac fe0028de31d34a2b8a78860bb64f9d38
+msgid "Size"
+msgstr "大小"
+
+#: ../../src/ondisk/chunked_format.md 489f4d166a2948f5a1a10acd0f62cf62
+#: 63a9355129ed4b96ac118c586251f418 a93b46b9322b42dc8a9fcc0d84fd82fe
+#: b37438e7b730498ea66c03b70fcf0ace c13954837c92457081d878a4e46006ad
+msgid "Type"
+msgstr "类型"
+
+#: ../../src/ondisk/chunked_format.md 1783d58083344da9849da0a5ffbb9f1f
+#: 38c227a7b2234700a6fc8337931be5e0 4f3dfbdde8db48d4ba0c087b0164b466
+#: 808e30edf5ab4ff396d0b450f3409626 e42084bc43324f2ab14b90d4759dd165
+msgid "Name"
+msgstr "名称"
+
+#: ../../src/ondisk/chunked_format.md 29e4b37caa804da5b423e344b197919c
+#: 2c877a5721be40558befe59c62938145 5ef2ccde68de422ca4410f17eae20b12
+#: 8139dd24ef2148e4bf928d912c9f5aa7 d8765e33e2744585b31b214c839018ec
+#: e2d1e957c05c44baac5811169e077690
+msgid "Description"
+msgstr "描述"
+
+#: ../../src/ondisk/chunked_format.md cf0f6a3acfb4453f81c602442ec1c0df
+msgid "0x50"
+msgstr "0x50"
+
+#: ../../src/ondisk/chunked_format.md 15ecddc1dc8b459ea6bec48870a54165
+#: 2f62bb7f61b24b9d88f63b7595cb7e05 4412d67b72794f86ad57fd019a07a529
+#: 96719399f1194db8bba72559cfb09260 bb66564899ff45e4a92859e1e7ae8de8
+#: c86147dd022d49f49ae7df6ff47b73c6 cfea939420084277a23506b1a195b3d4
+msgid "4"
+msgstr "4"
+
+#: ../../src/ondisk/chunked_format.md 1cd9379c30fa4e87acd9626c6aeed88e
+#: 890bda121aa545f6a59549db98c4aa01 8eae8459085b4cd1bfb6350d1afd137b
+#: 94daed3a9fd641558637f5f9466dd240 b023158bbaa349d594235c1cf4afd1fe
+#: e67522e223e74385b599c966014ea536
+msgid "`u32`"
+msgstr "`u32`"
+
+#: ../../src/ondisk/chunked_format.md 3fb9d209790942aab5fcbe3c13850555
+msgid "`feature_incompat`"
+msgstr "`feature_incompat`"
+
+#: ../../src/ondisk/chunked_format.md 168558b811bf4c9391b142a2b06c7c5d
+msgid ""
+"`EROFS_FEATURE_INCOMPAT_CHUNKED_FILE` enables chunk-based inodes. "
+"`EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` enables the device table described "
+"in {ref}`device_table`"
+msgstr ""
+"`EROFS_FEATURE_INCOMPAT_CHUNKED_FILE` 启用基于分块的 "
+"inode。`EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` 启用 {ref}`device_table` 中描述的设备表。"
+
+#: ../../src/ondisk/chunked_format.md b2ecd684b67b4e3b895a9f731e4d08c6
+msgid "0x56"
+msgstr "0x56"
+
+#: ../../src/ondisk/chunked_format.md 429fbb851cc44c97add421bb84389053
+#: 77a9a352bbbf426490c66951c73013c9 7b157aded4a04258a6a2ab0459aacf61
+#: cf97e7b0cc114d70be9ee730acb1cd3e e43a2705a8fa4775855c76b1008ef9d5
+msgid "2"
+msgstr "2"
+
+#: ../../src/ondisk/chunked_format.md 46f943fbd7824f34845912eec781d989
+#: 5b785a4aa64d4b94b427c80d8f6791c3 71076b323b194452bc909e1876295df6
+#: ee91ea891d60416aa215f64157470358 fcc38334b5984e81a4d1e7f6be3ce383
+msgid "`u16`"
+msgstr "`u16`"
+
+#: ../../src/ondisk/chunked_format.md eda9efa1e91f4748af86c55078789a43
+msgid "`extra_devices`"
+msgstr "`extra_devices`"
+
+#: ../../src/ondisk/chunked_format.md 40d2e9eb97c64e07bf653cc91d1793cd
+msgid ""
+"Number of extra devices in addition to the primary one. Valid when "
+"`EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` is set"
+msgstr ""
+"除主设备外的额外设备数量。仅在设置了 `EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` 时有效。"
+
+#: ../../src/ondisk/chunked_format.md 566b9ebf380a4412a2ad1d669d2d1b35
+msgid "0x58"
+msgstr "0x58"
+
+#: ../../src/ondisk/chunked_format.md db2e1c55935740508162cc04ec3d7b4c
+msgid "`devt_slotoff`"
+msgstr "`devt_slotoff`"
+
+#: ../../src/ondisk/chunked_format.md 4a72ee95d5e54046b20638119b0e2459
+msgid ""
+"Starting slot number of the device table on the primary device. The byte "
+"offset is `devt_slotoff * 128`. Valid when "
+"`EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` is set"
+msgstr ""
+"主设备上设备表的起始槽位号。字节偏移量为 `devt_slotoff * 128`。仅在设置了 "
+"`EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` 时有效。"
+
+#: ../../src/ondisk/chunked_format.md:21 4f68183a6ad742bbb35ee06f73c73601
+msgid "Inode Fields for Chunked Inodes"
+msgstr "基于分块的 inode 字段"
+
+#: ../../src/ondisk/chunked_format.md:23 12672ce3c81c46f4a438eebd352b0eef
+msgid ""
+"The full compact and extended inode layouts are defined in "
+"{ref}`on_disk_inodes`. For chunk-based inodes, both inode variants share "
+"the same feature-specific fields:"
+msgstr ""
+"完整的 compact 与 extended inode 布局定义见 {ref}`on_disk_inodes`。对于基于分块的 inode，两种 "
+"inode 变体共享相同的特性专用字段："
+
+#: ../../src/ondisk/chunked_format.md 256dd106d9404370b22ab088aaab60d4
+#: 764dff8607a34041a21017e5eae04196 822c54866d0d48f8b87aa7f6d0a705d5
+#: e71bbd18e42444259cdd83e1504a818d
+msgid "0x00"
+msgstr "0x00"
+
+#: ../../src/ondisk/chunked_format.md 344f6be0fe9a4e3990f4e0862de86c0f
+msgid "`i_format`"
+msgstr "`i_format`"
+
+#: ../../src/ondisk/chunked_format.md 6aaf91d4654b44a3804a5a60780c4451
+msgid ""
+"Inode format hints; `EROFS_INODE_CHUNK_BASED` (4) is used for chunked "
+"inode mode"
+msgstr ""
+"inode 格式提示；`EROFS_INODE_CHUNK_BASED` (4) 用于分块 inode 模式。"
+
+#: ../../src/ondisk/chunked_format.md 1c1ca64b34944046bc103f792dc74475
+msgid "0x10"
+msgstr "0x10"
+
+#: ../../src/ondisk/chunked_format.md a07295d0f6b64cc9b112b76dc363a57d
+msgid "`i_u`"
+msgstr "`i_u`"
+
+#: ../../src/ondisk/chunked_format.md 93127662e8304e9ba1a065bfa981c0f5
+msgid "Chunk info summary described below"
+msgstr "分块信息摘要，详见下文"
+
+#: ../../src/ondisk/chunked_format.md:32 9ad2bdab75514e4e80716fec388a65b8
+msgid "Inode Data Layout for Chunked Inodes"
+msgstr "基于分块的 inode 数据布局"
+
+#: ../../src/ondisk/chunked_format.md:34 a9bf774289734e06b5676b5d0e2eb502
+msgid ""
+"The following new data layout of an inode is encoded in bits 1–3 of "
+"`i_format`."
+msgstr ""
+"inode 的以下新数据布局编码在 `i_format` 的位 1–3 中。"
+
+#: ../../src/ondisk/chunked_format.md:36 adc27051171e408783199193b10cc8d8
+msgid "`EROFS_INODE_CHUNK_BASED` (4)"
+msgstr "`EROFS_INODE_CHUNK_BASED` (4)"
+
+#: ../../src/ondisk/chunked_format.md:38 75ac85568c424345820b83ababb0f519
+msgid ""
+"The entire inode data is split into fixed-size chunks, each occupying "
+"consecutive physical blocks. Requires "
+"`EROFS_FEATURE_INCOMPAT_CHUNKED_FILE`. `i_u` encodes a chunk info summary"
+" and an array of per-chunk address entries follows the inode body."
+msgstr ""
+"整个 inode 数据被切分为固定大小的分块，每一块占用连续的物理块。需要 "
+"`EROFS_FEATURE_INCOMPAT_CHUNKED_FILE`。`i_u` 编码一个分块信息摘要，每个分块的地址项数组紧跟在 inode "
+"主体之后。"
+
+#: ../../src/ondisk/chunked_format.md:43 6167ad00fea3494dafebf5a060ca4530
+msgid "Chunk-based Structures"
+msgstr "基于分块的结构"
+
+#: ../../src/ondisk/chunked_format.md:45 68d808a05afb4c4e969a8b816788ca18
+msgid ""
+"When the data layout is `EROFS_INODE_CHUNK_BASED`, the `i_u` field (4 "
+"bytes at inode offset 0x10) is interpreted as a chunk info summary:"
+msgstr ""
+"当数据布局为 `EROFS_INODE_CHUNK_BASED` 时，`i_u` 字段（inode 偏移 0x10 处的 4 "
+"字节）被解释为分块信息摘要："
+
+#: ../../src/ondisk/chunked_format.md:48 8e9388edb27643dba41577e1d261e0cc
+msgid "Chunk Info Summary"
+msgstr "分块信息摘要"
+
+#: ../../src/ondisk/chunked_format.md 9ffe9e4789164758a14ad3422797b5d3
+msgid "Bits"
+msgstr "位"
+
+#: ../../src/ondisk/chunked_format.md d5ff7d2c31684385b7b8c59fe0d8960d
+msgid "Width"
+msgstr "宽度"
+
+#: ../../src/ondisk/chunked_format.md 55b385b8759841ac99bf6ff4b4e3ee20
+msgid "0–4"
+msgstr "0–4"
+
+#: ../../src/ondisk/chunked_format.md 28f6546f34a54f9f9c1baaf97715a64f
+#: a66bad3365da482dbbb0ebdbe6ecca4d
+msgid "5"
+msgstr "5"
+
+#: ../../src/ondisk/chunked_format.md a78e65fd9e1e4244bad0dd5295a6628e
+msgid "`chunkbits`: chunk size = `2^(blkszbits + chunkbits)`"
+msgstr "`chunkbits`: chunk size = `2^(blkszbits + chunkbits)`"
+
+#: ../../src/ondisk/chunked_format.md 362061087c7349bf95dfd07650ced928
+#: 94096795f5444eefb971694769e9d853
+msgid "1"
+msgstr "1"
+
+#: ../../src/ondisk/chunked_format.md 53a99f40e34649ed8d2b5798534894d8
+msgid "`EROFS_CHUNK_FORMAT_INDEXES`: entry format selector (see below)"
+msgstr "`EROFS_CHUNK_FORMAT_INDEXES`：条目格式选择器（见下文）"
+
+#: ../../src/ondisk/chunked_format.md 16d86da28be647bc86f85d882d765bc8
+msgid "6"
+msgstr "6"
+
+#: ../../src/ondisk/chunked_format.md 12c34ac01467461389c1fe92a89fdcd6
+#: a367670d89c14fe8bc6a42abf18366c7 f791254ed6954a59b670ce91adf96d27
+msgid "48-bit layout specific; ignored for basic chunk-based inodes"
+msgstr "48 位布局专用；基本基于分块的 inode 忽略此项。"
+
+#: ../../src/ondisk/chunked_format.md bc6740153a0e46f8937b6ed89434eff7
+msgid "7–31"
+msgstr "7–31"
+
+#: ../../src/ondisk/chunked_format.md ce7659249b924cc78d7870e453345d65
+msgid "25"
+msgstr "25"
+
+#: ../../src/ondisk/chunked_format.md 4d853d6ba64044c1a531dad832701c23
+#: e451c8a74b8445feb4f711c4efdd2c5f
+msgid "Reserved; must be 0"
+msgstr "保留；必须为 0"
+
+#: ../../src/ondisk/chunked_format.md:57 76977f15c82b4e58946870f6ff42696b
+msgid ""
+"Per-chunk extent entries are stored immediately after the core on-disk "
+"inode and the inode xattr region. The number of entries is `⌈i_size / "
+"chunk_size⌉`."
+msgstr ""
+"每个分块的 extent 项紧挨核心 on-disk inode 与 inode xattr 区域之后存储。条目数量为 `⌈i_size / "
+"chunk_size⌉`。"
+
+#: ../../src/ondisk/chunked_format.md:60 35d4155d24604583b51902b4d448da63
+msgid "Chunk Entry Formats"
+msgstr "分块条目格式"
+
+#: ../../src/ondisk/chunked_format.md:62 a067323ac8a145c090a759cee292a83b
+msgid ""
+"The `EROFS_CHUNK_FORMAT_INDEXES` bit in the chunk info summary selects "
+"one of two per-chunk entry formats:"
+msgstr ""
+"分块信息摘要中的 `EROFS_CHUNK_FORMAT_INDEXES` 位用于选择两种每分块条目格式之一："
+
+#: ../../src/ondisk/chunked_format.md:66 afeec0759aed4e2da68f1253cce32893
+msgid "Block Map Entry (4 bytes)"
+msgstr "块映射条目（4 字节）"
+
+#: ../../src/ondisk/chunked_format.md:68 fd2e2105ef954ef392f6fed5700b41ec
+msgid ""
+"When `EROFS_CHUNK_FORMAT_INDEXES` is not set, each chunk is described by "
+"a single 32-bit block address entry."
+msgstr ""
+"当未设置 `EROFS_CHUNK_FORMAT_INDEXES` 时，每个分块由一个 32 位块地址条目描述。"
+
+#: ../../src/ondisk/chunked_format.md:71 e510d28f491842caa061c231595cdd0f
+msgid ""
+"Without a device table, this entry is a primary-device block address. "
+"With `EROFS_FEATURE_INCOMPAT_DEVICE_TABLE`, it is interpreted in the "
+"unified address space and can resolve to either the primary or an extra "
+"device."
+msgstr ""
+"无设备表时，该条目为主设备块地址。启用 `EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` "
+"后，它在统一地址空间中解析，可定位到主设备或某个额外设备。"
+
+#: ../../src/ondisk/chunked_format.md 727c8a586f8743e3a7e176d085e7756f
+#: afd95a93160540eeb441e62248124792
+msgid "`startblk`"
+msgstr "`startblk`"
+
+#: ../../src/ondisk/chunked_format.md 9213c24de1ce479d98b766e9c9c183f9
+msgid "Starting block address of this chunk"
+msgstr "该分块的起始块地址"
+
+#: ../../src/ondisk/chunked_format.md:79 1108c5143d714109852497d9cb05ab12
+msgid "Chunk Index Entry (8 bytes)"
+msgstr "分块索引条目（8 字节）"
+
+#: ../../src/ondisk/chunked_format.md:81 d5cec1cb5e6e458db0e34ef9c2ecbf01
+msgid ""
+"When `EROFS_CHUNK_FORMAT_INDEXES` is set, each chunk is described by an "
+"8-byte record that supports multi-device addressing."
+msgstr ""
+"当设置了 `EROFS_CHUNK_FORMAT_INDEXES` 时，每个分块由一个支持多设备寻址的 8 字节记录描述。"
+
+#: ../../src/ondisk/chunked_format.md 20775d07eb4a404e90e2817e3ef67a65
+#: ffe08513bbe241cea2b54df451aec4c9
+msgid "_dontcare_"
+msgstr "_dontcare_"
+
+#: ../../src/ondisk/chunked_format.md cd2326ec4c1148528fc3bc4bb964d4d7
+msgid "0x02"
+msgstr "0x02"
+
+#: ../../src/ondisk/chunked_format.md 6534e46f8c3c499cb743bfe85a07be06
+msgid "`device_id`"
+msgstr "`device_id`"
+
+#: ../../src/ondisk/chunked_format.md 99364bb0c79042cdab2fa7b7d30d1204
+msgid ""
+"Device selector. `0` uses unified-address-space resolution; non-zero "
+"values directly select extra devices"
+msgstr ""
+"设备选择器。`0` 使用统一地址空间解析；非零值直接选择额外设备。"
+
+#: ../../src/ondisk/chunked_format.md 556cdd1521964785ae22a72de798bec0
+msgid "0x04"
+msgstr "0x04"
+
+#: ../../src/ondisk/chunked_format.md f9c3a1a0354e466789aa8471f027080d
+msgid "32-bit starting block address; interpretation depends on `device_id`"
+msgstr "32 位起始块地址；具体含义取决于 `device_id`"
+
+#: ../../src/ondisk/chunked_format.md:90 683242bbf32f4527b478b6a4459fb780
+msgid ""
+"When `device_id` is `0`, `startblk` is interpreted exactly like a "
+"{ref}`Block Map Entry (4 bytes) <chunk-entry-formats-block-map-entry>`: "
+"it is an absolute block address in the unified address space. When "
+"`device_id` is non-zero, it directly selects an extra device and "
+"`startblk` is interpreted as a block address on that device. See {ref"
+"}`block-address-resolution-for-chunk-based-inodes`."
+msgstr ""
+"当 `device_id` 为 `0` 时，`startblk` 的解析方式与 {ref}`块映射条目（4 "
+"字节）<chunk-entry-formats-block-map-entry>` 完全相同：它是统一地址空间中的绝对块地址。当 `device_id` "
+"非零时，它直接选择一个额外设备，而 `startblk` 被解析为该设备上的块地址。详见 "
+"{ref}`block-address-resolution-for-chunk-based-inodes`。"
+
+#: ../../src/ondisk/chunked_format.md:98 065480ae230149d3b335c2b7109b8284
+msgid "Multi-device Support"
+msgstr "多设备支持"
+
+#: ../../src/ondisk/chunked_format.md:101 14551c26460b46cb9cefd10f8cd252f3
+msgid "Device Table"
+msgstr "设备表"
+
+#: ../../src/ondisk/chunked_format.md:103 73f65761090e469fb4ab8e6ad8549500
+msgid "This section applies when `EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` is set."
+msgstr "本节适用于设置了 `EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` 的情况。"
+
+#: ../../src/ondisk/chunked_format.md:105 84d7a35af65c41c78cacaac3cb06bc24
+msgid ""
+"When `EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` is set, the `extra_devices` "
+"superblock field gives the number of additional block devices. They are "
+"described by an array of 128-byte device slot records stored on the "
+"primary device. The first record begins at byte offset `devt_slotoff * "
+"128`."
+msgstr ""
+"当设置了 `EROFS_FEATURE_INCOMPAT_DEVICE_TABLE` 时，superblock 的 `extra_devices` "
+"字段给出额外块设备的数量。它们由存储在主设备上的一组 128 字节设备槽位记录描述。第一条记录起始于字节偏移量 `devt_slotoff * 128` "
+"处。"
+
+#: ../../src/ondisk/chunked_format.md:110 fd2c788ac2e743ffbe9b22d63e4cb9a8
+msgid "Each record contains:"
+msgstr "每条记录包含："
+
+#: ../../src/ondisk/chunked_format.md c373d168af1e4636b0a5e006953065ba
+msgid "64"
+msgstr "64"
+
+#: ../../src/ondisk/chunked_format.md 38f4c758cf6a49f285e6690bf3a7bfc8
+#: 755a45fd8ac84bba927d39c4badf559c b2e02d2db7a7416cb9e3afd5d072a002
+msgid "`u8[]`"
+msgstr "`u8[]`"
+
+#: ../../src/ondisk/chunked_format.md 911cabf71ce1427088a5aef93cd8bce9
+msgid "`tag`"
+msgstr "`tag`"
+
+#: ../../src/ondisk/chunked_format.md f281f6233af542089f75827ce4f2291a
+msgid "User-specific identifier: The kernel never parses it in any form"
+msgstr "用户专用标识符：内核不会以任何形式解析它。"
+
+#: ../../src/ondisk/chunked_format.md 0e5f73d10f3d440bafca672da9873374
+msgid "0x40"
+msgstr "0x40"
+
+#: ../../src/ondisk/chunked_format.md cb34b48f19f64ea386964c0720bb7d7e
+msgid "`blocks`"
+msgstr "`blocks`"
+
+#: ../../src/ondisk/chunked_format.md a7dc4fa0fb154446af7ffbaef314b597
+msgid "32-bit total block count of this device"
+msgstr "该设备的 32 位总块数"
+
+#: ../../src/ondisk/chunked_format.md 113464577e974c9bb17eed9ad588144c
+msgid "0x44"
+msgstr "0x44"
+
+#: ../../src/ondisk/chunked_format.md fb19988a204043a9b3f98e7a18db8619
+msgid "`uniaddr`"
+msgstr "`uniaddr`"
+
+#: ../../src/ondisk/chunked_format.md 6b7c8f5a4df94ac5adb9187b1753bce5
+msgid "32-bit unified starting block address of this device"
+msgstr "该设备的 32 位统一起始块地址"
+
+#: ../../src/ondisk/chunked_format.md 2949c15d65c2408ba54cf41faf71073a
+msgid "0x48"
+msgstr "0x48"
+
+#: ../../src/ondisk/chunked_format.md 281849d0c0b347e7a9bef10632b0fe39
+msgid "0x4C"
+msgstr "0x4C"
+
+#: ../../src/ondisk/chunked_format.md 61dbd6e0da74435a84d63761a1917e69
+msgid "52"
+msgstr "52"
+
+#: ../../src/ondisk/chunked_format.md 62ee090128d3490dabe7c74c640bcb76
+msgid "_reserved_"
+msgstr "_reserved_"
+
+#: ../../src/ondisk/chunked_format.md:121 816e93af51c54409ae5fbc6bdbb1820c
+msgid "Block Address Resolution for Chunk-based Inodes"
+msgstr "基于分块的 inode 块地址解析"
+
+#: ../../src/ondisk/chunked_format.md:123 e5f443780a2047eb88691f2482ab4c4e
+msgid "Chunk Index Entry"
+msgstr "分块索引条目"
+
+#: ../../src/ondisk/chunked_format.md:125 b07ad0302f3b4ddd97e0f1a0119a65d0
+msgid ""
+"When the chunk index entry format is used, `device_id` controls how "
+"`startblk` is interpreted:"
+msgstr ""
+"当使用分块索引条目格式时，`device_id` 决定 `startblk` 的解析方式："
+
+#: ../../src/ondisk/chunked_format.md:128 1b756787c26e4f568e9cac78791c7f42
+msgid ""
+"`device_id = 0`: `startblk` is an absolute block address in the unified "
+"address space; see {ref}`Block Map Entry <block-map-entry-address-"
+"resolution>` for details."
+msgstr ""
+"`device_id = 0`：`startblk` 是统一地址空间中的绝对块地址；详见 {ref}`块映射条目 "
+"<block-map-entry-address-resolution>`。"
+
+#: ../../src/ondisk/chunked_format.md:131 8b7453c741254b8585fa48e4ad5ca5f5
+msgid ""
+"`device_id = N` (1 ≤ N ≤ `extra_devices`): `startblk` is a block address "
+"on extra device N, whose record begins at byte offset `(devt_slotoff + N "
+"- 1) * 128` on the primary device."
+msgstr ""
+"`device_id = N`（1 ≤ N ≤ `extra_devices`）：`startblk` 是额外设备 N "
+"上的块地址，其记录在主设备上起始于字节偏移量 `(devt_slotoff + N - 1) * 128` 处。"
+
+#: ../../src/ondisk/chunked_format.md:136 70ed8afefe2a4752b14d198b1c7c2f77
+msgid "Block Map Entry"
+msgstr "块映射条目"
+
+#: ../../src/ondisk/chunked_format.md:138 5ecb878d328d4ff69a4071f2d5e7f1d9
+msgid ""
+"The simple block map entry format has no `device_id` field. Instead, "
+"`startblk` is an absolute block address in the unified address space, and"
+" the reader uses `uniaddr` from the device table to identify the target "
+"device: it finds the slot `i` whose range `[uniaddr[i], uniaddr[i] + "
+"blocks[i])` contains `startblk`, then derives the intra-device block "
+"address as `startblk − uniaddr[i]`. Chunk index entries with `device_id ="
+" 0` use this same interpretation."
+msgstr ""
+"简单块映射条目格式没有 `device_id` 字段。相反，`startblk` 是统一地址空间中的绝对块地址，读取器使用设备表中的 `uniaddr` "
+"来确定目标设备：找到满足范围 `[uniaddr[i], uniaddr[i] + blocks[i])` 包含 `startblk` 的槽位 "
+"`i`，然后将设备内块地址推导为 `startblk − uniaddr[i]`。`device_id = 0` 的分块索引条目采用相同的解析方式。"

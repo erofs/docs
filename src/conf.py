@@ -26,6 +26,14 @@ myst_heading_anchors = 3
 
 templates_path = ['_templates']
 
+# -- Internationalization
+
+language = 'en'
+locale_dirs = ['_locale']
+gettext_uuid = True
+gettext_location = True
+gettext_compact = False
+
 # -- Options for HTML output
 
 html_static_path = ["_static"]

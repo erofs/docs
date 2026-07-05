@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2026, EROFS filesystem developers
+# This file is distributed under the same license as the EROFS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: EROFS 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 05:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../src/bootable_system.md:1 c3c5f481acc146e292ef9103b827c61a
+msgid "Bootable system images"
+msgstr "可启动系统镜像"
+
+#: ../../src/bootable_system.md:3 7292aff970b949499e936edd3845ba3e
+msgid "Android system partitions"
+msgstr "Android 系统分区"
+
+#: ../../src/bootable_system.md:5 58add297658747bf8030fcdb7dfee731
+msgid ""
+"EROFS was originally developed for this use case in 2017.  Nowadays, all "
+"mainstream Android vendors use EROFS for their system partitions, "
+"leveraging its high-performance compression to reduce image sizes without"
+" any noticeable impact on user experience."
+msgstr ""
+"EROFS 最初于 2017 年为这一用例而开发。如今，所有主流 Android 厂商都"
+"将 EROFS 用于其系统分区，借助其高性能压缩能力，在不影响用户体验的"
+"前提下缩小镜像体积。"
+
+#: ../../src/bootable_system.md:10 2b32313214ae4b91a1fbe4c404bfcd41
+msgid "Known adopters include (alphabetical, may be incomplete):"
+msgstr "已知采用者包括（按字母顺序排列，可能不完整）："
+
+#: ../../src/bootable_system.md:12 c598e013bbf748d3b4a8c694de2aa82e
+msgid "Coolpad"
+msgstr "Coolpad"
+
+#: ../../src/bootable_system.md:13 33569cbf98944209846c113f6c7486af
+msgid "Honor"
+msgstr "Honor"
+
+#: ../../src/bootable_system.md:14 a97f130869ce42cd9c7f5fe986775381
+msgid "Huawei"
+msgstr "Huawei"
+
+#: ../../src/bootable_system.md:15 0d89ad20c1e844379505448177b1ac19
+msgid "Motorola"
+msgstr "Motorola"
+
+#: ../../src/bootable_system.md:16 fced15b390d949c8b681b7ace0341c12
+msgid "Samsung"
+msgstr "Samsung"
+
+#: ../../src/bootable_system.md:17 9f8d2288d1fd475b9640a621a26146a1
+msgid "OPPO"
+msgstr "OPPO"
+
+#: ../../src/bootable_system.md:18 962f442151cb49d0b169734fc03a1ff6
+msgid "Xiaomi"
+msgstr "Xiaomi"
+
+#: ../../src/bootable_system.md:19 229796c362b3437d8561ed3e859eeba1
+msgid "vivo"
+msgstr "vivo"
+
+#: ../../src/bootable_system.md:21 8f622343b14446e2b4a6d408d9075201
+msgid "For more details on Android system partition use cases, see:"
+msgstr "有关 Android 系统分区用例的更多详情，请参阅："
+
+#: ../../src/bootable_system.md:23 143b1d6bdab94acea82ce0081eecb1dd
+msgid ""
+"[EROFS AOSP user "
+"guide](https://source.android.com/docs/core/architecture/kernel/erofs)"
+msgstr ""
+"[EROFS AOSP 用户"
+"指南](https://source.android.com/docs/core/architecture/kernel/erofs)"
+
+#: ../../src/bootable_system.md:24 f1f741721d3f44cab87a34684e275a7c
+msgid "[ATC'19 EROFS](https://www.usenix.org/conference/atc19/presentation/gao)"
+msgstr "[ATC'19 EROFS](https://www.usenix.org/conference/atc19/presentation/gao)"
+
+#: ../../src/bootable_system.md:26 cfcfa3f078bd40309d9011dc9e94b871
+msgid "Fedora LiveCDs"
+msgstr "Fedora LiveCD"
+
+#: ../../src/bootable_system.md:28 1db74adb14bb4c01a5170d38717118f5
+msgid ""
+"Since Fedora 42, the EROFS filesystem has been used to compress Fedora "
+"LiveCDs to achieve smaller images with even better runtime performance."
+msgstr ""
+"自 Fedora 42 起，EROFS 文件系统已被用于压缩 Fedora LiveCD，以获得更"
+"小的镜像和更优的运行时性能。"
+
+#: ../../src/bootable_system.md:31 7e0c4341b1594b5aa8b2b63565a674e2
+msgid ""
+"![Starting Fedora Workstation 43 Live ISO on x86_64 (at 1.8x "
+"speed)](_static/fedora_workstation_live_43_erofs.gif)"
+msgstr ""
+"![启动 Fedora Workstation 43 Live ISO（x86_64，1.8 倍"
+"速）](_static/fedora_workstation_live_43_erofs.gif)"
+
+#: ../../src/bootable_system.md:31 25369929b54c48f38177d7e00d3d3e81
+msgid ""
+"Starting Fedora Workstation 43 Live ISO on x86_64 (at 1.8x "
+"speed)"
+msgstr ""
+"启动 Fedora Workstation 43 Live ISO（x86_64，1.8 倍"
+"速）"
+
+#: ../../src/bootable_system.md:33 78c1df9a7937461f811a1ddc67bc381e
+msgid ""
+"For more details, see [Switch to EROFS for Live "
+"Media](https://fedoraproject.org/wiki/Changes/EROFSforLiveMedia)."
+msgstr ""
+"更多详情请参阅 [改用 EROFS 作为 Live "
+"媒体](https://fedoraproject.org/wiki/Changes/EROFSforLiveMedia)。"
