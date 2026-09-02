@@ -31,10 +31,17 @@ Optional features extend this foundation without breaking the core design:
 - **{doc}`Chunk-based layout <chunked_format>`** splits large files into
   fixed-size, independently-addressed chunks, enabling cross-file deduplication
   and multi-device storage.
+- **{doc}`Compressed layout <compressed_format>`** is one of EROFS's core
+  strengths. By applying **fixed-output-size compression**, each compressed block
+  is always fully utilized, which minimizes I/O amplification and allows compressed
+  data to be cached and evicted at block granularity. This makes EROFS competitive
+  in both read throughput and memory footprint compared to unaligned compression
+  approaches, particularly on memory-constrained devices.
 
 ```{toctree}
 :hidden:
 core_ondisk
 xattrs
 chunked_format
+compressed_format
 ```
