@@ -24,6 +24,7 @@ including but not limited to (in alphabetical order):
      - Xiaomi (@xiaomi.com)
 
   * Individuals
+     - Nithurshen (nithurshen.dev@gmail.com)
 
 Since it's _an incomplete list_, feel free to submit a pull request to
 add yourself here if you'd like to be highlighted as an EROFS
